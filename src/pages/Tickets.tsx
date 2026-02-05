@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TicketTierCard from "@/components/TicketTierCard";
+import TravelPackageCard from "@/components/TravelPackageCard";
 import { Button } from "@/components/ui/button";
-import { Ticket, Star, Crown, Calendar, Clock, CheckCircle } from "lucide-react";
+import { Ticket, Star, Crown, Calendar, Clock, Users, GraduationCap, Briefcase, Hotel, MapPin, TrendingUp } from "lucide-react";
 import heroTickets from "@/assets/hero-tickets.jpg";
 
 const Tickets = () => {
@@ -28,64 +30,149 @@ const Tickets = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   const ticketTiers = [
     {
-      name: "General Admission",
-      icon: <Ticket size={48} />,
-      price: "$299",
-      description: "Access to all conference sessions and exhibitions",
+      name: "Early Bird",
+      icon: <Ticket size={40} />,
+      price: "$199",
+      description: "Limited availability - General Admission",
       features: [
-        "3-day conference access",
+        "2-day conference access",
         "All panel discussions",
-        "Film screenings",
         "Exhibition hall access",
         "Networking events",
         "Conference materials",
-        "Welcome reception",
       ],
-      color: "default",
+      badge: "Limited",
     },
     {
-      name: "VIP Pass",
-      icon: <Star size={48} />,
-      price: "$799",
-      description: "Premium experience with awards ceremony access",
+      name: "General Admission",
+      icon: <Ticket size={40} />,
+      price: "$249",
+      description: "Standard conference access",
+      features: [
+        "2-day conference access",
+        "All panel discussions",
+        "Exhibition hall access",
+        "Networking events",
+        "Conference materials",
+      ],
+    },
+    {
+      name: "Creative Professional",
+      icon: <Briefcase size={40} />,
+      price: "$349",
+      description: "Panels + Mixer + Expo + Awards Gala",
       features: [
         "Everything in General Admission",
-        "Awards ceremony seating",
-        "VIP lounge access",
-        "Priority seating at panels",
-        "Exclusive meet & greets",
-        "Backstage tours",
-        "VIP gift bag",
-        "Premium parking",
+        "Awards Gala access",
+        "Industry mixer",
+        "Expo floor access",
+        "Professional networking",
       ],
-      color: "hero",
       popular: true,
     },
     {
-      name: "Ultra VIP",
-      icon: <Crown size={48} />,
-      price: "$1,999",
-      description: "The ultimate HUE experience with exclusive access",
+      name: "VIP Access Pass",
+      icon: <Star size={40} />,
+      price: "$599",
+      description: "Premium experience with priority access",
       features: [
-        "Everything in VIP Pass",
-        "Red carpet access",
-        "Private reception with artists",
-        "Front row awards ceremony",
-        "One-on-one mentorship session",
-        "Exclusive after-party access",
-        "Concierge service",
-        "Hotel accommodations package",
-        "Premium swag bag",
+        "Everything in Creative Professional",
+        "Priority seating",
+        "VIP lounge access",
+        "Exclusive mixer",
+        "HUE swag bag",
       ],
-      color: "houston",
+      variant: "hero" as const,
     },
+    {
+      name: "All-Access Platinum",
+      icon: <Crown size={40} />,
+      price: "$899",
+      description: "The ultimate HUE experience",
+      features: [
+        "Everything in VIP Access",
+        "Backstage access",
+        "Speaker meet & greets",
+        "VIP reception",
+        "Premium seating",
+        "Exclusive gifting",
+      ],
+      variant: "houston" as const,
+    },
+    {
+      name: "Student Pass",
+      icon: <GraduationCap size={40} />,
+      price: "$99",
+      description: "Valid student ID required",
+      features: [
+        "2-day conference access",
+        "All panel discussions",
+        "Exhibition hall access",
+        "Student networking session",
+      ],
+    },
+  ];
+
+  const travelPackages = [
+    {
+      name: "Creator Package",
+      price: "$499",
+      features: [
+        "2-night hotel stay",
+        "General Admission ticket",
+        "Welcome gift bag",
+      ],
+    },
+    {
+      name: "Professional Package",
+      price: "$749",
+      features: [
+        "2-night hotel stay",
+        "Creative Professional Pass",
+        "Mixer access",
+        "Premium seating",
+      ],
+    },
+    {
+      name: "VIP Experience Package",
+      price: "$1,299",
+      features: [
+        "2-night suite or premium room",
+        "VIP Access Pass",
+        "Private reception",
+        "Red carpet access",
+        "Airport transfers",
+        "Exclusive gifting",
+      ],
+      featured: true,
+    },
+    {
+      name: "Platinum Executive Package",
+      price: "$1,999",
+      features: [
+        "Luxury suite",
+        "All-Access Platinum pass",
+        "Backstage meet & greets",
+        "Private chef tasting",
+        "VIP concierge",
+        "Branded merchandise",
+        "Priority check-in",
+      ],
+    },
+  ];
+
+  const whyHoustonStats = [
+    { label: "Most Diverse City", value: "Top 5" },
+    { label: "U.S. Media Market", value: "#3" },
+    { label: "Regional Economy", value: "$500B+" },
+    { label: "Residents", value: "7M+" },
   ];
 
   return (
@@ -140,47 +227,119 @@ const Tickets = () => {
       {/* Ticket Tiers */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
+          <h2 className="text-4xl font-bold text-center mb-4">
             Choose Your <span className="text-gold">Experience</span>
           </h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+            From student passes to all-access platinum, find the perfect ticket for your HUE experience
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {ticketTiers.map((tier, idx) => (
-              <div
-                key={idx}
-                className={`bg-card border-2 rounded-lg p-8 card-hover relative ${
-                  tier.popular ? "border-gold scale-105" : "border-border"
-                }`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold text-charcoal px-4 py-1 rounded-full text-sm font-bold">
-                    Most Popular
-                  </div>
-                )}
+              <TicketTierCard key={idx} {...tier} />
+            ))}
+          </div>
 
-                <div className="text-gold mb-6 flex justify-center">{tier.icon}</div>
-                <h3 className="text-2xl font-bold text-center mb-2">{tier.name}</h3>
-                <div className="text-4xl font-bold text-center text-gold mb-4">{tier.price}</div>
-                <p className="text-center text-muted-foreground mb-8">{tier.description}</p>
+          {/* Group Rates */}
+          <div className="mt-12 max-w-2xl mx-auto">
+            <div className="bg-card border border-gold/30 rounded-lg p-8 text-center">
+              <Users className="text-gold mx-auto mb-4" size={40} />
+              <h3 className="text-2xl font-bold mb-2">Group Rates (5+)</h3>
+              <p className="text-3xl font-bold text-gold mb-2">Starting at $175/person</p>
+              <p className="text-muted-foreground mb-4">
+                Bring your team and save! Contact us for custom group packages.
+              </p>
+              <Button variant="outline_gold">Inquire About Group Rates</Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, fidx) => (
-                    <li key={fidx} className="flex items-start gap-2 text-sm">
-                      <CheckCircle size={16} className="text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      {/* Travel & Accommodation */}
+      <section className="py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Hotel className="text-gold mx-auto mb-4" size={56} />
+            <h2 className="text-4xl font-bold mb-4">
+              Travel & <span className="text-gold">Accommodation</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Stay steps away from all conference activities with exclusive HUE rates
+            </p>
+          </div>
 
-                <Button
-                  variant={tier.color as any}
-                  className="w-full"
-                  size="lg"
-                >
-                  Get {tier.name}
-                </Button>
+          {/* Hotel Info */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-card border border-gold/30 rounded-lg p-8">
+              <h3 className="text-2xl font-bold mb-2 text-gold">Official Host Hotel</h3>
+              <p className="text-xl font-semibold mb-6">Blossom Hotel Houston</p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-background/50 rounded-lg">
+                  <p className="text-muted-foreground text-sm mb-2">Standard King/Double</p>
+                  <p className="text-2xl font-bold text-gold">$169–$189</p>
+                  <p className="text-muted-foreground text-xs">per night</p>
+                </div>
+                <div className="text-center p-4 bg-background/50 rounded-lg">
+                  <p className="text-muted-foreground text-sm mb-2">Executive Rooms</p>
+                  <p className="text-2xl font-bold text-gold">$209</p>
+                  <p className="text-muted-foreground text-xs">per night</p>
+                </div>
+                <div className="text-center p-4 bg-background/50 rounded-lg">
+                  <p className="text-muted-foreground text-sm mb-2">Suites</p>
+                  <p className="text-2xl font-bold text-gold">From $299</p>
+                  <p className="text-muted-foreground text-xs">per night</p>
+                </div>
+              </div>
+              
+              <p className="text-center text-sm text-muted-foreground mt-6">
+                <span className="text-gold">Special HUE rates</span> — Discounted vs. typical $250–$350 Houston luxury rate
+              </p>
+              
+              <div className="text-center mt-6">
+                <Button variant="hero" size="lg">Book Hotel Room</Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Travel Packages */}
+          <h3 className="text-2xl font-bold text-center mb-8">HUE Travel Packages</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {travelPackages.map((pkg, idx) => (
+              <TravelPackageCard key={idx} {...pkg} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Houston */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <MapPin className="text-gold mx-auto mb-4" size={56} />
+            <h2 className="text-4xl font-bold mb-4">
+              Why <span className="text-gold">Houston?</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              HUE positions Houston as the next entertainment capital of the South — and you're invited to be part of the movement.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+            {whyHoustonStats.map((stat, idx) => (
+              <div key={idx} className="bg-card border border-border rounded-lg p-6 text-center">
+                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground max-w-3xl mx-auto">
+            <span className="flex items-center gap-2"><TrendingUp size={16} className="text-gold" /> Growing film production hub</span>
+            <span>•</span>
+            <span>Home to world-class culinary scene</span>
+            <span>•</span>
+            <span>Thriving arts & music community</span>
           </div>
         </div>
       </section>
@@ -227,20 +386,26 @@ const Tickets = () => {
         </div>
       </section>
 
-      {/* Add to Calendar CTA */}
+      {/* Reserve Your Spot CTA */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center bg-gradient-to-br from-gold/10 via-houston/5 to-transparent border border-gold/30 rounded-2xl p-12">
-            <h3 className="text-3xl font-bold mb-4">Don't Miss Out</h3>
-            <p className="text-muted-foreground mb-6">
-              Add HUE Conference & Awards to your calendar and set reminders
+          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-gold/10 via-houston/5 to-transparent border border-gold/30 rounded-2xl p-12">
+            <h3 className="text-3xl font-bold mb-4">Reserve Your Spot Today</h3>
+            <p className="text-muted-foreground mb-8">
+              Be part of Houston's emergence as the entertainment capital of the South
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline_gold" size="lg">
-                Add to Google Calendar
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button variant="hero" size="xl">Get Tickets</Button>
+              <Button variant="outline_gold" size="lg">Book Hotel</Button>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
+              <Button variant="ghost" size="sm" asChild>
+                <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
+                  Submit Nominations →
+                </a>
               </Button>
-              <Button variant="outline_gold" size="lg">
-                Add to iCal
+              <Button variant="outline_gold" size="sm">
+                Add to Calendar
               </Button>
             </div>
           </div>
