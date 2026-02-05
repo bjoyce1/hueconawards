@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send, Users, Briefcase, HelpCircle } from "lucide-react";
+import heroContact from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   return (
@@ -13,7 +14,11 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-charcoal z-0" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroContact})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <Mail className="text-gold mx-auto mb-6 animate-pulse" size={80} />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">

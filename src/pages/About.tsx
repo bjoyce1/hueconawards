@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Users, Target, MapPin, Award } from "lucide-react";
+import heroAbout from "@/assets/hero-about.jpg";
 
 const About = () => {
   return (
@@ -9,7 +10,11 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-charcoal z-0" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroAbout})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             About <span className="text-gold">HUE</span>

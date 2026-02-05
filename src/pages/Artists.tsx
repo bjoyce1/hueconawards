@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Film, Music, Palette, UtensilsCrossed, Users, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import heroArtists from "@/assets/hero-artists.jpg";
 
 const Artists = () => {
   const [selectedArtist, setSelectedArtist] = useState<any>(null);
@@ -114,7 +115,11 @@ const Artists = () => {
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-charcoal z-0" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroArtists})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <Star className="text-gold mx-auto mb-6 animate-pulse" size={80} />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">

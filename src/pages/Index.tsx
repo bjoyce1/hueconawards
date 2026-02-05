@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Play, Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
+import heroHome from "@/assets/hero-home.jpg";
 
 const Index = () => {
   return (
@@ -12,7 +13,11 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background z-0" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroHome})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background z-0" />
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden z-0">
