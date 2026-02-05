@@ -18,30 +18,51 @@ const Awards = () => {
     {
       id: "film",
       icon: <Film size={48} />,
-      title: "Film Awards",
-      description: "Best Feature, Best Director, Best Actor/Actress, Best Screenplay, Best Cinematography",
-      details: "Submit your feature films, short films, and documentaries for consideration across multiple categories.",
+      title: "Film Vanguard Award",
+      description: "Outstanding Achievement in Film",
+      details: "Recognizing excellence in filmmaking, from directing and cinematography to storytelling and production.",
     },
     {
       id: "music",
       icon: <Music size={48} />,
-      title: "Music Awards",
-      description: "Best Album, Best Single, Best Music Video, Best New Artist, Best Live Performance",
-      details: "Showcase your musical talent across various genres and formats.",
+      title: "Music Innovator Award",
+      description: "Breakthrough in Sound & Production",
+      details: "Celebrating artists and producers pushing boundaries in music creation and performance.",
     },
     {
       id: "arts",
       icon: <Palette size={48} />,
-      title: "Arts Awards",
-      description: "Best Visual Artist, Best Installation, Best Public Art, Best Emerging Artist",
-      details: "Recognition for visual artists, sculptors, and multimedia creators pushing boundaries.",
+      title: "Artistic Visionary Award",
+      description: "Excellence in Visual & Digital Arts",
+      details: "Honoring visual artists, digital creators, and multimedia innovators shaping Houston's art scene.",
     },
     {
       id: "culinary",
       icon: <UtensilsCrossed size={48} />,
-      title: "Culinary Awards",
-      description: "Best Chef, Best New Restaurant, Best Food Innovation, Best Culinary Experience",
-      details: "Celebrating Houston's world-class culinary talent and innovative dining experiences.",
+      title: "Culinary Creative Award",
+      description: "Trailblazer in Culinary Innovation",
+      details: "Celebrating chefs and culinary artists who are redefining Houston's food culture.",
+    },
+    {
+      id: "community",
+      icon: <Trophy size={48} />,
+      title: "Community Impact Award",
+      description: "Cultural & Philanthropic Leadership",
+      details: "Recognizing individuals and organizations making lasting contributions to Houston's creative community.",
+    },
+    {
+      id: "rising",
+      icon: <Trophy size={48} />,
+      title: "Rising Star Award",
+      description: "Emerging Talent Across Disciplines",
+      details: "Spotlighting breakthrough talents across all creative fields who are the future of Houston entertainment.",
+    },
+    {
+      id: "fashion",
+      icon: <Trophy size={48} />,
+      title: "High-Fashion Award",
+      description: "Leadership in Style & Design",
+      details: "Honoring fashion designers, stylists, and innovators elevating Houston's fashion scene.",
     },
   ];
 
@@ -58,11 +79,16 @@ const Awards = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <Trophy className="text-gold mx-auto mb-6 animate-pulse" size={80} />
+          <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full">
+            <p className="text-houston font-semibold text-sm tracking-wider">
+              NOMINATIONS NOW OPEN
+            </p>
+          </div>
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             <span className="text-gold">HUE</span> Awards
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Celebrating excellence across Film, Music, Arts, and Culinary categories
+            Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
           </p>
         </div>
       </section>
@@ -70,11 +96,16 @@ const Awards = () => {
       {/* Award Categories */}
       <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Award <span className="text-gold">Categories</span>
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              Award <span className="text-gold">Categories</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Nominate the visionaries, storytellers, and change-makers who deserve recognition for their excellence, innovation, and contributions to our community.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {categories.map((category) => (
               <div
                 key={category.id}
@@ -94,15 +125,19 @@ const Awards = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={() => setShowSubmissionForm(true)}
-              className="group"
-            >
-              <Send className="mr-2 group-hover:translate-x-1 transition-transform" />
-              Submit Your Work
-            </Button>
+            <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="hero"
+                size="xl"
+                className="group"
+              >
+                <Send className="mr-2 group-hover:translate-x-1 transition-transform" />
+                Submit Nominations
+              </Button>
+            </a>
+            <p className="text-muted-foreground mt-4 text-sm">
+              Nominate yourself, a colleague, or an organization
+            </p>
           </div>
         </div>
       </section>
