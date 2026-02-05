@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Play, Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
+import hueLogo from "@/assets/hue-logo.png";
 
 const Index = () => {
   return (
@@ -27,6 +28,8 @@ const Index = () => {
 
         <div className="container mx-auto px-4 z-10 text-center">
           <div className="animate-fade-in">
+            <img src={hueLogo} alt="HUE" className="h-24 md:h-32 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]" />
+
             <div className="inline-block mb-6 px-6 py-2 bg-gold/10 border border-gold/20 rounded-full backdrop-blur-sm">
               <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
                 From Hollywood to Houston
