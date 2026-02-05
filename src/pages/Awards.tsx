@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import heroAwards from "@/assets/hero-awards.jpg";
+import hueLogo from "@/assets/hue-logo.png";
 
 const Awards = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -78,7 +79,7 @@ const Awards = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <Trophy className="text-gold mx-auto mb-6 animate-pulse" size={80} />
+          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full">
             <p className="text-houston font-semibold text-sm tracking-wider">
               NOMINATIONS NOW OPEN

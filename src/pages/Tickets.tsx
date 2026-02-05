@@ -6,6 +6,7 @@ import TravelPackageCard from "@/components/TravelPackageCard";
 import { Button } from "@/components/ui/button";
 import { Ticket, Star, Crown, Calendar, Clock, Users, GraduationCap, Briefcase, Hotel, MapPin, TrendingUp, Film, Music, Palette, Shirt, UtensilsCrossed, Megaphone, Mic, Handshake, Award, Sparkles } from "lucide-react";
 import heroTickets from "@/assets/hero-tickets.jpg";
+import hueLogo from "@/assets/hue-logo.png";
 
 const Tickets = () => {
   const eventDate = new Date('2026-05-07T09:00:00');
@@ -187,6 +188,7 @@ const Tickets = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
+          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <div className="inline-block mb-6 px-5 py-2 bg-gold/10 backdrop-blur-sm border border-gold/30 rounded-full animate-fade-in">
             <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
               Official Attendee Invitation

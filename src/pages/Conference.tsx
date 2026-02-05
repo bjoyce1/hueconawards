@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroConference from "@/assets/hero-conference.jpg";
+import hueLogo from "@/assets/hue-logo.png";
 
 const Conference = () => {
   const [selectedPanel, setSelectedPanel] = useState<any>(null);
@@ -96,7 +97,7 @@ const Conference = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <Calendar className="text-gold mx-auto mb-6 animate-pulse" size={80} />
+          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             HUE <span className="text-gold">Conference</span>
           </h1>

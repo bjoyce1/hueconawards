@@ -6,6 +6,7 @@ import { Film, Music, Palette, UtensilsCrossed, Users, Star, ExternalLink } from
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import heroArtists from "@/assets/hero-artists.jpg";
+import hueLogo from "@/assets/hue-logo.png";
 
 const Artists = () => {
   const [selectedArtist, setSelectedArtist] = useState<any>(null);
@@ -121,7 +122,7 @@ const Artists = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <Star className="text-gold mx-auto mb-6 animate-pulse" size={80} />
+          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             Featured <span className="text-gold">Artists</span>
           </h1>
