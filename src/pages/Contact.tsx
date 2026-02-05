@@ -163,11 +163,11 @@ const Contact = () => {
                   <div className="flex items-start gap-4">
                     <MapPin className="text-gold flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h4 className="font-bold mb-1">Address</h4>
+                      <h4 className="font-bold mb-1">Venue</h4>
                       <p className="text-muted-foreground">
-                        HUE Conference Center<br />
-                        123 Entertainment Blvd<br />
-                        Houston, TX 77001
+                        <span className="text-gold font-semibold">Blossom Hotel Houston</span><br />
+                        Houston, TX<br />
+                        <span className="text-sm">May 7–8, 2026</span>
                       </p>
                     </div>
                   </div>
@@ -178,9 +178,9 @@ const Contact = () => {
               <div className="aspect-square bg-muted rounded-lg border border-border flex items-center justify-center">
                 <div className="text-center p-8">
                   <MapPin className="text-muted-foreground mx-auto mb-4" size={64} />
-                  <p className="text-muted-foreground">Interactive Map</p>
+                  <p className="text-gold font-bold">Blossom Hotel Houston</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    123 Entertainment Blvd, Houston, TX
+                    Houston, TX
                   </p>
                 </div>
               </div>

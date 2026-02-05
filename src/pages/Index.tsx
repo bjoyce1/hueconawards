@@ -33,6 +33,12 @@ const Index = () => {
               </p>
             </div>
             
+            <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full">
+              <p className="text-houston font-semibold text-sm tracking-wider">
+                MAY 7–8, 2026 | BLOSSOM HOTEL HOUSTON
+              </p>
+            </div>
+
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
               <span className="text-foreground">Houston United in</span>
               <br />
@@ -41,19 +47,23 @@ const Index = () => {
               </span>
             </h1>
             
+            <p className="text-2xl md:text-3xl font-bold text-gold mb-4">
+              Create. Connect. Celebrate. Elevate.
+            </p>
+            
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Where Hollywood glamour meets Houston culture. Celebrating excellence in Film, Music, Arts, and Culinary creativity.
+              Celebrating, connecting, and elevating Houston's incredible talent across Film, Music, Fashion, Sports, Culinary Arts, Media, and Innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link to="/tickets">
+              <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="xl">
-                  Get Tickets
+                  Submit Nominations
                 </Button>
-              </Link>
-              <Link to="/awards">
+              </a>
+              <Link to="/tickets">
                 <Button variant="outline_gold" size="xl">
-                  Submit Your Work
+                  Get Tickets
                 </Button>
               </Link>
               <Button variant="ghost" size="xl" className="text-foreground hover:text-gold">

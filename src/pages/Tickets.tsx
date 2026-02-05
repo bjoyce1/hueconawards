@@ -6,27 +6,28 @@ import { Ticket, Star, Crown, Calendar, Clock, CheckCircle } from "lucide-react"
 import heroTickets from "@/assets/hero-tickets.jpg";
 
 const Tickets = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 45,
-    hours: 12,
-    minutes: 30,
-    seconds: 0,
-  });
+  const eventDate = new Date('2026-05-07T09:00:00');
+  
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const difference = eventDate.getTime() - now.getTime();
+    
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+    
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
     }, 1000);
 
     return () => clearInterval(timer);
@@ -103,8 +104,13 @@ const Tickets = () => {
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             Get Your <span className="text-gold">Tickets</span>
           </h1>
+          <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full animate-slide-up">
+            <p className="text-houston font-semibold text-sm tracking-wider">
+              MAY 7–8, 2026 | BLOSSOM HOTEL HOUSTON
+            </p>
+          </div>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Join us for three days of inspiration, innovation, and celebration of entertainment excellence
+            Join us for two days of industry panels, networking, and a red-carpet awards gala
           </p>
         </div>
       </section>
@@ -191,18 +197,18 @@ const Tickets = () => {
               <div className="bg-card border border-border rounded-lg p-8">
                 <Calendar className="text-gold mb-4" size={40} />
                 <h3 className="text-xl font-bold mb-3">Dates</h3>
-                <p className="text-muted-foreground mb-2">Friday, March 15 - Sunday, March 17, 2024</p>
+                <p className="text-muted-foreground mb-2">Thursday, May 7 – Friday, May 8, 2026</p>
                 <p className="text-sm text-muted-foreground">
-                  Conference: March 15-16 | Awards: March 16 Evening
+                  Conference: May 7-8 | Awards Gala: May 8 Evening
                 </p>
               </div>
 
               <div className="bg-card border border-border rounded-lg p-8">
                 <Clock className="text-gold mb-4" size={40} />
                 <h3 className="text-xl font-bold mb-3">Schedule</h3>
-                <p className="text-muted-foreground mb-2">Daily: 9:00 AM - 9:00 PM</p>
+                <p className="text-muted-foreground mb-2">Daily: 9:00 AM - 10:00 PM</p>
                 <p className="text-sm text-muted-foreground">
-                  Awards Ceremony: Saturday, 7:00 PM
+                  Red Carpet Awards Gala: Friday, 7:00 PM
                 </p>
               </div>
             </div>
@@ -210,9 +216,8 @@ const Tickets = () => {
             <div className="mt-8 bg-card border border-border rounded-lg p-8">
               <h3 className="text-xl font-bold mb-4">Venue Information</h3>
               <p className="text-muted-foreground mb-4">
-                HUE Conference Center<br />
-                123 Entertainment Blvd<br />
-                Houston, TX 77001
+                <span className="text-gold font-bold">Blossom Hotel Houston</span><br />
+                Houston, TX
               </p>
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border">
                 <span className="text-muted-foreground">Interactive Map</span>
