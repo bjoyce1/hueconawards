@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroConference from "@/assets/hero-conference.jpg";
 
 const Conference = () => {
   const [selectedPanel, setSelectedPanel] = useState<any>(null);
@@ -89,7 +90,11 @@ const Conference = () => {
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-charcoal z-0" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroConference})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <Calendar className="text-gold mx-auto mb-6 animate-pulse" size={80} />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
