@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import TicketTierCard from "@/components/TicketTierCard";
 import TravelPackageCard from "@/components/TravelPackageCard";
 import { Button } from "@/components/ui/button";
-import { Ticket, Star, Crown, Calendar, Clock, Users, GraduationCap, Briefcase, Hotel, MapPin, TrendingUp } from "lucide-react";
+import { Ticket, Star, Crown, Calendar, Clock, Users, GraduationCap, Briefcase, Hotel, MapPin, TrendingUp, Film, Music, Palette, Shirt, UtensilsCrossed, Megaphone, Mic, Handshake, Award, Sparkles } from "lucide-react";
 import heroTickets from "@/assets/hero-tickets.jpg";
 
 const Tickets = () => {
@@ -187,18 +187,102 @@ const Tickets = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <Ticket className="text-gold mx-auto mb-6 animate-pulse" size={80} />
-          <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            Get Your <span className="text-gold">Tickets</span>
-          </h1>
-          <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full animate-slide-up">
-            <p className="text-houston font-semibold text-sm tracking-wider">
-              MAY 7–8, 2026 | BLOSSOM HOTEL HOUSTON
+          <div className="inline-block mb-4 px-4 py-1 bg-gold/20 border border-gold/40 rounded-full animate-fade-in">
+            <p className="text-gold font-semibold text-sm tracking-wider">
+              OFFICIAL ATTENDEE INVITATION
             </p>
           </div>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Join us for two days of industry panels, networking, and a red-carpet awards gala
+          <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
+            HUE Conference <span className="text-gold">&</span> Awards
+          </h1>
+          <div className="inline-block mb-6 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full animate-slide-up">
+            <p className="text-houston font-semibold text-sm tracking-wider">
+              MAY 7–8, 2026 | BLOSSOM HOTEL | HOUSTON, TEXAS
+            </p>
+          </div>
+          <p className="text-lg md:text-xl text-gold font-medium mb-4 animate-slide-up">
+            "Houston: The New Mecca for Film, Music & Creative Arts"
           </p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
+            Join us for two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
+          </p>
+        </div>
+      </section>
+
+      {/* You're Invited Section */}
+      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              You're <span className="text-gold">Invited</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              The Houston United in Entertainment (HUE) Conference & Awards is the premier gathering for artists, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUE brings together <span className="text-gold font-semibold">1,200+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+              {[
+                { icon: <Film size={28} />, label: "Film & Television" },
+                { icon: <Music size={28} />, label: "Music" },
+                { icon: <Palette size={28} />, label: "Visual & Digital Arts" },
+                { icon: <Shirt size={28} />, label: "Fashion" },
+                { icon: <UtensilsCrossed size={28} />, label: "Culinary Arts" },
+                { icon: <Megaphone size={28} />, label: "Media & Innovation" },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-card border border-border rounded-lg p-4 card-hover">
+                  <div className="text-gold mb-2 flex justify-center">{item.icon}</div>
+                  <p className="text-sm text-muted-foreground">{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-lg text-muted-foreground italic">
+              Whether you're building your career, launching a brand, or expanding your network — <span className="text-gold">HUE is where Houston's creative future happens.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What To Expect */}
+      <section className="py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">
+            What To <span className="text-gold">Expect</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
+              <Mic className="text-gold mb-4" size={48} />
+              <h3 className="text-xl font-bold mb-3">Industry Panels & Keynotes</h3>
+              <p className="text-muted-foreground">
+                Insights from producers, directors, chefs, artists, investors, and media leaders shaping the future of entertainment.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
+              <Handshake className="text-gold mb-4" size={48} />
+              <h3 className="text-xl font-bold mb-3">The HUE Connection Experience</h3>
+              <p className="text-muted-foreground">
+                Curated networking lounges, pitch sessions, and real-time collaboration opportunities.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
+              <Award className="text-gold mb-4" size={48} />
+              <h3 className="text-xl font-bold mb-3">HUE Awards Gala</h3>
+              <p className="text-muted-foreground">
+                Red carpet arrivals, live performances, culinary tastings, and recognition of Houston's brightest creatives.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
+              <Sparkles className="text-gold mb-4" size={48} />
+              <h3 className="text-xl font-bold mb-3">VIP Mixers & Activations</h3>
+              <p className="text-muted-foreground">
+                Exclusive lounges, brand experiences, and private receptions with speakers and honorees.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
