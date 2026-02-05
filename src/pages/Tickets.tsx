@@ -185,122 +185,122 @@ const Tickets = () => {
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroTickets})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <div className="inline-block mb-4 px-4 py-1 bg-gold/20 border border-gold/40 rounded-full animate-fade-in">
-            <p className="text-gold font-semibold text-sm tracking-wider">
-              OFFICIAL ATTENDEE INVITATION
+          <div className="inline-block mb-6 px-5 py-2 bg-gold/10 backdrop-blur-sm border border-gold/30 rounded-full animate-fade-in">
+            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
+              Official Attendee Invitation
             </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
             HUE Conference <span className="text-gold">&</span> Awards
           </h1>
-          <div className="inline-block mb-6 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full animate-slide-up">
-            <p className="text-houston font-semibold text-sm tracking-wider">
-              MAY 7–8, 2026 | BLOSSOM HOTEL | HOUSTON, TEXAS
+          <div className="inline-flex items-center gap-3 mb-8 px-6 py-2.5 bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
+            <span className="w-2 h-2 rounded-full bg-houston animate-pulse" />
+            <p className="text-houston font-medium text-sm tracking-wide">
+              May 7–8, 2026 • Blossom Hotel • Houston, Texas
             </p>
           </div>
-          <p className="text-lg md:text-xl text-gold font-medium mb-4 animate-slide-up">
+          <p className="text-lg md:text-xl text-gold/90 font-medium mb-6 animate-slide-up italic">
             "Houston: The New Mecca for Film, Music & Creative Arts"
           </p>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Join us for two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up leading-relaxed">
+            Two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
           </p>
         </div>
       </section>
 
       {/* You're Invited Section */}
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
-        <div className="container mx-auto px-4">
+      <section className="py-28 bg-gradient-to-b from-charcoal via-charcoal to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Join The Movement</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
               You're <span className="text-gold">Invited</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
               The Houston United in Entertainment (HUE) Conference & Awards is the premier gathering for artists, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUE brings together <span className="text-gold font-semibold">1,200+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-14">
               {[
-                { icon: <Film size={28} />, label: "Film & Television" },
-                { icon: <Music size={28} />, label: "Music" },
-                { icon: <Palette size={28} />, label: "Visual & Digital Arts" },
-                { icon: <Shirt size={28} />, label: "Fashion" },
-                { icon: <UtensilsCrossed size={28} />, label: "Culinary Arts" },
-                { icon: <Megaphone size={28} />, label: "Media & Innovation" },
+                { icon: <Film size={24} />, label: "Film & Television" },
+                { icon: <Music size={24} />, label: "Music" },
+                { icon: <Palette size={24} />, label: "Visual & Digital Arts" },
+                { icon: <Shirt size={24} />, label: "Fashion" },
+                { icon: <UtensilsCrossed size={24} />, label: "Culinary Arts" },
+                { icon: <Megaphone size={24} />, label: "Media & Innovation" },
               ].map((item, idx) => (
-                <div key={idx} className="bg-card border border-border rounded-lg p-4 card-hover">
-                  <div className="text-gold mb-2 flex justify-center">{item.icon}</div>
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
+                <div key={idx} className="group bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-5 transition-all duration-300 hover:border-gold/30 hover:bg-card/80">
+                  <div className="text-gold/70 mb-3 flex justify-center transition-colors group-hover:text-gold">{item.icon}</div>
+                  <p className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80 transition-colors">{item.label}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-lg text-muted-foreground italic">
-              Whether you're building your career, launching a brand, or expanding your network — <span className="text-gold">HUE is where Houston's creative future happens.</span>
-            </p>
+            <div className="inline-block px-8 py-4 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 border border-gold/20 rounded-2xl">
+              <p className="text-base text-muted-foreground">
+                Whether you're building your career, launching a brand, or expanding your network —<br />
+                <span className="text-gold font-medium">HUE is where Houston's creative future happens.</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* What To Expect */}
-      <section className="py-24 bg-charcoal">
+      <section className="py-28 bg-charcoal relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            What To <span className="text-gold">Expect</span>
-          </h2>
+          <div className="text-center mb-16">
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Experience</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              What To <span className="text-gold">Expect</span>
+            </h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
-              <Mic className="text-gold mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Industry Panels & Keynotes</h3>
-              <p className="text-muted-foreground">
-                Insights from producers, directors, chefs, artists, investors, and media leaders shaping the future of entertainment.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
-              <Handshake className="text-gold mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">The HUE Connection Experience</h3>
-              <p className="text-muted-foreground">
-                Curated networking lounges, pitch sessions, and real-time collaboration opportunities.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
-              <Award className="text-gold mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">HUE Awards Gala</h3>
-              <p className="text-muted-foreground">
-                Red carpet arrivals, live performances, culinary tastings, and recognition of Houston's brightest creatives.
-              </p>
-            </div>
-
-            <div className="bg-card border border-border rounded-lg p-8 card-hover gold-glow">
-              <Sparkles className="text-gold mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">VIP Mixers & Activations</h3>
-              <p className="text-muted-foreground">
-                Exclusive lounges, brand experiences, and private receptions with speakers and honorees.
-              </p>
-            </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              { icon: <Mic size={32} />, title: "Industry Panels & Keynotes", desc: "Insights from producers, directors, chefs, artists, investors, and media leaders shaping the future of entertainment." },
+              { icon: <Handshake size={32} />, title: "The HUE Connection Experience", desc: "Curated networking lounges, pitch sessions, and real-time collaboration opportunities." },
+              { icon: <Award size={32} />, title: "HUE Awards Gala", desc: "Red carpet arrivals, live performances, culinary tastings, and recognition of Houston's brightest creatives." },
+              { icon: <Sparkles size={32} />, title: "VIP Mixers & Activations", desc: "Exclusive lounges, brand experiences, and private receptions with speakers and honorees." },
+            ].map((item, idx) => (
+              <div key={idx} className="group relative bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all duration-300 hover:border-gold/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-gold/20">
+                    <div className="text-gold">{item.icon}</div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Countdown Timer */}
-      <section className="py-16 bg-charcoal">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-8">Event Starts In</h2>
-            <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+      <section className="py-20 bg-gradient-to-b from-charcoal to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.03)_50%,transparent_100%)]" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-3">Mark Your Calendar</p>
+            <h2 className="text-2xl font-bold mb-10">Event Starts In</h2>
+            <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-xl mx-auto">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hours", value: timeLeft.hours },
                 { label: "Minutes", value: timeLeft.minutes },
                 { label: "Seconds", value: timeLeft.seconds },
               ].map((item) => (
-                <div key={item.label} className="bg-card border border-gold/30 rounded-lg p-6">
-                  <div className="text-4xl md:text-5xl font-bold text-gold mb-2">{item.value}</div>
-                  <div className="text-muted-foreground text-sm">{item.label}</div>
+                <div key={item.label} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-b from-gold/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative bg-card/50 backdrop-blur-sm border border-gold/20 rounded-2xl p-4 md:p-6">
+                    <div className="text-3xl md:text-5xl font-bold text-gold mb-1 tabular-nums">{String(item.value).padStart(2, '0')}</div>
+                    <div className="text-muted-foreground text-xs md:text-sm font-medium uppercase tracking-wider">{item.label}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -309,86 +309,101 @@ const Tickets = () => {
       </section>
 
       {/* Ticket Tiers */}
-      <section className="py-24 bg-background">
+      <section className="py-28 bg-background relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            Choose Your <span className="text-gold">Experience</span>
-          </h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-            From student passes to all-access platinum, find the perfect ticket for your HUE experience
-          </p>
+          <div className="text-center mb-16">
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Pricing</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              Choose Your <span className="text-gold">Experience</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              From student passes to all-access platinum, find the perfect ticket for your HUE experience
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {ticketTiers.map((tier, idx) => (
               <TicketTierCard key={idx} {...tier} />
             ))}
           </div>
 
           {/* Group Rates */}
-          <div className="mt-12 max-w-2xl mx-auto">
-            <div className="bg-card border border-gold/30 rounded-lg p-8 text-center">
-              <Users className="text-gold mx-auto mb-4" size={40} />
-              <h3 className="text-2xl font-bold mb-2">Group Rates (5+)</h3>
-              <p className="text-3xl font-bold text-gold mb-2">Starting at $175/person</p>
-              <p className="text-muted-foreground mb-4">
-                Bring your team and save! Contact us for custom group packages.
-              </p>
-              <Button variant="outline_gold">Inquire About Group Rates</Button>
+          <div className="mt-16 max-w-2xl mx-auto">
+            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-2xl p-10 text-center overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                  <Users className="text-gold" size={32} />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Group Rates (5+)</h3>
+                <p className="text-3xl font-bold text-gold mb-3">Starting at $175/person</p>
+                <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                  Bring your team and save! Contact us for custom group packages.
+                </p>
+                <Button variant="outline_gold" size="lg">Inquire About Group Rates</Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Travel & Accommodation */}
-      <section className="py-24 bg-charcoal">
+      <section className="py-28 bg-charcoal relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Hotel className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-4xl font-bold mb-4">
+            <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+              <Hotel className="text-gold" size={32} />
+            </div>
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Stay With Us</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Travel & <span className="text-gold">Accommodation</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-xl mx-auto">
               Stay steps away from all conference activities with exclusive HUE rates
             </p>
           </div>
 
           {/* Hotel Info */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-card border border-gold/30 rounded-lg p-8">
-              <h3 className="text-2xl font-bold mb-2 text-gold">Official Host Hotel</h3>
-              <p className="text-xl font-semibold mb-6">Blossom Hotel Houston</p>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4 bg-background/50 rounded-lg">
-                  <p className="text-muted-foreground text-sm mb-2">Standard King/Double</p>
-                  <p className="text-2xl font-bold text-gold">$169–$189</p>
-                  <p className="text-muted-foreground text-xs">per night</p>
+          <div className="max-w-4xl mx-auto mb-20">
+            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-2xl p-10 overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
+              <div className="relative z-10">
+                <p className="text-gold text-sm font-medium tracking-[0.15em] uppercase mb-2">Official Host Hotel</p>
+                <h3 className="text-2xl font-bold mb-8">Blossom Hotel Houston</h3>
+                
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  {[
+                    { room: "Standard King/Double", price: "$169–$189", note: "per night" },
+                    { room: "Executive Rooms", price: "$209", note: "per night" },
+                    { room: "Suites", price: "From $299", note: "per night" },
+                  ].map((item, idx) => (
+                    <div key={idx} className="group text-center p-6 bg-background/30 backdrop-blur-sm rounded-xl border border-border/30 transition-all hover:border-gold/20">
+                      <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider mb-3">{item.room}</p>
+                      <p className="text-2xl font-bold text-gold mb-1">{item.price}</p>
+                      <p className="text-muted-foreground text-xs">{item.note}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="text-center p-4 bg-background/50 rounded-lg">
-                  <p className="text-muted-foreground text-sm mb-2">Executive Rooms</p>
-                  <p className="text-2xl font-bold text-gold">$209</p>
-                  <p className="text-muted-foreground text-xs">per night</p>
+                
+                <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+                
+                <p className="text-center text-sm text-muted-foreground mb-6">
+                  <span className="text-gold font-medium">Special HUE rates</span> — Discounted vs. typical $250–$350 Houston luxury rate
+                </p>
+                
+                <div className="text-center">
+                  <Button variant="hero" size="lg">Book Hotel Room</Button>
                 </div>
-                <div className="text-center p-4 bg-background/50 rounded-lg">
-                  <p className="text-muted-foreground text-sm mb-2">Suites</p>
-                  <p className="text-2xl font-bold text-gold">From $299</p>
-                  <p className="text-muted-foreground text-xs">per night</p>
-                </div>
-              </div>
-              
-              <p className="text-center text-sm text-muted-foreground mt-6">
-                <span className="text-gold">Special HUE rates</span> — Discounted vs. typical $250–$350 Houston luxury rate
-              </p>
-              
-              <div className="text-center mt-6">
-                <Button variant="hero" size="lg">Book Hotel Room</Button>
               </div>
             </div>
           </div>
 
           {/* Travel Packages */}
-          <h3 className="text-2xl font-bold text-center mb-8">HUE Travel Packages</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-3">All-Inclusive Options</p>
+            <h3 className="text-2xl font-bold">HUE Travel Packages</h3>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {travelPackages.map((pkg, idx) => (
               <TravelPackageCard key={idx} {...pkg} />
             ))}
@@ -397,73 +412,93 @@ const Tickets = () => {
       </section>
 
       {/* Why Houston */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <MapPin className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-4xl font-bold mb-4">
+      <section className="py-28 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-houston/5 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-14">
+            <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+              <MapPin className="text-gold" size={32} />
+            </div>
+            <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Location</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Why <span className="text-gold">Houston?</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-xl mx-auto">
               HUE positions Houston as the next entertainment capital of the South — and you're invited to be part of the movement.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
             {whyHoustonStats.map((stat, idx) => (
-              <div key={idx} className="bg-card border border-border rounded-lg p-6 text-center">
+              <div key={idx} className="group bg-gradient-to-b from-card/80 to-card/40 border border-border/50 rounded-2xl p-6 text-center transition-all hover:border-gold/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground max-w-3xl mx-auto">
-            <span className="flex items-center gap-2"><TrendingUp size={16} className="text-gold" /> Growing film production hub</span>
-            <span>•</span>
-            <span>Home to world-class culinary scene</span>
-            <span>•</span>
-            <span>Thriving arts & music community</span>
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground max-w-3xl mx-auto">
+            <span className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border/30">
+              <TrendingUp size={14} className="text-gold" /> Growing film production hub
+            </span>
+            <span className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border/30">
+              World-class culinary scene
+            </span>
+            <span className="flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-border/30">
+              Thriving arts & music community
+            </span>
           </div>
         </div>
       </section>
 
       {/* Event Details */}
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-28 bg-gradient-to-b from-charcoal to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16">
-              Event <span className="text-gold">Details</span>
-            </h2>
+            <div className="text-center mb-16">
+              <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Logistics</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Event <span className="text-gold">Details</span>
+              </h2>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card border border-border rounded-lg p-8">
-                <Calendar className="text-gold mb-4" size={40} />
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
+                  <Calendar className="text-gold" size={24} />
+                </div>
                 <h3 className="text-xl font-bold mb-3">Dates</h3>
-                <p className="text-muted-foreground mb-2">Thursday, May 7 – Friday, May 8, 2026</p>
+                <p className="text-foreground/90 font-medium mb-2">Thursday, May 7 – Friday, May 8, 2026</p>
                 <p className="text-sm text-muted-foreground">
                   Conference: May 7-8 | Awards Gala: May 8 Evening
                 </p>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-8">
-                <Clock className="text-gold mb-4" size={40} />
+              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
+                  <Clock className="text-gold" size={24} />
+                </div>
                 <h3 className="text-xl font-bold mb-3">Schedule</h3>
-                <p className="text-muted-foreground mb-2">Daily: 9:00 AM - 10:00 PM</p>
+                <p className="text-foreground/90 font-medium mb-2">Daily: 9:00 AM - 10:00 PM</p>
                 <p className="text-sm text-muted-foreground">
                   Red Carpet Awards Gala: Friday, 7:00 PM
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 bg-card border border-border rounded-lg p-8">
-              <h3 className="text-xl font-bold mb-4">Venue Information</h3>
-              <p className="text-muted-foreground mb-4">
-                <span className="text-gold font-bold">Blossom Hotel Houston</span><br />
-                Houston, TX
-              </p>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border">
-                <span className="text-muted-foreground">Interactive Map</span>
+            <div className="mt-6 group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+              <div className="flex items-start gap-5 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-gold/20">
+                  <MapPin className="text-gold" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-1">Venue Information</h3>
+                  <p className="text-gold font-medium">Blossom Hotel Houston</p>
+                  <p className="text-sm text-muted-foreground">Houston, TX</p>
+                </div>
+              </div>
+              <div className="aspect-video bg-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-border/30">
+                <span className="text-muted-foreground text-sm">Interactive Map Coming Soon</span>
               </div>
             </div>
           </div>
@@ -471,26 +506,31 @@ const Tickets = () => {
       </section>
 
       {/* Reserve Your Spot CTA */}
-      <section className="py-16 bg-background">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-gold/10 via-houston/5 to-transparent border border-gold/30 rounded-2xl p-12">
-            <h3 className="text-3xl font-bold mb-4">Reserve Your Spot Today</h3>
-            <p className="text-muted-foreground mb-8">
-              Be part of Houston's emergence as the entertainment capital of the South
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button variant="hero" size="xl">Get Tickets</Button>
-              <Button variant="outline_gold" size="lg">Book Hotel</Button>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-              <Button variant="ghost" size="sm" asChild>
-                <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
-                  Submit Nominations →
-                </a>
-              </Button>
-              <Button variant="outline_gold" size="sm">
-                Add to Calendar
-              </Button>
+          <div className="max-w-3xl mx-auto text-center relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-houston/5 to-transparent rounded-3xl blur-xl" />
+            <div className="relative bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-sm border border-gold/20 rounded-3xl p-14">
+              <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Don't Miss Out</p>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Reserve Your Spot Today</h3>
+              <p className="text-muted-foreground mb-10 max-w-md mx-auto">
+                Be part of Houston's emergence as the entertainment capital of the South
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button variant="hero" size="xl">Get Tickets</Button>
+                <Button variant="outline_gold" size="lg">Book Hotel</Button>
+              </div>
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
+                <Button variant="ghost" size="sm" asChild>
+                  <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
+                    Submit Nominations →
+                  </a>
+                </Button>
+                <Button variant="outline_gold" size="sm">
+                  Add to Calendar
+                </Button>
+              </div>
             </div>
           </div>
         </div>
