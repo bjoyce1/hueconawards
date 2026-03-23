@@ -195,7 +195,7 @@ const Tickets = () => {
             </p>
           </div>
           <h1 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
-            HUE Conference <span className="text-gold">&</span> Awards
+            HUECONA Conference <span className="text-gold">&</span> Awards
           </h1>
           <div className="inline-flex items-center gap-3 mb-8 px-6 py-2.5 bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
             <span className="w-2 h-2 rounded-full bg-houston animate-pulse" />
