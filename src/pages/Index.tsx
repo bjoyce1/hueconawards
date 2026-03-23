@@ -69,10 +69,6 @@ const Index = () => {
                   Get Tickets
                 </Button>
               </Link>
-              <Button variant="ghost" size="xl" className="text-foreground hover:text-gold">
-                <Play className="mr-2" size={20} />
-                Watch Promo
-              </Button>
             </div>
 
             {/* Scroll Indicator */}
