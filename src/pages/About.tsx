@@ -17,9 +17,9 @@ const About = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            About <span className="text-gold">HUE</span>
+            About <span className="text-gold">HUECONA</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Houston United in Entertainment - A movement celebrating creativity across Film, Music, Arts, and Culinary excellence
@@ -36,7 +36,7 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-gold">Our Mission</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  The Houston United in Entertainment (HUE) Conference & Awards exists to unite, celebrate, and elevate artists across Film, Music, Arts, and Culinary fields. We bring Hollywood-level production expertise to Houston's vibrant creative community, creating unprecedented opportunities for both established and emerging talent in Texas.
+                  The Houston United in Entertainment Conference & Awards (HUECONA) exists to unite, celebrate, and elevate artists across Film, Music, Arts, and Culinary fields. We bring Hollywood-level production expertise to Houston's vibrant creative community, creating unprecedented opportunities for both established and emerging talent in Texas.
                 </p>
               </div>
             </div>
@@ -46,7 +46,7 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-houston">The Purpose</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  HUE serves as a platform for recognition, collaboration, and growth. Through our conference programming, awards ceremony, and year-round initiatives, we foster connections between Hollywood professionals and Houston's creative community, establishing the city as a major hub for entertainment and cultural innovation.
+                  HUECONA serves as a platform for recognition, collaboration, and growth. Through our conference programming, awards ceremony, and year-round initiatives, we foster connections between Hollywood professionals and Houston's creative community, establishing the city as a major hub for entertainment and cultural innovation.
                 </p>
               </div>
             </div>

@@ -81,7 +81,7 @@ const Conference = () => {
     {
       title: "Q&A with Award Winners",
       time: "Closing Day - 4:00 PM",
-      description: "Meet and interact with this year's HUE Award recipients across all categories.",
+      description: "Meet and interact with this year's HUECONA Award recipients across all categories.",
     },
   ];
 
@@ -97,7 +97,7 @@ const Conference = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             HUECONA <span className="text-gold">Conference</span>
           </h1>

@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Film, Music, Palette, UtensilsCrossed, Trophy, Send } from "lucide-react";
+import { Film, Music, Palette, UtensilsCrossed, Trophy, Send, Star, Award } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -53,7 +53,7 @@ const Awards = () => {
     },
     {
       id: "rising",
-      icon: <Trophy size={48} />,
+      icon: <Star size={48} />,
       title: "Rising Star Award",
       description: "Emerging Talent Across Disciplines",
       details: "Spotlighting breakthrough talents across all creative fields who are the future of Houston entertainment.",
@@ -64,6 +64,13 @@ const Awards = () => {
       title: "High-Fashion Award",
       description: "Leadership in Style & Design",
       details: "Honoring fashion designers, stylists, and innovators elevating Houston's fashion scene.",
+    },
+    {
+      id: "lifetime",
+      icon: <Award size={48} />,
+      title: "Lifetime Achievement Award",
+      description: "Honoring a Legacy of Excellence",
+      details: "Celebrating an individual whose enduring contributions have shaped and transformed Houston's entertainment and creative landscape over the course of their career.",
     },
   ];
 
@@ -79,14 +86,14 @@ const Awards = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full">
             <p className="text-houston font-semibold text-sm tracking-wider">
               NOMINATIONS NOW OPEN
             </p>
           </div>
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            <span className="text-gold">HUE</span> Awards
+            <span className="text-gold">HUECONA</span> Awards
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
@@ -106,7 +113,7 @@ const Awards = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {categories.map((category) => (
               <div
                 key={category.id}
@@ -118,14 +125,22 @@ const Awards = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{category.title}</h3>
                 <p className="text-muted-foreground mb-4">{category.description}</p>
-                <Button variant="outline_gold" size="sm">
-                  Learn More
-                </Button>
+                <div className="flex flex-col gap-2">
+                  <Button variant="outline_gold" size="sm">
+                    Learn More
+                  </Button>
+                  <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <Button variant="hero" size="sm" className="w-full">
+                      <Send size={14} className="mr-1" />
+                      Nominate
+                    </Button>
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 space-y-4">
             <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="hero"
@@ -136,9 +151,16 @@ const Awards = () => {
                 Submit Nominations
               </Button>
             </a>
-            <p className="text-muted-foreground mt-4 text-sm">
+            <p className="text-muted-foreground text-sm">
               Nominate yourself, a colleague, or an organization
             </p>
+            <div>
+              <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline_gold" size="lg" className="mt-2">
+                  Self-Nomination →
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -202,89 +224,15 @@ const Awards = () => {
                 {categories.find((c) => c.id === selectedCategory)?.description}
               </p>
             </div>
-            <Button
-              variant="hero"
-              className="w-full"
-              onClick={() => {
-                setSelectedCategory(null);
-                setShowSubmissionForm(true);
-              }}
-            >
-              Submit in This Category
-            </Button>
+            <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="hero"
+                className="w-full"
+              >
+                Nominate in This Category
+              </Button>
+            </a>
           </div>
-        </DialogContent>
-      </Dialog>
-
-      {/* Submission Form Modal */}
-      <Dialog open={showSubmissionForm} onOpenChange={setShowSubmissionForm}>
-        <DialogContent className="bg-card border-gold/30 max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-gold">Submit Your Work</DialogTitle>
-          </DialogHeader>
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name *</Label>
-              <Input id="name" placeholder="Your full name" required />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="email">Email *</Label>
-              <Input id="email" type="email" placeholder="your.email@example.com" required />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="category">Category *</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="film">Film</SelectItem>
-                  <SelectItem value="music">Music</SelectItem>
-                  <SelectItem value="arts">Arts</SelectItem>
-                  <SelectItem value="culinary">Culinary</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="title">Work Title *</Label>
-              <Input id="title" placeholder="Title of your submission" required />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="bio">Bio / Artist Statement *</Label>
-              <Textarea
-                id="bio"
-                placeholder="Tell us about yourself and your work (max 500 words)"
-                rows={6}
-                required
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="website">Website / Portfolio</Label>
-              <Input id="website" type="url" placeholder="https://your-portfolio.com" />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="social">Social Media Links</Label>
-              <Input id="social" placeholder="Instagram, Twitter, etc." />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="upload">Upload Work *</Label>
-              <Input id="upload" type="file" className="cursor-pointer" />
-              <p className="text-xs text-muted-foreground">
-                Accepted formats: MP4, PDF, JPG, PNG (Max 100MB)
-              </p>
-            </div>
-
-            <Button variant="hero" type="submit" className="w-full">
-              Submit Application
-            </Button>
-          </form>
         </DialogContent>
       </Dialog>
 

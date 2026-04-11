@@ -75,12 +75,12 @@ const Sponsors = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             Become a <span className="text-gold">Sponsor</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Partner with HUE to support Houston's creative community and gain visibility with thousands of entertainment professionals
+            Partner with HUECONA to support Houston's creative community and gain visibility with hundreds of entertainment professionals
           </p>
         </div>
       </section>
@@ -139,7 +139,7 @@ const Sponsors = () => {
             Our <span className="text-gold">Partners</span>
           </h2>
           <p className="text-center text-muted-foreground mb-16">
-            Thank you to our sponsors for making HUE possible
+            Thank you to our sponsors for making HUECONA possible
           </p>
 
           {currentSponsors.map((category) => (
@@ -166,7 +166,7 @@ const Sponsors = () => {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-6">
-                Partner With <span className="text-gold">HUE</span>
+                Partner With <span className="text-gold">HUECONA</span>
               </h2>
               <p className="text-lg text-muted-foreground">
                 Fill out the form below and our sponsorship team will be in touch within 24 hours

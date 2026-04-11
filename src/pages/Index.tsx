@@ -28,7 +28,7 @@ const Index = () => {
 
         <div className="container mx-auto px-4 z-10 text-center">
           <div className="animate-fade-in">
-            <img src={hueLogo} alt="HUE" className="h-24 md:h-32 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]" />
+            <img src={hueLogo} alt="HUECONA" className="h-24 md:h-32 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]" />
 
             <div className="inline-block mb-6 px-6 py-2 bg-gold/10 border border-gold/20 rounded-full backdrop-blur-sm">
               <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
@@ -38,7 +38,7 @@ const Index = () => {
             
             <div className="inline-block mb-6 px-5 py-1.5 bg-houston/10 border border-houston/20 rounded-full backdrop-blur-sm">
               <p className="text-houston font-semibold text-xs tracking-[0.15em] uppercase">
-                May 7–8, 2026 · Blossom Hotel Houston
+                July 16–17, 2026 · Blossom Hotel Houston
               </p>
             </div>
 
@@ -81,17 +81,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What Is HUE Section */}
+      {/* What Is HUECONA Section */}
       <section className="py-28 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-card/50 via-background to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-20 animate-slide-up">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">About the Event</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              What Is <span className="text-gold">HUE?</span>
+              What Is <span className="text-gold">HUECONA?</span>
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-8" />
             <p className="text-base text-muted-foreground leading-relaxed mb-5">
-              The Houston United in Entertainment (HUE) Conference & Awards is a groundbreaking mobilization of artists across Film, Music, Arts, and Culinary fields in the Houston metropolitan area and beyond.
+              The Houston United in Entertainment Conference & Awards (HUECONA) is a groundbreaking mobilization of artists across Film, Music, Arts, and Culinary fields in the Houston metropolitan area and beyond.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
               With a production team hailing from Hollywood, we're expanding opportunities to existing and rising talent in Texas. Houston, now the culture and culinary capital, is the new Mecca for entertainment innovation.
@@ -207,11 +207,11 @@ const Index = () => {
           <div className="max-w-5xl mx-auto text-center mb-14">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">See the Vision</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Experience <span className="text-gold">HUE</span>
+              Experience <span className="text-gold">HUECONA</span>
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-6" />
             <p className="text-sm text-muted-foreground">
-              Watch our cinematic promo showcasing the vision and energy of HUE
+              Watch our cinematic promo showcasing the vision and energy of HUECONA
             </p>
           </div>
 

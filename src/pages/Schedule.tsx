@@ -19,7 +19,7 @@ const Schedule = () => {
         category: "all",
         icon: <Calendar size={20} />,
         location: "Main Stage",
-        description: "Welcome address and keynote presentation setting the stage for HUE Conference & Awards.",
+        description: "Welcome address and keynote presentation setting the stage for HUECONA Conference & Awards.",
       },
       {
         time: "10:30 AM - 12:00 PM",
@@ -112,78 +112,20 @@ const Schedule = () => {
         description: "Industry leaders discuss technology, AI, and emerging platforms.",
       },
       {
-        time: "4:00 PM - 6:00 PM",
-        title: "Live Music Performances",
-        category: "music",
-        icon: <Music size={20} />,
-        location: "Performance Hall",
-        description: "Showcase of emerging and established musical artists.",
-      },
-      {
-        time: "7:00 PM - 11:00 PM",
-        title: "HUE Awards Ceremony",
-        category: "all",
-        icon: <Calendar size={20} />,
-        location: "Grand Ballroom",
-        description: "Red carpet and awards celebration honoring excellence across all categories.",
-      },
-    ],
-    day3: [
-      {
-        time: "9:00 AM - 10:30 AM",
-        title: "Panel: Creative Collaboration Across Disciplines",
-        category: "all",
-        icon: <Calendar size={20} />,
-        location: "Main Stage",
-        description: "Multi-disciplinary creators discuss cross-industry partnerships.",
-      },
-      {
-        time: "11:00 AM - 12:30 PM",
-        title: "Arts Workshop: Building Your Portfolio",
-        category: "arts",
-        icon: <Palette size={20} />,
-        location: "Gallery Space",
-        description: "Practical guidance on developing a professional art portfolio.",
-      },
-      {
-        time: "11:00 AM - 12:30 PM",
-        title: "Culinary Panel: From Kitchen to Empire",
-        category: "culinary",
-        icon: <UtensilsCrossed size={20} />,
-        location: "Demo Kitchen",
-        description: "Celebrity chefs share insights on building culinary brands.",
-      },
-      {
-        time: "1:00 PM - 2:30 PM",
-        title: "Farewell Lunch & Tastings",
-        category: "culinary",
-        icon: <UtensilsCrossed size={20} />,
-        location: "Grand Ballroom",
-        description: "Final culinary experience featuring top Houston restaurants.",
-      },
-      {
-        time: "3:00 PM - 4:00 PM",
-        title: "Film Screenings Block 2",
-        category: "film",
-        icon: <Film size={20} />,
-        location: "Cinema Hall",
-        description: "Additional film screenings and Q&A sessions.",
-      },
-      {
         time: "4:00 PM - 5:30 PM",
         title: "Q&A with Award Winners",
         category: "all",
         icon: <Calendar size={20} />,
         location: "Main Stage",
-        description: "Interactive session with this year's HUE Award recipients.",
+        description: "Interactive session with this year's HUECONA Award recipients.",
       },
       {
-        time: "6:00 PM",
-        title: "Closing Remarks",
+        time: "7:00 PM - 11:00 PM",
+        title: "HUECONA Awards Ceremony",
         category: "all",
         icon: <Calendar size={20} />,
-        location: "Main Stage",
-        description: "Final thoughts and see you next year!",
+        location: "Grand Ballroom",
+        description: "Red carpet and awards celebration honoring excellence across all categories.",
       },
     ],
   };
@@ -231,12 +173,12 @@ const Schedule = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             Event <span className="text-gold">Schedule</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up mb-8">
-            Three days of panels, screenings, performances, and celebrations
+            Two days of panels, screenings, performances, and celebrations
           </p>
           <Button variant="hero" size="lg">
             <Download className="mr-2" size={20} />
@@ -296,10 +238,9 @@ const Schedule = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="day1" className="max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 mb-12 bg-charcoal">
-              <TabsTrigger value="day1">Day 1 - Friday</TabsTrigger>
-              <TabsTrigger value="day2">Day 2 - Saturday</TabsTrigger>
-              <TabsTrigger value="day3">Day 3 - Sunday</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-12 bg-charcoal">
+              <TabsTrigger value="day1">Day 1 - Wednesday, July 16</TabsTrigger>
+              <TabsTrigger value="day2">Day 2 - Thursday, July 17</TabsTrigger>
             </TabsList>
 
             <TabsContent value="day1">
@@ -308,10 +249,6 @@ const Schedule = () => {
 
             <TabsContent value="day2">
               <DaySchedule events={scheduleData.day2} />
-            </TabsContent>
-
-            <TabsContent value="day3">
-              <DaySchedule events={scheduleData.day3} />
             </TabsContent>
           </Tabs>
         </div>
