@@ -9,7 +9,7 @@ import heroTickets from "@/assets/hero-tickets.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 
 const Tickets = () => {
-  const eventDate = new Date('2026-05-07T09:00:00');
+  const eventDate = new Date('2026-07-16T09:00:00');
   
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -88,7 +88,7 @@ const Tickets = () => {
         "Priority seating",
         "VIP lounge access",
         "Exclusive mixer",
-        "HUE swag bag",
+        "HUECONA swag bag",
       ],
       variant: "hero" as const,
     },
@@ -96,7 +96,7 @@ const Tickets = () => {
       name: "All-Access Platinum",
       icon: <Crown size={40} />,
       price: "$899",
-      description: "The ultimate HUE experience",
+      description: "The ultimate HUECONA experience",
       features: [
         "Everything in VIP Access",
         "Backstage access",
@@ -124,7 +124,7 @@ const Tickets = () => {
   const travelPackages = [
     {
       name: "Creator Package",
-      price: "$499",
+      price: "Contact Agent",
       features: [
         "2-night hotel stay",
         "General Admission ticket",
@@ -133,7 +133,7 @@ const Tickets = () => {
     },
     {
       name: "Professional Package",
-      price: "$749",
+      price: "Contact Agent",
       features: [
         "2-night hotel stay",
         "Creative Professional Pass",
@@ -143,7 +143,7 @@ const Tickets = () => {
     },
     {
       name: "VIP Experience Package",
-      price: "$1,299",
+      price: "Contact Agent",
       features: [
         "2-night suite or premium room",
         "VIP Access Pass",
@@ -156,7 +156,7 @@ const Tickets = () => {
     },
     {
       name: "Platinum Executive Package",
-      price: "$1,999",
+      price: "Contact Agent",
       features: [
         "Luxury suite",
         "All-Access Platinum pass",
@@ -200,7 +200,7 @@ const Tickets = () => {
           <div className="inline-flex items-center gap-3 mb-8 px-6 py-2.5 bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
             <span className="w-2 h-2 rounded-full bg-houston animate-pulse" />
             <p className="text-houston font-medium text-sm tracking-wide">
-              May 7–8, 2026 • Blossom Hotel • Houston, Texas
+              July 16–17, 2026 • Blossom Hotel • Houston, Texas
             </p>
           </div>
           <p className="text-lg md:text-xl text-gold/90 font-medium mb-6 animate-slide-up italic">
@@ -222,7 +222,7 @@ const Tickets = () => {
               You're <span className="text-gold">Invited</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
-              The Houston United in Entertainment (HUE) Conference & Awards is the premier gathering for artists, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUE brings together <span className="text-gold font-semibold">1,200+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
+              The Houston United in Entertainment Conference & Awards (HUECONA) is the premier gathering for artists, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUECONA brings together <span className="text-gold font-semibold">600+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-14">
@@ -244,7 +244,7 @@ const Tickets = () => {
             <div className="inline-block px-8 py-4 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 border border-gold/20 rounded-2xl">
               <p className="text-base text-muted-foreground">
                 Whether you're building your career, launching a brand, or expanding your network —<br />
-                <span className="text-gold font-medium">HUE is where Houston's creative future happens.</span>
+                <span className="text-gold font-medium">HUECONA is where Houston's creative future happens.</span>
               </p>
             </div>
           </div>
@@ -319,7 +319,7 @@ const Tickets = () => {
               Choose Your <span className="text-gold">Experience</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              From student passes to all-access platinum, find the perfect ticket for your HUE experience
+              From student passes to all-access platinum, find the perfect ticket for your HUECONA experience
             </p>
           </div>
 
@@ -361,7 +361,7 @@ const Tickets = () => {
               Travel & <span className="text-gold">Accommodation</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Stay steps away from all conference activities with exclusive HUE rates
+              Stay steps away from all conference activities with exclusive HUECONA rates
             </p>
           </div>
 
@@ -390,7 +390,7 @@ const Tickets = () => {
                 <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
                 
                 <p className="text-center text-sm text-muted-foreground mb-6">
-                  <span className="text-gold font-medium">Special HUE rates</span> — Discounted vs. typical $250–$350 Houston luxury rate
+                  <span className="text-gold font-medium">Special HUECONA rates</span> — Discounted vs. typical $250–$350 Houston luxury rate
                 </p>
                 
                 <div className="text-center">
@@ -403,7 +403,8 @@ const Tickets = () => {
           {/* Travel Packages */}
           <div className="text-center mb-10">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-3">All-Inclusive Options</p>
-            <h3 className="text-2xl font-bold">HUE Travel Packages</h3>
+            <h3 className="text-2xl font-bold">HUECONA Travel Packages</h3>
+            <p className="text-muted-foreground text-sm mt-2">Contact booking agent for rates and availability</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
             {travelPackages.map((pkg, idx) => (
@@ -426,7 +427,7 @@ const Tickets = () => {
               Why <span className="text-gold">Houston?</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              HUE positions Houston as the next entertainment capital of the South — and you're invited to be part of the movement.
+              HUECONA positions Houston as the next entertainment capital of the South — and you're invited to be part of the movement.
             </p>
           </div>
 
@@ -470,9 +471,9 @@ const Tickets = () => {
                   <Calendar className="text-gold" size={24} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Dates</h3>
-                <p className="text-foreground/90 font-medium mb-2">Thursday, May 7 – Friday, May 8, 2026</p>
+                <p className="text-foreground/90 font-medium mb-2">Wednesday, July 16 – Thursday, July 17, 2026</p>
                 <p className="text-sm text-muted-foreground">
-                  Conference: May 7-8 | Awards Gala: May 8 Evening
+                  Conference: July 16-17 | Awards Gala: July 17 Evening
                 </p>
               </div>
 
@@ -483,7 +484,7 @@ const Tickets = () => {
                 <h3 className="text-xl font-bold mb-3">Schedule</h3>
                 <p className="text-foreground/90 font-medium mb-2">Daily: 9:00 AM - 10:00 PM</p>
                 <p className="text-sm text-muted-foreground">
-                  Red Carpet Awards Gala: Friday, 7:00 PM
+                  Red Carpet Awards Gala: Thursday, 7:00 PM
                 </p>
               </div>
             </div>

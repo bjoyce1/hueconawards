@@ -12,9 +12,9 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={hueLogo} alt="HUE Awards" className="h-10 w-auto" />
+              <img src={hueLogo} alt="HUECONA Awards" className="h-10 w-auto" />
               <div className="text-2xl font-bold">
-                <span className="text-gold">HUE</span>
+                <span className="text-gold">HUECONA</span>
                 <span className="text-foreground"> AWARDS</span>
               </div>
             </div>
@@ -44,7 +44,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-gold transition-colors">
-                  About HUE
+                  About HUECONA
                 </Link>
               </li>
               <li>
@@ -69,7 +69,7 @@ const Footer = () => {
           <div>
             <h3 className="text-foreground font-bold mb-4">Stay Updated</h3>
             <p className="text-muted-foreground text-sm mb-4">
-              Subscribe to receive updates about HUE events
+              Subscribe to receive updates about HUECONA events
             </p>
             <div className="flex flex-col space-y-2">
               <Input placeholder="Your email" type="email" className="bg-background" />
@@ -83,7 +83,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 HUE Conference & Awards. All rights reserved.
+            © 2026 HUECONA Conference & Awards. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/contact" className="text-muted-foreground hover:text-gold text-sm transition-colors">

@@ -79,7 +79,7 @@ const Artists = () => {
         name: "Special Guest",
         role: "Industry Icon",
         category: "Special Guest",
-        bio: "Legendary entertainer and cultural icon being honored at this year's HUE Awards.",
+        bio: "Legendary entertainer and cultural icon being honored at this year's HUECONA Awards.",
         achievements: ["Lifetime Achievement Award", "Cultural Ambassador", "Industry Pioneer"],
       },
     ],

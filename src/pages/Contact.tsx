@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Users, Briefcase, HelpCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Users, ExternalLink } from "lucide-react";
 import heroContact from "@/assets/hero-contact.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 
@@ -21,7 +21,7 @@ const Contact = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             Get in <span className="text-gold">Touch</span>
           </h1>
@@ -34,31 +34,13 @@ const Contact = () => {
       {/* Contact Options */}
       <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div className="bg-card border border-border rounded-lg p-8 text-center card-hover">
-              <Users className="text-gold mx-auto mb-4" size={48} />
+              <Mail className="text-gold mx-auto mb-4" size={48} />
               <h3 className="text-xl font-bold mb-3">General Inquiries</h3>
-              <p className="text-muted-foreground mb-4">Questions about the event?</p>
-              <a href="mailto:info@hueawards.com" className="text-gold hover:underline">
-                info@hueawards.com
-              </a>
-            </div>
-
-            <div className="bg-card border border-border rounded-lg p-8 text-center card-hover">
-              <Briefcase className="text-gold mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Press & Media</h3>
-              <p className="text-muted-foreground mb-4">Media inquiries and press credentials</p>
-              <a href="mailto:press@hueawards.com" className="text-gold hover:underline">
-                press@hueawards.com
-              </a>
-            </div>
-
-            <div className="bg-card border border-border rounded-lg p-8 text-center card-hover">
-              <HelpCircle className="text-gold mx-auto mb-4" size={48} />
-              <h3 className="text-xl font-bold mb-3">Volunteer</h3>
-              <p className="text-muted-foreground mb-4">Want to help make HUE amazing?</p>
-              <a href="mailto:volunteer@hueawards.com" className="text-gold hover:underline">
-                volunteer@hueawards.com
+              <p className="text-muted-foreground mb-4">For all questions about the event, sponsorships, press, volunteering, and more</p>
+              <a href="mailto:official@HUECONA.com" className="text-gold hover:underline text-lg font-semibold">
+                official@HUECONA.com
               </a>
             </div>
           </div>
@@ -145,18 +127,8 @@ const Contact = () => {
                     <Mail className="text-gold flex-shrink-0 mt-1" size={24} />
                     <div>
                       <h4 className="font-bold mb-1">Email</h4>
-                      <a href="mailto:info@hueawards.com" className="text-muted-foreground hover:text-gold">
-                        info@hueawards.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Phone className="text-gold flex-shrink-0 mt-1" size={24} />
-                    <div>
-                      <h4 className="font-bold mb-1">Phone</h4>
-                      <a href="tel:+15551234567" className="text-muted-foreground hover:text-gold">
-                        (555) 123-4567
+                      <a href="mailto:official@HUECONA.com" className="text-muted-foreground hover:text-gold">
+                        official@HUECONA.com
                       </a>
                     </div>
                   </div>
@@ -168,7 +140,7 @@ const Contact = () => {
                       <p className="text-muted-foreground">
                         <span className="text-gold font-semibold">Blossom Hotel Houston</span><br />
                         Houston, TX<br />
-                        <span className="text-sm">May 7–8, 2026</span>
+                        <span className="text-sm">July 16–17, 2026</span>
                       </p>
                     </div>
                   </div>
@@ -183,6 +155,16 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mt-2">
                     Houston, TX
                   </p>
+                  <a 
+                    href="https://www.google.com/maps/search/Blossom+Hotel+Houston" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="outline_gold" size="sm" className="mt-4">
+                      <ExternalLink size={14} className="mr-2" />
+                      Get Directions
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -196,14 +178,16 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Users className="text-gold mx-auto mb-6" size={64} />
             <h2 className="text-4xl font-bold mb-6">
-              Volunteer at <span className="text-gold">HUE</span>
+              Volunteer at <span className="text-gold">HUECONA</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Be part of something special! Join our volunteer team and help create an unforgettable experience for attendees. Volunteers receive free event access, HUE swag, and exclusive behind-the-scenes experiences.
+              Be part of something special! Join our volunteer team and help create an unforgettable experience for attendees. Volunteers receive free event access, HUECONA swag, and exclusive behind-the-scenes experiences.
             </p>
-            <Button variant="hero" size="xl">
-              Sign Up to Volunteer
-            </Button>
+            <a href="mailto:official@HUECONA.com?subject=Volunteer%20Sign-Up">
+              <Button variant="hero" size="xl">
+                Sign Up to Volunteer
+              </Button>
+            </a>
           </div>
         </div>
       </section>
