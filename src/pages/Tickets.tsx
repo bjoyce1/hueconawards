@@ -394,7 +394,7 @@ const Tickets = () => {
                 </p>
                 
                 <div className="text-center">
-                  <Button variant="hero" size="lg">Book Hotel Room</Button>
+                  <Button variant="hero" size="lg" asChild><a href="https://www.hilton.com/en/hotels/houtnqq-blossom-hotel-houston/rooms/" target="_blank" rel="noopener noreferrer">Book Hotel Room</a></Button>
                 </div>
               </div>
             </div>
@@ -521,7 +521,7 @@ const Tickets = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button variant="hero" size="xl">Get Tickets</Button>
-                <Button variant="outline_gold" size="lg">Book Hotel</Button>
+                <Button variant="outline_gold" size="lg" asChild><a href="https://www.hilton.com/en/hotels/houtnqq-blossom-hotel-houston/rooms/" target="_blank" rel="noopener noreferrer">Book Hotel</a></Button>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
               <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
