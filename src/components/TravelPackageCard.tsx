@@ -36,8 +36,10 @@ const TravelPackageCard = ({
           </li>
         ))}
       </ul>
-      <Button variant="outline_gold" className="w-full">
-        Book Package
+      <Button variant="outline_gold" className="w-full" asChild>
+        <a href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Travel Package: ${name}`)}&body=${encodeURIComponent(`Hi HUECONA team,\n\nI'd like to book the ${name} package (${price}).\n\nName:\nDates:\nGuests:\n\nThanks!`)}`}>
+          Book Package
+        </a>
       </Button>
     </div>
   );
