@@ -139,7 +139,8 @@ const Contact = () => {
                       <h4 className="font-bold mb-1">Venue</h4>
                       <p className="text-muted-foreground">
                         <span className="text-gold font-semibold">Blossom Hotel Houston</span><br />
-                        Houston, TX<br />
+                        7611 Main Street<br />
+                        Houston, TX 77030<br />
                         <span className="text-sm">July 16–17, 2026</span>
                       </p>
                     </div>
@@ -148,24 +149,33 @@ const Contact = () => {
               </div>
 
               {/* Map Embed */}
-              <div className="aspect-square bg-muted rounded-lg border border-border flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="text-muted-foreground mx-auto mb-4" size={64} />
-                  <p className="text-gold font-bold">Blossom Hotel Houston</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Houston, TX
-                  </p>
-                  <a 
-                    href="https://www.google.com/maps/search/Blossom+Hotel+Houston" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline_gold" size="sm" className="mt-4">
-                      <ExternalLink size={14} className="mr-2" />
-                      Get Directions
-                    </Button>
-                  </a>
+              <div className="aspect-square rounded-lg border border-border overflow-hidden relative">
+                <iframe
+                  title="Blossom Hotel Houston map"
+                  src="https://www.google.com/maps?q=Blossom+Hotel+Houston,+7611+Main+St,+Houston+TX+77030&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+              <div className="mt-4 flex items-center justify-between bg-card border border-border rounded-lg px-4 py-3">
+                <div>
+                  <p className="text-gold font-bold text-sm">Blossom Hotel Houston</p>
+                  <p className="text-xs text-muted-foreground">7611 Main St, Houston, TX 77030</p>
                 </div>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Blossom+Hotel+Houston,+7611+Main+St,+Houston+TX+77030"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline_gold" size="sm">
+                    <ExternalLink size={14} className="mr-2" />
+                    Directions
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
