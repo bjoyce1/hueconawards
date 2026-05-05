@@ -99,10 +99,10 @@ const Footer = () => {
             <a href="/docs/HUECONA_Press_Release.docx" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Press
             </a>
-            <a href="#" className="text-muted-foreground hover:text-gold text-sm transition-colors">
+            <a href="mailto:official@HUECONA.com?subject=Privacy%20Policy%20Request" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-muted-foreground hover:text-gold text-sm transition-colors">
+            <a href="mailto:official@HUECONA.com?subject=Terms%20of%20Service%20Request" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Terms of Service
             </a>
           </div>
