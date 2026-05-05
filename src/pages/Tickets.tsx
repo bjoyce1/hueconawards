@@ -342,7 +342,9 @@ const Tickets = () => {
                 <p className="text-muted-foreground mb-6 max-w-md mx-auto">
                   Bring your team and save! Contact us for custom group packages.
                 </p>
-                <Button variant="outline_gold" size="lg">Inquire About Group Rates</Button>
+                <Button variant="outline_gold" size="lg" asChild>
+                  <a href="mailto:official@HUECONA.com?subject=Group%20Rate%20Inquiry%20(5%2B)&body=Hi%20HUECONA%20team%2C%0A%0AI%27m%20interested%20in%20group%20rates%20for%20HUECONA%202026.%0A%0ACompany%2FOrg%3A%0AGroup%20size%3A%0APreferred%20tier%3A%0A%0AThanks!">Inquire About Group Rates</a>
+                </Button>
               </div>
             </div>
           </div>
