@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import HonoreesGrid from "@/components/HonoreesGrid";
 import { Users, Target, MapPin, Award } from "lucide-react";
 import heroAbout from "@/assets/hero-about.jpg";
 import hueLogo from "@/assets/hue-logo.png";
@@ -176,6 +177,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <HonoreesGrid />
 
       <Footer />
     </div>

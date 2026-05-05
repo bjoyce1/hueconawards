@@ -154,10 +154,15 @@ const Awards = () => {
             <p className="text-muted-foreground text-sm">
               Nominate yourself, a colleague, or an organization
             </p>
-            <div>
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <a href="https://form.jotform.com/260208455201042" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline_gold" size="lg" className="mt-2">
                   Self-Nomination →
+                </Button>
+              </a>
+              <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="lg" className="mt-2">
+                  Download Nomination T&Cs (PDF)
                 </Button>
               </a>
             </div>

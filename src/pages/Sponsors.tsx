@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Trophy, Star, Award, Crown, Download, CheckCircle } from "lucide-react";
 import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
+import vendorFlyer from "@/assets/vendor-flyer.jpg";
 
 const Sponsors = () => {
   const sponsorTiers = [
@@ -124,10 +125,12 @@ const Sponsors = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="ghost" size="lg">
-              <Download className="mr-2" />
-              Download Sponsorship Deck (PDF)
-            </Button>
+            <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="lg">
+                <Download className="mr-2" />
+                Download Sponsorship Deck (PDF)
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -160,7 +163,31 @@ const Sponsors = () => {
         </div>
       </section>
 
-      {/* Become a Sponsor Form */}
+      {/* Become a Vendor */}
+      <section className="py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="rounded-lg overflow-hidden border border-gold/30">
+              <img src={vendorFlyer} alt="HUECONA Vendor Opportunity Flyer" className="w-full h-auto" />
+            </div>
+            <div>
+              <h2 className="text-4xl font-bold mb-6">
+                Become a <span className="text-gold">Vendor</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Showcase your brand at the HUECONA Showcase Hall — open both event days to all attendees, sponsors, and press. Limited booth space available.
+              </p>
+              <a href={vendorFlyer} target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="lg">
+                  <Download className="mr-2" />
+                  Download Vendor Flyer
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gradient-to-b from-charcoal to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
