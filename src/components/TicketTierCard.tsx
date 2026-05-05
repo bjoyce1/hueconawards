@@ -57,8 +57,13 @@ const TicketTierCard = ({
         variant={variant}
         className="w-full"
         size="lg"
+        asChild
       >
-        Get {name}
+        <a
+          href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Ticket Purchase: ${name}`)}&body=${encodeURIComponent(`Hi HUECONA team,\n\nI'd like to purchase the ${name} ticket (${price}).\n\nName:\nQuantity:\nPhone:\n\nThanks!`)}`}
+        >
+          Get {name}
+        </a>
       </Button>
     </div>
   );

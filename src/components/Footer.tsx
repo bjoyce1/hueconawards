@@ -23,16 +23,16 @@ const Footer = () => {
               Celebrating excellence in Film, Music, Arts, and Culinary creativity.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="mailto:official@HUECONA.com?subject=Instagram%20Handle%20Request" aria-label="Instagram" className="text-muted-foreground hover:text-gold transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="mailto:official@HUECONA.com?subject=Twitter%20Handle%20Request" aria-label="Twitter" className="text-muted-foreground hover:text-gold transition-colors">
                 <Twitter size={24} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="mailto:official@HUECONA.com?subject=Facebook%20Page%20Request" aria-label="Facebook" className="text-muted-foreground hover:text-gold transition-colors">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <a href="mailto:official@HUECONA.com?subject=YouTube%20Channel%20Request" aria-label="YouTube" className="text-muted-foreground hover:text-gold transition-colors">
                 <Youtube size={24} />
               </a>
             </div>
@@ -71,12 +71,19 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm mb-4">
               Subscribe to receive updates about HUECONA events
             </p>
-            <div className="flex flex-col space-y-2">
-              <Input placeholder="Your email" type="email" className="bg-background" />
-              <Button variant="hero" size="sm">
+            <form
+              className="flex flex-col space-y-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement)?.value || "";
+                window.location.href = `mailto:official@HUECONA.com?subject=${encodeURIComponent("Newsletter Signup")}&body=${encodeURIComponent(`Please add me to the HUECONA mailing list.\n\nEmail: ${email}`)}`;
+              }}
+            >
+              <Input name="email" placeholder="Your email" type="email" required className="bg-background" />
+              <Button variant="hero" size="sm" type="submit">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
@@ -92,10 +99,10 @@ const Footer = () => {
             <a href="/docs/HUECONA_Press_Release.docx" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Press
             </a>
-            <a href="#" className="text-muted-foreground hover:text-gold text-sm transition-colors">
+            <a href="mailto:official@HUECONA.com?subject=Privacy%20Policy%20Request" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-muted-foreground hover:text-gold text-sm transition-colors">
+            <a href="mailto:official@HUECONA.com?subject=Terms%20of%20Service%20Request" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Terms of Service
             </a>
           </div>

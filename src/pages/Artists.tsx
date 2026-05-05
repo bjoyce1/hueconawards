@@ -228,12 +228,20 @@ const Artists = () => {
             </div>
 
             <div className="flex gap-4">
-              <Button variant="hero" className="flex-1">
-                <ExternalLink size={16} className="mr-2" />
-                View Portfolio
+              <Button variant="hero" className="flex-1" asChild>
+                <a
+                  href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Portfolio Request: ${selectedArtist?.name ?? ""}`)}`}
+                >
+                  <ExternalLink size={16} className="mr-2" />
+                  View Portfolio
+                </a>
               </Button>
-              <Button variant="outline_gold" className="flex-1">
-                View Work
+              <Button variant="outline_gold" className="flex-1" asChild>
+                <a
+                  href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Work Samples: ${selectedArtist?.name ?? ""}`)}`}
+                >
+                  View Work
+                </a>
               </Button>
             </div>
           </div>

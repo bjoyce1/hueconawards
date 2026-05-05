@@ -311,7 +311,7 @@ const Tickets = () => {
       </section>
 
       {/* Ticket Tiers */}
-      <section className="py-28 bg-background relative">
+      <section id="tickets" className="py-28 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Pricing</p>
@@ -342,7 +342,9 @@ const Tickets = () => {
                 <p className="text-muted-foreground mb-6 max-w-md mx-auto">
                   Bring your team and save! Contact us for custom group packages.
                 </p>
-                <Button variant="outline_gold" size="lg">Inquire About Group Rates</Button>
+                <Button variant="outline_gold" size="lg" asChild>
+                  <a href="mailto:official@HUECONA.com?subject=Group%20Rate%20Inquiry%20(5%2B)&body=Hi%20HUECONA%20team%2C%0A%0AI%27m%20interested%20in%20group%20rates%20for%20HUECONA%202026.%0A%0ACompany%2FOrg%3A%0AGroup%20size%3A%0APreferred%20tier%3A%0A%0AThanks!">Inquire About Group Rates</a>
+                </Button>
               </div>
             </div>
           </div>
@@ -520,7 +522,7 @@ const Tickets = () => {
                 Be part of Houston's emergence as the entertainment capital of the South
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button variant="hero" size="xl">Get Tickets</Button>
+                <Button variant="hero" size="xl" asChild><a href="#tickets">Get Tickets</a></Button>
                 <Button variant="outline_gold" size="lg" asChild><a href="https://www.hilton.com/en/hotels/houtnqq-blossom-hotel-houston/rooms/" target="_blank" rel="noopener noreferrer">Book Hotel</a></Button>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
@@ -530,8 +532,14 @@ const Tickets = () => {
                     Submit Nominations →
                   </a>
                 </Button>
-                <Button variant="outline_gold" size="sm">
-                  Add to Calendar
+                <Button variant="outline_gold" size="sm" asChild>
+                  <a
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=HUECONA+Conference+%26+Awards+2026&dates=20260716T140000Z/20260718T040000Z&details=Houston+United+in+Entertainment+Conference+%26+Awards.+See+hueconawards.com&location=Blossom+Hotel+Houston%2C+Houston%2C+TX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Add to Calendar
+                  </a>
                 </Button>
               </div>
             </div>
