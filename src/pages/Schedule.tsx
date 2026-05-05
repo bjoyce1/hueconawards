@@ -180,9 +180,11 @@ const Schedule = () => {
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up mb-8">
             Two days of panels, screenings, performances, and celebrations
           </p>
-          <Button variant="hero" size="lg">
-            <Download className="mr-2" size={20} />
-            Download Full Schedule
+          <Button variant="hero" size="lg" asChild>
+            <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2" size={20} />
+              Download Event Info (PDF)
+            </a>
           </Button>
         </div>
       </section>
