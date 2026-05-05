@@ -259,14 +259,23 @@ const Index = () => {
               <p className="text-sm text-muted-foreground mb-5">
                 Get exclusive updates, behind-the-scenes content, and early access to tickets
               </p>
-              <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+              <form
+                className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement)?.value || "";
+                  window.location.href = `mailto:official@HUECONA.com?subject=${encodeURIComponent("Newsletter Signup")}&body=${encodeURIComponent(`Please add me to the HUECONA mailing list.\n\nEmail: ${email}`)}`;
+                }}
+              >
                 <input
+                  name="email"
                   type="email"
+                  required
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 bg-background/50 border border-border/50 rounded-lg text-sm focus:outline-none focus:border-gold/40 transition-colors"
                 />
-                <Button variant="hero">Subscribe</Button>
-              </div>
+                <Button variant="hero" type="submit">Subscribe</Button>
+              </form>
             </div>
           </div>
         </div>
