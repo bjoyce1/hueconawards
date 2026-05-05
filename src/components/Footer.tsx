@@ -89,6 +89,9 @@ const Footer = () => {
             <Link to="/contact" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Contact
             </Link>
+            <a href="/docs/HUECONA_Press_Release.docx" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold text-sm transition-colors">
+              Press
+            </a>
             <a href="#" className="text-muted-foreground hover:text-gold text-sm transition-colors">
               Privacy Policy
             </a>
