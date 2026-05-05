@@ -152,8 +152,14 @@ const Schedule = () => {
           </AccordionTrigger>
           <AccordionContent className="px-6 pb-4">
             <p className="text-muted-foreground">{event.description}</p>
-            <Button variant="outline_gold" size="sm" className="mt-4">
-              Add to Calendar
+            <Button variant="outline_gold" size="sm" className="mt-4" asChild>
+              <a
+                href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("HUECONA: " + event.title)}&dates=20260716T140000Z/20260718T040000Z&details=${encodeURIComponent(event.description + " — " + event.time)}&location=${encodeURIComponent(event.location + ", Blossom Hotel Houston, Houston, TX")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Add to Calendar
+              </a>
             </Button>
           </AccordionContent>
         </AccordionItem>
