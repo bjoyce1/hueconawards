@@ -71,12 +71,19 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm mb-4">
               Subscribe to receive updates about HUECONA events
             </p>
-            <div className="flex flex-col space-y-2">
-              <Input placeholder="Your email" type="email" className="bg-background" />
-              <Button variant="hero" size="sm">
+            <form
+              className="flex flex-col space-y-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement)?.value || "";
+                window.location.href = `mailto:official@HUECONA.com?subject=${encodeURIComponent("Newsletter Signup")}&body=${encodeURIComponent(`Please add me to the HUECONA mailing list.\n\nEmail: ${email}`)}`;
+              }}
+            >
+              <Input name="email" placeholder="Your email" type="email" required className="bg-background" />
+              <Button variant="hero" size="sm" type="submit">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 
