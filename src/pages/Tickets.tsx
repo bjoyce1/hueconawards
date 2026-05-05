@@ -522,7 +522,7 @@ const Tickets = () => {
                 Be part of Houston's emergence as the entertainment capital of the South
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button variant="hero" size="xl">Get Tickets</Button>
+                <Button variant="hero" size="xl" asChild><a href="#tickets">Get Tickets</a></Button>
                 <Button variant="outline_gold" size="lg" asChild><a href="https://www.hilton.com/en/hotels/houtnqq-blossom-hotel-houston/rooms/" target="_blank" rel="noopener noreferrer">Book Hotel</a></Button>
               </div>
               <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
@@ -532,8 +532,14 @@ const Tickets = () => {
                     Submit Nominations →
                   </a>
                 </Button>
-                <Button variant="outline_gold" size="sm">
-                  Add to Calendar
+                <Button variant="outline_gold" size="sm" asChild>
+                  <a
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=HUECONA+Conference+%26+Awards+2026&dates=20260716T140000Z/20260718T040000Z&details=Houston+United+in+Entertainment+Conference+%26+Awards.+See+hueconawards.com&location=Blossom+Hotel+Houston%2C+Houston%2C+TX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Add to Calendar
+                  </a>
                 </Button>
               </div>
             </div>
