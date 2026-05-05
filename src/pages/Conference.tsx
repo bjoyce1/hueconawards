@@ -175,8 +175,14 @@ const Conference = () => {
               <h4 className="font-bold mb-2">What You'll Learn:</h4>
               <p className="text-muted-foreground">{selectedPanel?.details}</p>
             </div>
-            <Button variant="hero" className="w-full">
-              Add to My Schedule
+            <Button variant="hero" className="w-full" asChild>
+              <a
+                href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("HUECONA Panel: " + (selectedPanel?.title ?? ""))}&dates=20260716T140000Z/20260718T040000Z&details=${encodeURIComponent((selectedPanel?.description ?? "") + " Speakers: " + (selectedPanel?.speakers ?? ""))}&location=${encodeURIComponent("Blossom Hotel Houston, Houston, TX")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Add to My Schedule
+              </a>
             </Button>
           </div>
         </DialogContent>
