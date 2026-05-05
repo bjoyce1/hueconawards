@@ -117,8 +117,10 @@ const Sponsors = () => {
                   ))}
                 </ul>
 
-                <Button variant={tier.color === "gold" ? "hero" : "outline_gold"} className="w-full">
-                  Select {tier.tier}
+                <Button variant={tier.color === "gold" ? "hero" : "outline_gold"} className="w-full" asChild>
+                  <a href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Sponsorship Inquiry: ${tier.tier}`)}&body=${encodeURIComponent(`Hi HUECONA team,\n\nWe're interested in the ${tier.tier} sponsorship (${tier.price}).\n\nCompany:\nContact:\nPhone:\n\nThanks!`)}`}>
+                    Select {tier.tier}
+                  </a>
                 </Button>
               </div>
             ))}
