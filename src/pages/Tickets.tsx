@@ -311,7 +311,7 @@ const Tickets = () => {
       </section>
 
       {/* Ticket Tiers */}
-      <section className="py-28 bg-background relative">
+      <section id="tickets" className="py-28 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Pricing</p>
