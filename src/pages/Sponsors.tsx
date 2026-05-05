@@ -124,10 +124,12 @@ const Sponsors = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="ghost" size="lg">
-              <Download className="mr-2" />
-              Download Sponsorship Deck (PDF)
-            </Button>
+            <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="ghost" size="lg">
+                <Download className="mr-2" />
+                Download Sponsorship Deck (PDF)
+              </Button>
+            </a>
           </div>
         </div>
       </section>
