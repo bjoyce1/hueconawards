@@ -178,6 +178,8 @@ const About = () => {
         </div>
       </section>
 
+      <HonoreesGrid />
+
       <Footer />
     </div>
   );
