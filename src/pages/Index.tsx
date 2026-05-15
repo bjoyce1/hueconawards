@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
-import { Play, Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
+import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 
@@ -216,13 +216,19 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video bg-card/50 rounded-2xl overflow-hidden border border-border/50 group cursor-pointer transition-all duration-300 hover:border-gold/30">
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gold/10 to-houston/10 group-hover:from-gold/15 group-hover:to-houston/15 transition-all duration-500">
-                <div className="w-20 h-20 bg-gold/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Play size={32} className="text-charcoal ml-1" />
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+            <div className="relative aspect-video bg-card/50 rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:border-gold/30">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                poster=""
+              >
+                <source
+                  src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
