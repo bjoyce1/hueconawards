@@ -13,8 +13,25 @@ const Index = () => {
       <Navigation />
 
       {/* Promo Video Section — Hero */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-0" />
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Full-bleed looping video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster=""
+        >
+          <source
+            src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-background/60 z-0" />
         
         {/* Subtle ambient light */}
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -34,25 +51,8 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto animate-fade-in">
-            <div className="relative aspect-video bg-card/50 rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:border-gold/30">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                poster=""
-              >
-                <source
-                  src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
           {/* Scroll Indicator */}
-          <div className="animate-bounce mt-14">
+          <div className="animate-bounce">
             <div className="w-6 h-10 border-2 border-gold/30 rounded-full mx-auto flex items-start justify-center p-2">
               <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse" />
             </div>
