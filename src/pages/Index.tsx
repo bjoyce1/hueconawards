@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
-import { Play, Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
+import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 
