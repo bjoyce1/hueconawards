@@ -12,6 +12,54 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
 
+      {/* Promo Video Section — Hero */}
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-0" />
+        
+        {/* Subtle ambient light */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-houston/5 rounded-full blur-3xl animate-pulse delay-700" />
+        </div>
+
+        <div className="container mx-auto px-4 z-10 text-center">
+          <div className="max-w-5xl mx-auto text-center mb-10 animate-fade-in">
+            <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">See the Vision</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4">
+              Experience <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">HUECONA</span>
+            </h1>
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-6" />
+            <p className="text-sm text-muted-foreground mb-8">
+              Watch our cinematic promo showcasing the vision and energy of HUECONA
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <div className="relative aspect-video bg-card/50 rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:border-gold/30">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                poster=""
+              >
+                <source
+                  src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="animate-bounce mt-14">
+            <div className="w-6 h-10 border-2 border-gold/30 rounded-full mx-auto flex items-start justify-center p-2">
+              <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center overflow-hidden pt-20">
         <div 
@@ -42,13 +90,13 @@ const Index = () => {
               </p>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
               <span className="text-foreground">Houston United in</span>
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
                 Entertainment
               </span>
-            </h1>
+            </h2>
             
             <p className="text-lg md:text-xl font-bold text-gold/90 mb-3 tracking-[0.15em] uppercase">
               Create · Connect · Celebrate · Elevate
@@ -69,13 +117,6 @@ const Index = () => {
                   Get Tickets
                 </Button>
               </Link>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="animate-bounce">
-              <div className="w-6 h-10 border-2 border-gold/30 rounded-full mx-auto flex items-start justify-center p-2">
-                <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse" />
-              </div>
             </div>
           </div>
         </div>
@@ -197,39 +238,6 @@ const Index = () => {
               title="Awards Ceremony"
               description="Celebrate excellence across Film, Music, Arts, and Culinary categories"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Promo Video Section */}
-      <section className="py-28">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto text-center mb-14">
-            <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">See the Vision</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Experience <span className="text-gold">HUECONA</span>
-            </h2>
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-6" />
-            <p className="text-sm text-muted-foreground">
-              Watch our cinematic promo showcasing the vision and energy of HUECONA
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video bg-card/50 rounded-2xl overflow-hidden border border-border/50 transition-all duration-300 hover:border-gold/30">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                poster=""
-              >
-                <source
-                  src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-            </div>
           </div>
         </div>
       </section>
