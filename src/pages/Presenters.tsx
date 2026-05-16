@@ -225,6 +225,20 @@ const Presenters = () => {
           0% { transform: translateY(0px); }
           100% { transform: translateY(-30px); }
         }
+        @keyframes presenterPulse {
+          0%, 100% {
+            opacity: 0.35;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.85;
+            transform: scale(1.08);
+          }
+        }
+        @keyframes presenterDrift {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(3%, -2%); }
+        }
       `}</style>
     </div>
   );
