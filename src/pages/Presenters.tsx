@@ -288,7 +288,12 @@ function PresenterSection({
 }) {
   const { ref, visible } = useReveal<HTMLElement>();
   const isGold = p.accent === "gold";
-  const accentHsl = isGold ? "var(--gold)" : "var(--houston-blue)";
+  const accentHsl =
+    p.accent === "gold"
+      ? "var(--gold)"
+      : p.accent === "red"
+      ? "355 78% 45%"
+      : "var(--houston-blue)";
   const glowX = isGold ? "25%" : "75%";
 
   return (
