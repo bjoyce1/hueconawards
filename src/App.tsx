@@ -12,6 +12,7 @@ import Culinary from "./pages/Culinary";
 import Schedule from "./pages/Schedule";
 import Sponsors from "./pages/Sponsors";
 import Tickets from "./pages/Tickets";
+import Presenters from "./pages/Presenters";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import MobileBottomNav from "./components/MobileBottomNav";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/tickets" element={<Tickets />} />
+          <Route path="/presenters" element={<Presenters />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -22,6 +22,7 @@ const Navigation = () => {
   { name: "Awards", path: "/awards" },
   { name: "Conference", path: "/conference" },
   { name: "Artists", path: "/artists" },
+  { name: "Presenters", path: "/presenters" },
   { name: "Culinary & Culture", path: "/culinary" },
   { name: "Schedule", path: "/schedule" },
   { name: "Sponsors", path: "/sponsors" },
