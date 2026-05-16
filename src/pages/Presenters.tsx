@@ -58,7 +58,7 @@ const presenters: Presenter[] = [
     session: "The Identity Factor",
     tagline:
       "From being overlooked to being unforgettable through Main Character Energy. You don't need more luck — you need a new identity.",
-    accent: "houston",
+    accent: "red",
     flyer: adRobertsFlyer,
   },
   {
