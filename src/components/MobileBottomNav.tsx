@@ -27,7 +27,7 @@ const primaryTabs = [
 const moreLinks = [
   { name: "About", path: "/about", icon: Info },
   { name: "Conference", path: "/conference", icon: Mic },
-  { name: "Artists", path: "/artists", icon: Users },
+  { name: "Guest", path: "/artists", icon: Users },
   { name: "Presenters", path: "/presenters", icon: Sparkles },
   { name: "Culinary & Culture", path: "/culinary", icon: UtensilsCrossed },
   { name: "Sponsors", path: "/sponsors", icon: Handshake },
