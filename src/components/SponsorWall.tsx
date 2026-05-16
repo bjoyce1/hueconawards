@@ -8,6 +8,7 @@ import oasis from "@/assets/sponsors/oasis-mind-spa.png";
 import pandemonium from "@/assets/sponsors/pandemonium.png";
 import pinkElephant from "@/assets/sponsors/pink-elephant.png";
 import savvy from "@/assets/sponsors/savvy-designs.png";
+import popcornBar from "@/assets/sponsors/popcorn-bar.png";
 
 export const sponsors = [
   { name: "Pandemonium Entertainment Partners", logo: pandemonium, invert: false },
@@ -20,6 +21,7 @@ export const sponsors = [
   { name: "Oasis Mind Spa", logo: oasis, invert: false },
   { name: "Pink Elephant Solution", logo: pinkElephant, invert: false },
   { name: "Savvy Designs", logo: savvy, invert: true },
+  { name: "The Popcorn Bar", logo: popcornBar, invert: false },
 ];
 
 interface SponsorWallProps {
