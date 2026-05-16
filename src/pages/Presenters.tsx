@@ -413,6 +413,7 @@ const PresenterRow = ({
         style={{
           transform: `perspective(1200px) rotateX(${tilt.y * -4}deg) rotateY(${tilt.x * 4}deg)`,
           transition: "transform 0.25s ease-out",
+          ...(accentBorderStyle || {}),
         }}
         aria-label={`View ${p.name} flyer full screen`}
       >
