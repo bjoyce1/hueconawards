@@ -18,7 +18,7 @@ type Presenter = {
   title: string;
   session: string;
   tagline: string;
-  accent: "gold" | "houston";
+  accent: "gold" | "houston" | "red";
   flyer: string;
 };
 
@@ -58,7 +58,7 @@ const presenters: Presenter[] = [
     session: "The Identity Factor",
     tagline:
       "From being overlooked to being unforgettable through Main Character Energy. You don't need more luck — you need a new identity.",
-    accent: "houston",
+    accent: "red",
     flyer: adRobertsFlyer,
   },
   {
@@ -288,7 +288,12 @@ function PresenterSection({
 }) {
   const { ref, visible } = useReveal<HTMLElement>();
   const isGold = p.accent === "gold";
-  const accentHsl = isGold ? "var(--gold)" : "var(--houston-blue)";
+  const accentHsl =
+    p.accent === "gold"
+      ? "var(--gold)"
+      : p.accent === "red"
+      ? "355 78% 45%"
+      : "var(--houston-blue)";
   const glowX = isGold ? "25%" : "75%";
 
   return (
@@ -370,13 +375,19 @@ const PresenterRow = ({
   const { ref, visible } = useReveal<HTMLDivElement>();
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const reverse = idx % 2 === 1;
-  const accentText = p.accent === "gold" ? "text-gold" : "text-houston";
+  const isRed = p.accent === "red";
+  const redHsl = "355 78% 45%";
+  const accentText = p.accent === "gold" ? "text-gold" : isRed ? "" : "text-houston";
+  const accentTextStyle = isRed ? { color: `hsl(${redHsl})` } : undefined;
   const accentBorder =
-    p.accent === "gold" ? "border-gold/30" : "border-houston/40";
-  const accentGlow =
-    p.accent === "gold"
-      ? "shadow-[0_30px_80px_-20px_hsl(var(--gold)/0.35)]"
-      : "shadow-[0_30px_80px_-20px_hsl(var(--houston-blue)/0.45)]";
+    p.accent === "gold" ? "border-gold/30" : isRed ? "" : "border-houston/40";
+  const accentBorderStyle = isRed ? { borderColor: `hsl(${redHsl} / 0.45)` } : undefined;
+  const accentBgClass =
+    p.accent === "gold" ? "bg-gold" : isRed ? "" : "bg-houston";
+  const accentBgStyle = isRed ? { backgroundColor: `hsl(${redHsl})` } : undefined;
+  const accentHoverBg =
+    p.accent === "gold" ? "bg-gold/15" : isRed ? "" : "bg-houston/20";
+  const accentHoverBgStyle = isRed ? { backgroundColor: `hsl(${redHsl} / 0.18)` } : undefined;
 
   const handleTilt = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -402,6 +413,7 @@ const PresenterRow = ({
         style={{
           transform: `perspective(1200px) rotateX(${tilt.y * -4}deg) rotateY(${tilt.x * 4}deg)`,
           transition: "transform 0.25s ease-out",
+          ...(accentBorderStyle || {}),
         }}
         aria-label={`View ${p.name} flyer full screen`}
       >
@@ -420,7 +432,7 @@ const PresenterRow = ({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-2 rounded-full bg-background/80 backdrop-blur-md border border-border/60 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-          <Maximize2 size={14} className={accentText} />
+          <Maximize2 size={14} className={accentText} style={accentTextStyle} />
           <span className="text-xs font-semibold tracking-wide">Expand</span>
         </div>
       </button>
@@ -429,11 +441,11 @@ const PresenterRow = ({
       <div className="lg:col-span-5 space-y-5">
         <div
           className={`text-[11px] tracking-[0.3em] uppercase font-bold ${accentText} flex items-center gap-3`}
+          style={accentTextStyle}
         >
           <span
-            className={`inline-block h-px w-8 ${
-              p.accent === "gold" ? "bg-gold" : "bg-houston"
-            }`}
+            className={`inline-block h-px w-8 ${accentBgClass}`}
+            style={accentBgStyle}
           />
           Presenter · 0{idx + 1}
         </div>
@@ -444,20 +456,19 @@ const PresenterRow = ({
           {p.title}
         </p>
         <div
-          className={`h-px w-16 ${
-            p.accent === "gold" ? "bg-gold" : "bg-houston"
-          }`}
+          className={`h-px w-16 ${accentBgClass}`}
+          style={accentBgStyle}
         />
         <h3 className="text-xl md:text-2xl font-bold italic">"{p.session}"</h3>
         <p className="text-muted-foreground leading-relaxed">{p.tagline}</p>
         <button
           onClick={onOpen}
           className={`group/btn relative inline-flex items-center gap-2 mt-2 px-5 py-3 rounded-full border ${accentBorder} ${accentText} text-sm font-semibold tracking-wide overflow-hidden active:scale-95 transition-all`}
+          style={{ ...(accentTextStyle || {}), ...(accentBorderStyle || {}) }}
         >
           <span
-            className={`absolute inset-0 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ${
-              p.accent === "gold" ? "bg-gold/15" : "bg-houston/20"
-            }`}
+            className={`absolute inset-0 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ${accentHoverBg}`}
+            style={accentHoverBgStyle}
           />
           <span className="relative">View Session Flyer</span>
           <Maximize2
