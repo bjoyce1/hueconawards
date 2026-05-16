@@ -244,6 +244,70 @@ const Presenters = () => {
   );
 };
 
+const PresenterSection = ({
+  presenter: p,
+  index: idx,
+  onOpen,
+}: {
+  presenter: Presenter;
+  index: number;
+  onOpen: () => void;
+}) => {
+  const { ref, visible } = useReveal<HTMLElement>();
+  const isGold = p.accent === "gold";
+  const accentHsl = isGold ? "var(--gold)" : "var(--houston-blue)";
+  const glowX = isGold ? "25%" : "75%";
+
+  return (
+    <section
+      ref={ref}
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{
+        background: `radial-gradient(ellipse at ${glowX} 50%, hsl(${accentHsl} / 0.14) 0%, transparent 55%), linear-gradient(180deg, hsl(var(--background)) 0%, hsl(${accentHsl} / 0.05) 40%, hsl(${accentHsl} / 0.08) 60%, hsl(var(--background)) 100%)`,
+      }}
+    >
+      {/* Animated pulsing glow — activates on scroll into view */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+        style={{
+          opacity: visible ? 1 : 0,
+          background: `radial-gradient(60% 70% at ${glowX} 50%, hsl(${accentHsl} / 0.35) 0%, hsl(${accentHsl} / 0.12) 35%, transparent 70%)`,
+          mixBlendMode: "screen",
+          animation: visible
+            ? "presenterPulse 6s ease-in-out infinite, presenterDrift 14s ease-in-out infinite"
+            : "none",
+          willChange: "opacity, transform",
+        }}
+      />
+      {/* Secondary counter-glow for depth */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+        style={{
+          opacity: visible ? 0.6 : 0,
+          background: `radial-gradient(40% 50% at ${isGold ? "80%" : "20%"} 30%, hsl(${accentHsl} / 0.18) 0%, transparent 70%)`,
+          mixBlendMode: "screen",
+          animation: visible
+            ? "presenterPulse 8s ease-in-out 1s infinite"
+            : "none",
+        }}
+      />
+      {/* Subtle noise overlay */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <PresenterRow presenter={p} index={idx} onOpen={onOpen} />
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const PresenterRow = ({
   presenter: p,
   index: idx,
