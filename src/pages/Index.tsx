@@ -311,7 +311,7 @@ const Index = () => {
           className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-serif font-bold pointer-events-none select-none whitespace-nowrap"
           style={{
             fontSize: "clamp(8rem, 18vw, 18rem)",
-            color: "hsl(43, 74%, 53%, 0.04)",
+            color: "hsla(43, 74%, 53%, 0.04)",
             letterSpacing: "-0.05em",
           }}
           aria-hidden="true"
