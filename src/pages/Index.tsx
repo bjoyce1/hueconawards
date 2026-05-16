@@ -305,6 +305,36 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Silent Interlude */}
+      <section className="relative py-32 overflow-hidden bg-gradient-to-b from-background to-[hsl(0,0%,2%)]">
+        <div
+          className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-serif font-bold pointer-events-none select-none whitespace-nowrap"
+          style={{
+            fontSize: "clamp(8rem, 18vw, 18rem)",
+            color: "hsl(43, 74%, 53%, 0.04)",
+            letterSpacing: "-0.05em",
+          }}
+          aria-hidden="true"
+        >
+          HUECONA
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <p className="font-serif italic text-3xl sm:text-4xl md:text-6xl font-normal leading-tight max-w-4xl mx-auto">
+            This isn't a stop on the tour.<br />
+            Houston is the{" "}
+            <span className="font-semibold bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">
+              next stage
+            </span>.
+          </p>
+          <div className="mt-12 text-xs font-bold tracking-[0.4em] uppercase text-gold/60">
+            <span className="text-gold-deep mr-4">◆</span>
+            HUECONA · 2026
+            <span className="text-gold-deep ml-4">◆</span>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-28">
         <div className="container mx-auto px-4">
