@@ -246,7 +246,7 @@ const Index = () => {
           </div>
 
           <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 items-center justify-center z-10">
-            <img src={hueconaMonogram} alt="HUECONA" className="w-full h-full object-contain" />
+            <img src={hueconaMonogram} alt="HUECONA" className="w-full h-full object-contain animate-hue-float" />
           </div>
         </div>
 

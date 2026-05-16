@@ -267,6 +267,15 @@ All colors MUST be HSL.
     0%, 100% { box-shadow: 0 0 60px hsla(43, 74%, 53%, 0.4); }
     50%      { box-shadow: 0 0 100px hsla(43, 74%, 53%, 0.7); }
   }
+
+  @keyframes hue-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-8px) rotate(1.5deg); }
+  }
+  .animate-hue-float {
+    animation: hue-float 6s ease-in-out infinite;
+    transform-origin: center;
+  }
 }
 
 /* Film grain overlay */
