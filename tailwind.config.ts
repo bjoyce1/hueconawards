@@ -51,11 +51,16 @@ export default {
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
+          highlight: "hsl(var(--gold-highlight))",
+          deep: "hsl(var(--gold-deep))",
+          antique: "hsl(var(--gold-antique))",
         },
         houston: "hsl(var(--houston-blue))",
       },
       fontFamily: {
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

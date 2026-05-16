@@ -16,51 +16,61 @@ import samiyah from "@/assets/headshots/Samiyah.png";
 import toni from "@/assets/headshots/Toni.png";
 
 const honorees = [
-  { name: "Starletta", img: starletta },
-  { name: "Kelsey Scott", img: kelseyScott },
-  { name: "Dr. Cam", img: drCam },
-  { name: "Angela", img: angela },
-  { name: "Akia", img: akia },
-  { name: "Latanya", img: latanya },
-  { name: "Andre", img: andre },
-  { name: "A.D.", img: ad },
-  { name: "Kentrell", img: kentrell },
-  { name: "Eve", img: eve },
-  { name: "Krys", img: krys },
-  { name: "Phyllis", img: phyllis },
-  { name: "Anita", img: anita },
-  { name: "Nicole", img: nicole },
-  { name: "Samiyah", img: samiyah },
-  { name: "Toni", img: toni },
+  { name: "Starletta", role: "Lifetime Achievement", img: starletta },
+  { name: "Kelsey Scott", role: "Excellence in Film", img: kelseyScott },
+  { name: "Dr. Cam", role: "Houston Icon", img: drCam },
+  { name: "Angela", role: "Cultural Vision", img: angela },
+  { name: "Akia", role: "Rising Voice", img: akia },
+  { name: "Latanya", role: "Excellence in Production", img: latanya },
+  { name: "Andre", role: "Music Visionary", img: andre },
+  { name: "A.D.", role: "Creative Direction", img: ad },
+  { name: "Kentrell", role: "Producer of the Year", img: kentrell },
+  { name: "Eve", role: "Casting Excellence", img: eve },
+  { name: "Krys", role: "Style & Vision", img: krys },
+  { name: "Phyllis", role: "Industry Trailblazer", img: phyllis },
+  { name: "Anita", role: "Houston Icon", img: anita },
+  { name: "Nicole", role: "Storytelling", img: nicole },
+  { name: "Samiyah", role: "Emerging Talent", img: samiyah },
+  { name: "Toni", role: "Industry Leader", img: toni },
 ];
 
 const HonoreesGrid = () => {
   return (
     <section className="py-24 bg-charcoal">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-gold">Honorees & Speakers</span>
+        <div className="text-center mb-20">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold mb-4">Featured Recognition</p>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight mb-3">
+            The <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">Honorees</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-5" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Celebrating the visionaries shaping Houston's creative future
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-10 max-w-6xl mx-auto">
           {honorees.map((p) => (
-            <div key={p.name} className="group">
-              <div className="aspect-square overflow-hidden rounded-lg border-2 border-border group-hover:border-gold transition-all duration-300">
+            <div key={p.name} className="group transition-transform duration-700 ease-out hover:-translate-y-1">
+              <div className="aspect-square overflow-hidden relative bg-background border border-border group-hover:border-gold-deep transition-colors duration-700">
                 <img
                   src={p.img}
-                  alt={p.name}
+                  alt={`${p.name} — ${p.role}`}
                   loading="lazy"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  decoding="async"
+                  className="w-full h-full object-cover grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-[1.04] transition-all duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
-              <p className="mt-3 text-center text-sm uppercase tracking-wider font-semibold">
-                {p.name}
-              </p>
+              <div className="relative pt-3.5 text-center">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px bg-gold w-6 group-hover:w-12 transition-all duration-700 ease-out" />
+                <div className="font-serif text-lg font-semibold uppercase tracking-[0.05em] leading-tight">
+                  {p.name}
+                </div>
+                <div className="font-serif italic text-[13px] text-gold/85 mt-1">
+                  {p.role}
+                </div>
+              </div>
             </div>
           ))}
         </div>
