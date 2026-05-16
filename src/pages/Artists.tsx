@@ -53,9 +53,9 @@ const GuestCard = ({ person }: { person: { name: string; role: string; image: st
         loading="lazy"
       />
     </div>
-    <div className="p-5 text-center">
-      <h3 className="text-lg font-bold leading-tight">{person.name}</h3>
-      <p className="text-gold text-sm mt-1 tracking-wide">{person.role}</p>
+    <div className="p-3 sm:p-5 text-center">
+      <h3 className="text-sm sm:text-lg font-bold leading-tight">{person.name}</h3>
+      <p className="text-gold text-[11px] sm:text-sm mt-1 tracking-wide">{person.role}</p>
     </div>
   </div>
 );
