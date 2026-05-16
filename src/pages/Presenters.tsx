@@ -375,13 +375,19 @@ const PresenterRow = ({
   const { ref, visible } = useReveal<HTMLDivElement>();
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const reverse = idx % 2 === 1;
-  const accentText = p.accent === "gold" ? "text-gold" : "text-houston";
+  const isRed = p.accent === "red";
+  const redHsl = "355 78% 45%";
+  const accentText = p.accent === "gold" ? "text-gold" : isRed ? "" : "text-houston";
+  const accentTextStyle = isRed ? { color: `hsl(${redHsl})` } : undefined;
   const accentBorder =
-    p.accent === "gold" ? "border-gold/30" : "border-houston/40";
-  const accentGlow =
-    p.accent === "gold"
-      ? "shadow-[0_30px_80px_-20px_hsl(var(--gold)/0.35)]"
-      : "shadow-[0_30px_80px_-20px_hsl(var(--houston-blue)/0.45)]";
+    p.accent === "gold" ? "border-gold/30" : isRed ? "" : "border-houston/40";
+  const accentBorderStyle = isRed ? { borderColor: `hsl(${redHsl} / 0.45)` } : undefined;
+  const accentBgClass =
+    p.accent === "gold" ? "bg-gold" : isRed ? "" : "bg-houston";
+  const accentBgStyle = isRed ? { backgroundColor: `hsl(${redHsl})` } : undefined;
+  const accentHoverBg =
+    p.accent === "gold" ? "bg-gold/15" : isRed ? "" : "bg-houston/20";
+  const accentHoverBgStyle = isRed ? { backgroundColor: `hsl(${redHsl} / 0.18)` } : undefined;
 
   const handleTilt = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
