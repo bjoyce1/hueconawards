@@ -266,9 +266,7 @@ const Schedule = () => {
             alt="HUECONA"
             className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in"
           />
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            Event <span className="text-gold">Schedule</span>
-          </h1>
+          <DisplayHeadline accent="Schedule" className="mb-6 animate-fade-in">Event</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up mb-8">
             Two days of panels, screenings, performances, and celebrations — July 16–17, 2026
           </p>

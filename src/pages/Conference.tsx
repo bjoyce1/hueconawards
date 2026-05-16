@@ -100,9 +100,7 @@ const Conference = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            HUECONA <span className="text-gold">Conference</span>
-          </h1>
+          <DisplayHeadline accent="Conference" className="mb-6 animate-fade-in">HUECONA</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Panel discussions, Q&A sessions, and networking opportunities with industry leaders
           </p>

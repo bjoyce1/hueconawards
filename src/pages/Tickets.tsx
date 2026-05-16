@@ -196,9 +196,7 @@ const Tickets = () => {
               Official Attendee Invitation
             </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
-            HUECONA Conference <span className="text-gold">&</span> Awards
-          </h1>
+          <DisplayHeadline accent="& Awards" className="mb-8 animate-fade-in">HUECONA Conference</DisplayHeadline>
           <div className="inline-flex items-center gap-2 sm:gap-3 mb-8 px-4 sm:px-6 py-2 sm:py-2.5 max-w-full bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
             <span className="shrink-0 w-2 h-2 rounded-full bg-houston animate-pulse" />
             <p className="text-houston font-medium text-xs sm:text-sm tracking-wide text-center">
