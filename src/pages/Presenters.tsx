@@ -38,6 +38,15 @@ const presenters: Presenter[] = [
     accent: "houston",
     flyer: andreFlyer,
   },
+  {
+    id: "mrcap",
+    name: "Mr. CAP",
+    title: "Artist · Author · Creative Visionary",
+    session: "The Art of ISM Experience",
+    tagline: "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
+    accent: "gold",
+    flyer: mrcapFlyer,
+  },
 ];
 
 // Lightweight reveal-on-scroll hook
