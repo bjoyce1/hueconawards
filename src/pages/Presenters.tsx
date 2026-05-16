@@ -6,6 +6,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Sparkles, Maximize2, ArrowDown } from "lucide-react";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
+import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import heroBg from "@/assets/presenters/presenters-hero-bg.jpg";
 
 type Presenter = {
@@ -36,6 +37,15 @@ const presenters: Presenter[] = [
     tagline: "How to make lasting connections in a disconnected society.",
     accent: "houston",
     flyer: andreFlyer,
+  },
+  {
+    id: "mrcap",
+    name: "Mr. CAP",
+    title: "Artist · Author · Creative Visionary",
+    session: "The Art of ISM Experience",
+    tagline: "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
+    accent: "gold",
+    flyer: mrcapFlyer,
   },
 ];
 
