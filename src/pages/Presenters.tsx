@@ -7,6 +7,7 @@ import { Sparkles, Maximize2, ArrowDown } from "lucide-react";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
+import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import heroBg from "@/assets/presenters/presenters-hero-bg.jpg";
 import hoverBg from "@/assets/presenters/section-hover-bg.png";
 
@@ -47,6 +48,16 @@ const presenters: Presenter[] = [
     tagline: "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
     accent: "gold",
     flyer: mrcapFlyer,
+  },
+  {
+    id: "spencer",
+    name: "Spencer Proffer",
+    title: "Visionary Media Producer · Story-Driven Culture Builder",
+    session: "Cinematic Narratives That Move Culture",
+    tagline:
+      "Turn iconic music, real-life stories and cultural truth into story-driven projects that travel across screens, platforms and generations.",
+    accent: "houston",
+    flyer: spencerFlyer,
   },
 ];
 
