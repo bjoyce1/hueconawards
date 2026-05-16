@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Film, Music, Palette, UtensilsCrossed, Users, Star, ExternalLink } from "lucide-react";
@@ -113,6 +114,7 @@ const Artists = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="Featured Artists & Speakers — HUECONA 2026" description="Meet the speakers, performers and honorees taking the stage at HUECONA 2026 across Film, Music, Fashion and Culinary Arts." path="/artists"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">

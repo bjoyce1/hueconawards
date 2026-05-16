@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -67,6 +68,7 @@ const Sponsors = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="Sponsors & Partners — HUECONA 2026" description="Become a HUECONA 2026 sponsor. Explore partnership tiers and meet the brands championing Houston's entertainment future." path="/sponsors"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">

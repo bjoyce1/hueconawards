@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { UtensilsCrossed, ChefHat, Sparkles, Wine, Coffee, IceCream } from "lucide-react";
 import heroCulinary from "@/assets/hero-culinary.jpg";
@@ -22,6 +23,7 @@ const Culinary = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="Culinary & Culture — HUECONA 2026" description="Houston's culinary innovators and cultural programming come together at HUECONA 2026. Tastings, chef showcases and creative collaborations." path="/culinary"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">

@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="Contact HUECONA — Get In Touch" description="Reach the HUECONA team at official@HUECONA.com. Find the venue location, dates and partnership inquiries." path="/contact"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">

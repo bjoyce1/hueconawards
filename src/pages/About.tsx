@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import HonoreesGrid from "@/components/HonoreesGrid";
 import { Users, Target, MapPin, Award } from "lucide-react";
@@ -9,6 +10,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="About HUECONA — Houston's Entertainment Movement" description="Learn about HUECONA: the mission, the team, and how Hollywood expertise is uniting with Houston's diverse cultural scene." path="/about"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
