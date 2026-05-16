@@ -283,9 +283,15 @@ const Schedule = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="day1" className="max-w-5xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 mb-12 bg-charcoal">
-              <TabsTrigger value="day1">Day 1 — Thu, July 16</TabsTrigger>
-              <TabsTrigger value="day2">Day 2 — Fri, July 17</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-12 bg-charcoal h-auto">
+              <TabsTrigger value="day1" className="text-xs sm:text-sm whitespace-normal py-2 leading-tight">
+                <span className="sm:hidden">Day 1<br />Thu, Jul 16</span>
+                <span className="hidden sm:inline">Day 1 — Thu, July 16</span>
+              </TabsTrigger>
+              <TabsTrigger value="day2" className="text-xs sm:text-sm whitespace-normal py-2 leading-tight">
+                <span className="sm:hidden">Day 2<br />Fri, Jul 17</span>
+                <span className="hidden sm:inline">Day 2 — Fri, July 17</span>
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="day1">
