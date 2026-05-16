@@ -244,12 +244,8 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="hidden md:grid absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full place-items-center z-10 animate-[pulse-ring_3s_ease-in-out_infinite]"
-               style={{
-                 background: "linear-gradient(135deg, hsl(43, 76%, 71%), hsl(43, 74%, 53%), hsl(39, 67%, 36%))",
-                 boxShadow: "0 0 60px hsla(43, 74%, 53%, 0.4)",
-               }}>
-            <span className="font-serif italic font-bold text-xs tracking-[0.15em] text-background">HUE</span>
+          <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 items-center justify-center z-10 animate-[pulse-ring_3s_ease-in-out_infinite]">
+            <img src={hueconaMonogram} alt="HUECONA" className="w-full h-full object-contain drop-shadow-[0_0_30px_hsla(43,74%,53%,0.5)]" />
           </div>
         </div>
 
