@@ -9,6 +9,7 @@ import { Trophy, Star, Award, Crown, Download, CheckCircle } from "lucide-react"
 import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
+import SponsorWall from "@/components/SponsorWall";
 
 const Sponsors = () => {
   const sponsorTiers = [
