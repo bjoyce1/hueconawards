@@ -92,7 +92,7 @@ const Awards = () => {
               NOMINATIONS NOW OPEN
             </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             <span className="text-gold">HUECONA</span> Awards
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">

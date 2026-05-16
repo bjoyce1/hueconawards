@@ -117,7 +117,7 @@ const Index = () => {
               </p>
             </div>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
               <span className="text-foreground">Houston United in</span>
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
@@ -154,7 +154,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-20 animate-slide-up">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">About the Event</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
               What Is <span className="text-gold">HUECONA?</span>
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-8" />
@@ -188,7 +188,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-houston/5" />
         <div className="container mx-auto px-4 relative z-10">
           <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase text-center mb-4">The Convergence</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
             From <span className="text-gold">Star Capital</span> to <span className="text-houston">Lone Star State</span>
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-16" />
@@ -229,7 +229,7 @@ const Index = () => {
       <section className="py-28 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-card/40 via-background to-background">
         <div className="container mx-auto px-4">
           <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase text-center mb-4">What Awaits You</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
             Event <span className="text-gold">Highlights</span>
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-16" />
@@ -274,7 +274,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-card/60 to-card/20 border border-border/50 rounded-2xl p-14">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">Be Part of It</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Join the <span className="text-gold">Movement</span>
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-6" />

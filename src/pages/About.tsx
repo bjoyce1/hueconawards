@@ -19,7 +19,7 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
-          <h1 className="text-5xl md:text-7xl font-black mb-6 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
             About <span className="text-gold">HUECONA</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
@@ -60,7 +60,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <MapPin className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Why <span className="text-gold">Houston?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -119,7 +119,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Users className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Our <span className="text-gold">Production Team</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

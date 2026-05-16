@@ -194,7 +194,7 @@ const Tickets = () => {
               Official Attendee Invitation
             </p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-8 animate-fade-in tracking-tight">
             HUECONA Conference <span className="text-gold">&</span> Awards
           </h1>
           <div className="inline-flex items-center gap-3 mb-8 px-6 py-2.5 bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
@@ -218,7 +218,7 @@ const Tickets = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Join The Movement</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 tracking-tight">
               You're <span className="text-gold">Invited</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
@@ -256,7 +256,7 @@ const Tickets = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Experience</p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
               What To <span className="text-gold">Expect</span>
             </h2>
           </div>
@@ -315,7 +315,7 @@ const Tickets = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Pricing</p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Choose Your <span className="text-gold">Experience</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -359,7 +359,7 @@ const Tickets = () => {
               <Hotel className="text-gold" size={32} />
             </div>
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Stay With Us</p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Travel & <span className="text-gold">Accommodation</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -425,7 +425,7 @@ const Tickets = () => {
               <MapPin className="text-gold" size={32} />
             </div>
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Location</p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Why <span className="text-gold">Houston?</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -462,7 +462,7 @@ const Tickets = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Logistics</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                 Event <span className="text-gold">Details</span>
               </h2>
             </div>
