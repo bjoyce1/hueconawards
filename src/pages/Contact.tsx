@@ -195,7 +195,7 @@ const Contact = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Be part of something special! Join our volunteer team and help create an unforgettable experience for attendees. Volunteers receive free event access, HUECONA swag, and exclusive behind-the-scenes experiences.
             </p>
-            <a href="mailto:official@HUECONA.com?subject=Volunteer%20Sign-Up">
+            <a href="https://www.volunteerhou.org/agency/detail/HeartbeatPerformingArtsCharities/" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="xl">
                 Sign Up to Volunteer
               </Button>
