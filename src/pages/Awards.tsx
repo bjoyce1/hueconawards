@@ -1,3 +1,4 @@
+import DisplayHeadline from "@/components/DisplayHeadline";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -94,9 +95,7 @@ const Awards = () => {
               NOMINATIONS NOW OPEN
             </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            <span className="text-gold">HUECONA</span> Awards
-          </h1>
+          <DisplayHeadline accent="Awards" className="mb-6 animate-fade-in">HUECONA</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
           </p>

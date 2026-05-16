@@ -1,3 +1,4 @@
+import DisplayHeadline from "@/components/DisplayHeadline";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
@@ -83,9 +84,7 @@ const Artists = () => {
             alt="HUE"
             className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in"
           />
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            Special <span className="text-gold">Guest</span>
-          </h1>
+          <DisplayHeadline accent="Guest" className="mb-6 animate-fade-in">Special</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Celebrating the talent, creativity, and vision of Houston's entertainment community
           </p>
