@@ -53,9 +53,9 @@ const GuestCard = ({ person }: { person: { name: string; role: string; image: st
         loading="lazy"
       />
     </div>
-    <div className="p-5 text-center">
-      <h3 className="text-lg font-bold leading-tight">{person.name}</h3>
-      <p className="text-gold text-sm mt-1 tracking-wide">{person.role}</p>
+    <div className="p-3 sm:p-5 text-center">
+      <h3 className="text-sm sm:text-lg font-bold leading-tight">{person.name}</h3>
+      <p className="text-gold text-[11px] sm:text-sm mt-1 tracking-wide">{person.role}</p>
     </div>
   </div>
 );
@@ -93,17 +93,17 @@ const Artists = () => {
       </section>
 
       {/* Special Guests */}
-      <section className="py-20 bg-charcoal">
+      <section className="py-14 sm:py-20 bg-charcoal">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-gold tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
               HUECONA 2026
             </p>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
               Special <span className="text-gold">Guests</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {specialGuests.map((p) => (
               <GuestCard key={p.name} person={p} />
             ))}
@@ -112,17 +112,17 @@ const Artists = () => {
       </section>
 
       {/* Production Team */}
-      <section className="py-20 bg-background">
+      <section className="py-14 sm:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-houston tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
               Behind the Scenes
             </p>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
               Production <span className="text-gold">Team</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
             {productionTeam.map((p) => (
               <GuestCard key={p.name} person={p} />
             ))}
