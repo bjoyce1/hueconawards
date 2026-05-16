@@ -93,17 +93,17 @@ const Artists = () => {
       </section>
 
       {/* Special Guests */}
-      <section className="py-20 bg-charcoal">
+      <section className="py-14 sm:py-20 bg-charcoal">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-gold tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
               HUECONA 2026
             </p>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
               Special <span className="text-gold">Guests</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {specialGuests.map((p) => (
               <GuestCard key={p.name} person={p} />
             ))}
