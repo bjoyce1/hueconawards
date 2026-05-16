@@ -244,7 +244,7 @@ const Presenters = () => {
   );
 };
 
-const PresenterSection = ({
+function PresenterSection({
   presenter: p,
   index: idx,
   onOpen,
@@ -252,7 +252,7 @@ const PresenterSection = ({
   presenter: Presenter;
   index: number;
   onOpen: () => void;
-}) => {
+}) {
   const { ref, visible } = useReveal<HTMLElement>();
   const isGold = p.accent === "gold";
   const accentHsl = isGold ? "var(--gold)" : "var(--houston-blue)";
