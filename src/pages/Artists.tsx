@@ -114,7 +114,7 @@ const Artists = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <SEO title="Featured Guest & Speakers — HUECONA 2026" description="Meet the speakers, performers and honorees taking the stage at HUECONA 2026 across Film, Music, Fashion and Culinary Arts." path="/artists"  />
+      <SEO title="Special Guest & Speakers — HUECONA 2026" description="Meet the speakers, performers and honorees taking the stage at HUECONA 2026 across Film, Music, Fashion and Culinary Arts." path="/artists"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
@@ -126,7 +126,7 @@ const Artists = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 animate-fade-in">
-            Featured <span className="text-gold">Guest</span>
+            Special <span className="text-gold">Guest</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Celebrating the talent, creativity, and vision of Houston's entertainment community
