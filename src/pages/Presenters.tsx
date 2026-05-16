@@ -244,7 +244,20 @@ const Presenters = () => {
   );
 };
 
-const PresenterSection = ({
+function PresenterSection({
+  presenter: p,
+  index: idx,
+  onOpen,
+}: {
+  presenter: Presenter;
+  index: number;
+  onOpen: () => void;
+}) {
+  // @ts-expect-error - legacy signature handled below
+  return _PresenterSectionImpl({ presenter: p, index: idx, onOpen });
+}
+
+const _PresenterSectionImpl = ({
   presenter: p,
   index: idx,
   onOpen,
