@@ -10,6 +10,7 @@ import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-r
 import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import DisplayHeadline from "@/components/DisplayHeadline";
+import hueconaMonogram from "@/assets/huecona-monogram.png";
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
