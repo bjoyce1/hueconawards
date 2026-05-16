@@ -39,7 +39,7 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-4 text-gold">Our Mission</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  The Houston United in Entertainment Conference & Awards (HUECONA) exists to unite, celebrate, and elevate artists across Film, Music, Arts, and Culinary fields. We bring Hollywood-level production expertise to Houston's vibrant creative community, creating unprecedented opportunities for both established and emerging talent in Texas.
+                  The Houston United in Entertainment Conference & Awards (HUECONA) exists to unite, celebrate, and elevate guest across Film, Music, Arts, and Culinary fields. We bring Hollywood-level production expertise to Houston's vibrant creative community, creating unprecedented opportunities for both established and emerging talent in Texas.
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ const About = () => {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-bold mb-3 text-gold">Creative Community</h3>
               <p className="text-muted-foreground">
-                A supportive ecosystem of artists, creators, and entrepreneurs makes Houston the ideal place to launch and sustain a thriving career in entertainment.
+                A supportive ecosystem of guest, creators, and entrepreneurs makes Houston the ideal place to launch and sustain a thriving career in entertainment.
               </p>
             </div>
           </div>

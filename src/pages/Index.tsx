@@ -174,7 +174,7 @@ const Index = () => {
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-8" />
             <p className="text-base text-muted-foreground leading-relaxed mb-5">
-              The Houston United in Entertainment Conference & Awards (HUECONA) is a groundbreaking mobilization of artists across Film, Music, Arts, and Culinary fields in the Houston metropolitan area and beyond.
+              The Houston United in Entertainment Conference & Awards (HUECONA) is a groundbreaking mobilization of guest across Film, Music, Arts, and Culinary fields in the Houston metropolitan area and beyond.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
               With a production team hailing from Hollywood, we're expanding opportunities to existing and rising talent in Texas. Houston, now the culture and culinary capital, is the new Mecca for entertainment innovation.
@@ -263,7 +263,7 @@ const Index = () => {
             <EventCard
               icon={<Music size={24} />}
               title="Live Performances"
-              description="Enjoy electrifying performances from emerging and established artists"
+              description="Enjoy electrifying performances from emerging and established guest"
             />
             <EventCard
               icon={<UtensilsCrossed size={24} />}

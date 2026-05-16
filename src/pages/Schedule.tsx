@@ -158,19 +158,19 @@ const Schedule = () => {
           title: "Music Industry — “Breaking Sound Barriers”",
           speakers: "Spencer Proffer, Cornelius Pratt (others TBA)",
           description:
-            "Topics: Building sustainable careers as independent artists · The rise of Texas labels and music collectives · Sync licensing, publishing, and performance rights. Panelists: producers, A&R reps, performing artists, and entertainment lawyers.",
+            "Topics: Building sustainable careers as independent guest · The rise of Texas labels and music collectives · Sync licensing, publishing, and performance rights. Panelists: producers, A&R reps, performing guest, and entertainment lawyers.",
         },
         {
           title: "Culinary Arts — “The Flavor of Culture”",
           speakers: "Introduction: Phyllis Bailey · Bao Ong (Restaurant Critic) and others TBA",
           description:
-            "Topics: Culinary storytelling and brand building · From local kitchens to national food media · Creative collaborations between chefs and artists. Panelists: celebrity chefs, food stylists, media producers, and cultural curators.",
+            "Topics: Culinary storytelling and brand building · From local kitchens to national food media · Creative collaborations between chefs and guest. Panelists: celebrity chefs, food stylists, media producers, and cultural curators.",
         },
         {
           title: "Visual & Digital Arts — “Creative Futures”",
           speakers: "Introduction: Spencer Proffer · Panel: Asante Bradford, Cornelius Pratt, Michael Vamosy",
           description:
-            "Topics: Bridging traditional and digital art markets · AI and immersive technology in creative expression · The business of art: monetization, NFTs, and gallery exposure. Panelists: visual artists, curators, digital innovators, and art investors.",
+            "Topics: Bridging traditional and digital art markets · AI and immersive technology in creative expression · The business of art: monetization, NFTs, and gallery exposure. Panelists: visual guest, curators, digital innovators, and art investors.",
         },
         {
           time: "4:30 PM",

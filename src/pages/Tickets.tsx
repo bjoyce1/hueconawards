@@ -224,7 +224,7 @@ const Tickets = () => {
               You're <span className="text-gold">Invited</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
-              The Houston United in Entertainment Conference & Awards (HUECONA) is the premier gathering for artists, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUECONA brings together <span className="text-gold font-semibold">600+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
+              The Houston United in Entertainment Conference & Awards (HUECONA) is the premier gathering for guest, innovators, and industry leaders. Designed by Hollywood producers and entertainment executives, HUECONA brings together <span className="text-gold font-semibold">600+ creators, decision-makers, tastemakers, and media insiders</span> for panels, networking, education, and a star-studded awards gala.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-14">
@@ -265,7 +265,7 @@ const Tickets = () => {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: <Mic size={32} />, title: "Industry Panels & Keynotes", desc: "Insights from producers, directors, chefs, artists, investors, and media leaders shaping the future of entertainment." },
+              { icon: <Mic size={32} />, title: "Industry Panels & Keynotes", desc: "Insights from producers, directors, chefs, guest, investors, and media leaders shaping the future of entertainment." },
               { icon: <Handshake size={32} />, title: "The HUE Connection Experience", desc: "Curated networking lounges, pitch sessions, and real-time collaboration opportunities." },
               { icon: <Award size={32} />, title: "HUE Awards Gala", desc: "Red carpet arrivals, live performances, culinary tastings, and recognition of Houston's brightest creatives." },
               { icon: <Sparkles size={32} />, title: "VIP Mixers & Activations", desc: "Exclusive lounges, brand experiences, and private receptions with speakers and honorees." },
