@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import TicketTierCard from "@/components/TicketTierCard";
 import TravelPackageCard from "@/components/TravelPackageCard";
@@ -179,6 +180,7 @@ const Tickets = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="Tickets & Travel Packages — HUECONA 2026" description="Reserve your HUECONA 2026 pass: Early Bird, General, Creative Professional, VIP and All-Access Platinum. Group rates and Blossom Hotel Houston travel packages available." path="/tickets" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">

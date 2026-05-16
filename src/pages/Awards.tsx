@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -77,6 +78,7 @@ const Awards = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <SEO title="HUE Awards 2026 — Eight Categories Honoring Houston's Best" description="Discover the eight HUE Award categories celebrating Film, Music, Fashion, Culinary, Community Impact, Visual Arts and Lifetime Achievement. Submit nominations now." path="/awards"  />
 
       {/* Hero Section */}
       <section className="hero-section vignette relative flex items-center justify-center pt-20">
