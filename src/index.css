@@ -97,10 +97,10 @@ All colors MUST be HSL.
     -webkit-touch-callout: none;
   }
 
-  /* Global custom scrollbar – blue track, gold handle */
+  /* Global custom scrollbar – dark track, gold handle */
   html {
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--gold)) hsl(var(--houston-blue));
+    scrollbar-color: hsl(var(--gold)) hsl(var(--charcoal));
   }
 
   ::-webkit-scrollbar {
@@ -109,13 +109,13 @@ All colors MUST be HSL.
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--houston-blue));
+    background: hsl(var(--charcoal));
   }
 
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--gold));
     border-radius: 5px;
-    border: 2px solid hsl(var(--houston-blue));
+    border: 2px solid hsl(var(--charcoal));
   }
 
   ::-webkit-scrollbar-thumb:hover {
