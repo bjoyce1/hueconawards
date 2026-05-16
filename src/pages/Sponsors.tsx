@@ -9,6 +9,7 @@ import { Trophy, Star, Award, Crown, Download, CheckCircle } from "lucide-react"
 import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
+import SponsorWall from "@/components/SponsorWall";
 
 const Sponsors = () => {
   const sponsorTiers = [
@@ -139,33 +140,7 @@ const Sponsors = () => {
         </div>
       </section>
 
-      {/* Current Sponsors Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            Our <span className="text-gold">Partners</span>
-          </h2>
-          <p className="text-center text-muted-foreground mb-16">
-            Thank you to our sponsors for making HUECONA possible
-          </p>
-
-          {currentSponsors.map((category) => (
-            <div key={category.tier} className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-gold">{category.tier} Sponsors</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {Array.from({ length: category.count }).map((_, idx) => (
-                  <div
-                    key={idx}
-                    className="aspect-video bg-muted rounded-lg border border-border flex items-center justify-center hover:border-gold transition-colors cursor-pointer"
-                  >
-                    <span className="text-muted-foreground text-sm">Sponsor Logo</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <SponsorWall title="Our Partners & Sponsors" subtitle="Thank you to the brands championing HUECONA 2026" />
 
       {/* Become a Vendor */}
       <section className="py-24 bg-charcoal">
