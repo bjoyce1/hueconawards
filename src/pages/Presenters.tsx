@@ -18,7 +18,7 @@ type Presenter = {
   title: string;
   session: string;
   tagline: string;
-  accent: "gold" | "houston";
+  accent: "gold" | "houston" | "red";
   flyer: string;
 };
 
