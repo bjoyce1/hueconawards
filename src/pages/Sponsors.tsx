@@ -100,7 +100,7 @@ const Sponsors = () => {
             {sponsorTiers.map((tier, idx) => (
               <div
                 key={idx}
-                className="bg-card border-2 border-border rounded-lg p-8 card-hover"
+                className="bg-card border-2 border-border rounded-lg p-8 card-hover flex flex-col"
                 style={{
                   borderColor: tier.color === "gold" ? "hsl(var(--gold))" : tier.color === "houston" ? "hsl(var(--houston-blue))" : "hsl(var(--border))",
                 }}
@@ -111,7 +111,7 @@ const Sponsors = () => {
                 <h3 className="text-2xl font-bold text-center mb-2">{tier.tier}</h3>
                 <div className="text-3xl font-bold text-center text-gold mb-6">{tier.price}</div>
                 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 flex-grow">
                   {tier.benefits.map((benefit, bidx) => (
                     <li key={bidx} className="flex items-start gap-2 text-sm">
                       <CheckCircle size={16} className="text-gold flex-shrink-0 mt-0.5" />
