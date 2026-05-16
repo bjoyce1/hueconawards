@@ -112,17 +112,17 @@ const Artists = () => {
       </section>
 
       {/* Production Team */}
-      <section className="py-20 bg-background">
+      <section className="py-14 sm:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="text-houston tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
               Behind the Scenes
             </p>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
               Production <span className="text-gold">Team</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
             {productionTeam.map((p) => (
               <GuestCard key={p.name} person={p} />
             ))}
