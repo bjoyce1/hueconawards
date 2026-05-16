@@ -54,18 +54,14 @@ const SponsorWall = ({
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.name}
-              className="group relative aspect-[3/2] bg-background/40 backdrop-blur-sm border border-border rounded-lg flex items-center justify-center p-6 transition-all duration-500 hover:border-gold hover:bg-background/70"
+              className="group relative aspect-[3/2] bg-white border border-border rounded-lg flex items-center justify-center p-5 transition-all duration-500 hover:border-gold hover:shadow-[0_0_0_1px_hsl(var(--gold)/0.4)]"
               title={sponsor.name}
             >
               <img
                 src={sponsor.logo}
                 alt={`${sponsor.name} logo`}
                 loading="lazy"
-                className={`max-h-full max-w-full object-contain transition-all duration-500 ${
-                  sponsor.invert
-                    ? "invert brightness-0 opacity-80 group-hover:opacity-100"
-                    : "opacity-90 group-hover:opacity-100 group-hover:scale-105"
-                }`}
+                className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ))}
