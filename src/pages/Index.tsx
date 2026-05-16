@@ -9,6 +9,7 @@ import EventCard from "@/components/EventCard";
 import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
+import DisplayHeadline from "@/components/DisplayHeadline";
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -132,13 +133,9 @@ const Index = () => {
               </p>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-              <span className="text-foreground">Houston United in</span>
-              <br />
-              <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                Entertainment
-              </span>
-            </h2>
+            <DisplayHeadline as="h2" accent="Entertainment" className="mb-6">
+              Houston United in
+            </DisplayHeadline>
             
             <p className="text-lg md:text-xl font-bold text-gold/90 mb-3 tracking-[0.15em] uppercase">
               Create · Connect · Celebrate · Elevate
@@ -198,45 +195,69 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hollywood → Houston Transition */}
-      <section className="py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-houston/5" />
-        <div className="container mx-auto px-4 relative z-10">
-          <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase text-center mb-4">The Convergence</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
-            From <span className="text-gold">Star Capital</span> to <span className="text-houston">Lone Star State</span>
+      {/* Hollywood ↔ Houston Convergence */}
+      <section className="relative bg-background overflow-hidden">
+        <div className="container mx-auto px-4 pt-24 pb-12 text-center">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold mb-4">The Convergence</p>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight mb-4">
+            Two Cities. <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">One Stage.</span>
           </h2>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-16" />
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {/* Hollywood Side */}
-            <div className="group bg-gradient-to-br from-gold/[0.07] to-transparent rounded-2xl p-8 border border-gold/20 hover:border-gold/30 transition-all duration-300">
-              <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-gold/20">
-                <Sparkles className="text-gold" size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-5 text-gold tracking-wide">Hollywood Excellence</h3>
-              <ul className="space-y-3.5 text-sm text-muted-foreground">
-                <li className="flex items-center gap-3"><span className="text-gold/50">✦</span> World-class production expertise</li>
-                <li className="flex items-center gap-3"><span className="text-gold/50">✦</span> Industry-leading standards</li>
-                <li className="flex items-center gap-3"><span className="text-gold/50">✦</span> Award-winning professionals</li>
-                <li className="flex items-center gap-3"><span className="text-gold/50">✦</span> Cinematic innovation</li>
-              </ul>
-            </div>
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto" />
+        </div>
 
-            {/* Houston Side */}
-            <div className="group bg-gradient-to-bl from-houston/[0.07] to-transparent rounded-2xl p-8 border border-houston/20 hover:border-houston/30 transition-all duration-300">
-              <div className="w-14 h-14 rounded-xl bg-houston/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-houston/20">
-                <Users className="text-houston" size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-5 text-houston tracking-wide">Houston Culture</h3>
-              <ul className="space-y-3.5 text-sm text-muted-foreground">
-                <li className="flex items-center gap-3"><span className="text-houston/50">★</span> Diverse cultural landscape</li>
-                <li className="flex items-center gap-3"><span className="text-houston/50">★</span> Emerging creative talent</li>
-                <li className="flex items-center gap-3"><span className="text-houston/50">★</span> Culinary innovation capital</li>
-                <li className="flex items-center gap-3"><span className="text-houston/50">★</span> Vibrant arts community</li>
-              </ul>
+        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+          <div
+            className="absolute top-0 left-0 h-full w-full md:w-[60%] overflow-hidden"
+            style={{
+              clipPath: "polygon(0 0, 100% 0, calc(100% - 80px) 100%, 0 100%)",
+              background:
+                "linear-gradient(135deg, hsla(43, 60%, 30%, 0.7), hsla(0, 0%, 0%, 0.85)), radial-gradient(circle at 30% 40%, hsl(43, 74%, 35%), hsl(0, 0%, 5%) 70%)",
+            }}
+          >
+            <div className="absolute inset-0 p-8 md:p-20 flex flex-col justify-end items-start">
+              <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-gold mb-4">From Hollywood</p>
+              <h3 className="font-serif text-5xl md:text-7xl font-medium leading-none tracking-tight">
+                Star <span className="italic text-gold-highlight">Capital</span>
+              </h3>
+              <p className="text-sm text-muted-foreground mt-4 max-w-xs leading-relaxed">
+                A century of craft. The stages, soundtracks, and screens that taught the world what entertainment looks like.
+              </p>
             </div>
           </div>
+
+          <div
+            className="absolute top-0 right-0 h-full w-full md:w-[60%] overflow-hidden"
+            style={{
+              clipPath: "polygon(80px 0, 100% 0, 100% 100%, 0 100%)",
+              background:
+                "linear-gradient(225deg, hsla(226, 70%, 30%, 0.7), hsla(0, 0%, 0%, 0.85)), radial-gradient(circle at 70% 60%, hsl(226, 100%, 30%), hsl(0, 0%, 5%) 70%)",
+            }}
+          >
+            <div className="absolute inset-0 p-8 md:p-20 flex flex-col justify-end items-end text-right">
+              <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-[hsl(226,100%,70%)] mb-4">To Houston</p>
+              <h3 className="font-serif text-5xl md:text-7xl font-medium leading-none tracking-tight">
+                <span className="italic text-[hsl(226,100%,75%)]">Lone Star</span> State
+              </h3>
+              <p className="text-sm text-muted-foreground mt-4 max-w-xs leading-relaxed">
+                The next chapter. A city writing its own grammar for film, music, fashion, and food on its own terms.
+              </p>
+            </div>
+          </div>
+
+          <div className="hidden md:grid absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full place-items-center z-10 animate-[pulse-ring_3s_ease-in-out_infinite]"
+               style={{
+                 background: "linear-gradient(135deg, hsl(43, 76%, 71%), hsl(43, 74%, 53%), hsl(39, 67%, 36%))",
+                 boxShadow: "0 0 60px hsla(43, 74%, 53%, 0.4)",
+               }}>
+            <span className="font-serif italic font-bold text-xs tracking-[0.15em] text-background">HUE</span>
+          </div>
+        </div>
+
+        <div className="py-20 px-4 text-center">
+          <blockquote className="font-serif italic text-2xl sm:text-3xl md:text-4xl font-medium leading-snug max-w-3xl mx-auto">
+            Hollywood made the rules.<br />
+            Houston is writing the <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">next chapter</span>.
+          </blockquote>
         </div>
       </section>
 
