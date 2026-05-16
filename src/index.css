@@ -96,6 +96,31 @@ All colors MUST be HSL.
   button, a, [role="button"] {
     -webkit-touch-callout: none;
   }
+
+  /* Global custom scrollbar – blue track, gold handle */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--gold)) hsl(var(--houston-blue));
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--houston-blue));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--gold));
+    border-radius: 5px;
+    border: 2px solid hsl(var(--houston-blue));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gold-light));
+  }
 }
 
 @layer components {
