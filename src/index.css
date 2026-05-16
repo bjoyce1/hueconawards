@@ -126,7 +126,7 @@ All colors MUST be HSL.
 @layer components {
   /* Hero Section */
   .hero-section {
-    @apply min-h-[800px] relative overflow-hidden;
+    @apply min-h-[560px] sm:min-h-[700px] lg:min-h-[800px] relative overflow-hidden;
   }
 
   /* Parallax Effect */
