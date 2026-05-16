@@ -6,6 +6,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Sparkles, Maximize2, ArrowDown } from "lucide-react";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
+import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import heroBg from "@/assets/presenters/presenters-hero-bg.jpg";
 
 type Presenter = {
