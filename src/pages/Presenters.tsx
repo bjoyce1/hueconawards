@@ -8,6 +8,7 @@ import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
+import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import heroBg from "@/assets/presenters/presenters-hero-bg.jpg";
 import hoverBg from "@/assets/presenters/section-hover-bg.png";
 
