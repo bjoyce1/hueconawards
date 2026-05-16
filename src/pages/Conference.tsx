@@ -26,8 +26,8 @@ const Conference = () => {
       category: "Music",
       icon: <Music size={32} />,
       title: "The New Music Industry: Independence & Innovation",
-      speakers: "Chart-Topping Artists & Label Executives",
-      description: "Understanding how independent artists are reshaping the music business and finding success on their own terms.",
+      speakers: "Chart-Topping Guest & Label Executives",
+      description: "Understanding how independent guest are reshaping the music business and finding success on their own terms.",
       details: "Learn strategies for building a sustainable music career, leveraging streaming platforms, connecting with fans, and maintaining creative control.",
     },
     {
@@ -35,8 +35,8 @@ const Conference = () => {
       category: "Arts",
       icon: <Palette size={32} />,
       title: "Visual Storytelling: Art in the Digital Age",
-      speakers: "Gallery Curators & Contemporary Artists",
-      description: "How visual artists are adapting to digital platforms while maintaining the power of physical installations.",
+      speakers: "Gallery Curators & Contemporary Guest",
+      description: "How visual guest are adapting to digital platforms while maintaining the power of physical installations.",
       details: "Discover how to build an art career in the 21st century, from social media presence to gallery representation and NFT opportunities.",
     },
     {
@@ -63,7 +63,7 @@ const Conference = () => {
       icon: <MessageSquare size={32} />,
       title: "Building Your Brand: Marketing for Creatives",
       speakers: "Entertainment Marketing Experts",
-      description: "Essential marketing strategies for artists, filmmakers, musicians, and culinary professionals.",
+      description: "Essential marketing strategies for guest, filmmakers, musicians, and culinary professionals.",
       details: "Master social media, PR, personal branding, and audience engagement to grow your influence and opportunities.",
     },
   ];
