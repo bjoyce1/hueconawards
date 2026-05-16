@@ -52,6 +52,16 @@ const presenters: Presenter[] = [
     flyer: andreFlyer,
   },
   {
+    id: "adroberts",
+    name: "A.D. Roberts",
+    title: "Hypnotherapist · Mindset Strategist · Speaker · Identity Architect",
+    session: "The Identity Factor",
+    tagline:
+      "From being overlooked to being unforgettable through Main Character Energy. You don't need more luck — you need a new identity.",
+    accent: "houston",
+    flyer: adRobertsFlyer,
+  },
+  {
     id: "mrcap",
     name: "Mr. CAP",
     title: "Artist · Author · Creative Visionary",
