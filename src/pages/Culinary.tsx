@@ -1,3 +1,4 @@
+import DisplayHeadline from "@/components/DisplayHeadline";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";

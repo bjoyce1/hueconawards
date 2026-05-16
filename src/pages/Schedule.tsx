@@ -1,3 +1,4 @@
+import DisplayHeadline from "@/components/DisplayHeadline";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
