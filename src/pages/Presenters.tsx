@@ -8,6 +8,7 @@ import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
+import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import heroBg from "@/assets/presenters/presenters-hero-bg.jpg";
 import hoverBg from "@/assets/presenters/section-hover-bg.png";
 
@@ -49,6 +50,16 @@ const presenters: Presenter[] = [
     tagline: "How to make lasting connections in a disconnected society.",
     accent: "houston",
     flyer: andreFlyer,
+  },
+  {
+    id: "adroberts",
+    name: "A.D. Roberts",
+    title: "Hypnotherapist · Mindset Strategist · Speaker · Identity Architect",
+    session: "The Identity Factor",
+    tagline:
+      "From being overlooked to being unforgettable through Main Character Energy. You don't need more luck — you need a new identity.",
+    accent: "houston",
+    flyer: adRobertsFlyer,
   },
   {
     id: "mrcap",
