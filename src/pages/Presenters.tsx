@@ -23,6 +23,16 @@ type Presenter = {
 
 const presenters: Presenter[] = [
   {
+    id: "spencer",
+    name: "Spencer Proffer",
+    title: "Visionary Media Producer · Story-Driven Culture Builder",
+    session: "Cinematic Narratives That Move Culture",
+    tagline:
+      "Turn iconic music, real-life stories and cultural truth into story-driven projects that travel across screens, platforms and generations.",
+    accent: "houston",
+    flyer: spencerFlyer,
+  },
+  {
     id: "latanya",
     name: "Dr. Latanya Edenburgs",
     title: "MA, M.Ed. — Creator of The MOVE Method™",
@@ -48,16 +58,6 @@ const presenters: Presenter[] = [
     tagline: "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
     accent: "gold",
     flyer: mrcapFlyer,
-  },
-  {
-    id: "spencer",
-    name: "Spencer Proffer",
-    title: "Visionary Media Producer · Story-Driven Culture Builder",
-    session: "Cinematic Narratives That Move Culture",
-    tagline:
-      "Turn iconic music, real-life stories and cultural truth into story-driven projects that travel across screens, platforms and generations.",
-    accent: "houston",
-    flyer: spencerFlyer,
   },
 ];
 
