@@ -14,6 +14,12 @@ import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
 import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
 import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
 import starlettaDupois from "@/assets/guests/starletta-dupois.png";
+import adRoberts from "@/assets/guests/ad-roberts.png";
+import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
+import andreNotice from "@/assets/guests/andre-notice.png";
+import angelaLewis from "@/assets/guests/angela-lewis.png";
+import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
+import drCamHill from "@/assets/guests/dr-cam-hill.png";
 
 const specialGuests = [
   { name: "Eve Pomerance", role: "Casting Director", image: evePomerance },
@@ -23,11 +29,17 @@ const specialGuests = [
   { name: "Dr. Latanya Edenburgs", role: "Speaker & Coach", image: latanyaEdenburgs },
   { name: "Toni Tomlin", role: "Speaker & Coach", image: toniTomlin },
   { name: "Starletta Dupois", role: "Actress", image: starlettaDupois },
+  { name: "A.D. Roberts", role: "Speaker & Coach", image: adRoberts },
+  { name: "Andre Notice", role: "Speaker & Coach", image: andreNotice },
+  { name: "Anita Osuigwe-Spencer", role: "Writer & Director", image: anitaOsuigweSpencer },
+  { name: "Dr. Cam Hill", role: "Moderator", image: drCamHill },
 ];
 
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
   { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
+  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
+  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
   { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
 ];
 
