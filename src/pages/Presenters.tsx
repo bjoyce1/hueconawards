@@ -271,11 +271,28 @@ function PresenterSection({
   return (
     <section
       ref={ref}
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="group/section relative py-20 lg:py-28 overflow-hidden"
       style={{
         background: `radial-gradient(ellipse at ${glowX} 50%, hsl(${accentHsl} / 0.14) 0%, transparent 55%), linear-gradient(180deg, hsl(var(--background)) 0%, hsl(${accentHsl} / 0.05) 40%, hsl(${accentHsl} / 0.08) 60%, hsl(var(--background)) 100%)`,
       }}
     >
+      {/* Hover background image */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-0 group-hover/section:opacity-30 transition-opacity duration-700 ease-out"
+        style={{
+          backgroundImage: `url(${hoverBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-0 group-hover/section:opacity-100 transition-opacity duration-700"
+        style={{
+          background: `linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.4) 50%, hsl(var(--background) / 0.7) 100%)`,
+        }}
+      />
       {/* Animated pulsing glow — activates on scroll into view */}
       <div
         aria-hidden="true"
