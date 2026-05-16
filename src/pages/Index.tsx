@@ -10,8 +10,10 @@ import hueLogo from "@/assets/hue-logo.png";
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const lastTimeRef = useRef(0);
   const mutedRef = useRef(false);
+  const scrolledRef = useRef(false);
 
   useEffect(() => {
     const v = videoRef.current;
@@ -31,9 +33,19 @@ const Index = () => {
 
     const onTimeUpdate = () => {
       // Detect loop restart: currentTime jumps backwards
-      if (!mutedRef.current && v.currentTime + 0.5 < lastTimeRef.current) {
-        v.muted = true;
-        mutedRef.current = true;
+      if (v.currentTime + 0.5 < lastTimeRef.current) {
+        // First playthrough complete: mute audio + auto-scroll once
+        if (!mutedRef.current) {
+          v.muted = true;
+          mutedRef.current = true;
+        }
+        if (!scrolledRef.current) {
+          scrolledRef.current = true;
+          const next = heroRef.current?.nextElementSibling as HTMLElement | null;
+          if (next) {
+            next.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
       }
       lastTimeRef.current = v.currentTime;
     };
@@ -47,7 +59,7 @@ const Index = () => {
       <Navigation />
 
       {/* Promo Video Section — Hero */}
-      <section className="min-h-screen flex flex-col relative overflow-hidden">
+      <section ref={heroRef} className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Full-bleed looping video */}
         <video
           ref={videoRef}
