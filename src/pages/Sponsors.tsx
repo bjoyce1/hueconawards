@@ -96,11 +96,11 @@ const Sponsors = () => {
             Sponsorship <span className="text-gold">Opportunities</span>
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             {sponsorTiers.map((tier, idx) => (
               <div
                 key={idx}
-                className="bg-card border-2 border-border rounded-lg p-8 card-hover flex flex-col"
+                className="bg-card border-2 border-border rounded-lg p-8 card-hover flex flex-col h-full"
                 style={{
                   borderColor: tier.color === "gold" ? "hsl(var(--gold))" : tier.color === "houston" ? "hsl(var(--houston-blue))" : "hsl(var(--border))",
                 }}
@@ -110,7 +110,7 @@ const Sponsors = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-center mb-2">{tier.tier}</h3>
                 <div className="text-3xl font-bold text-center text-gold mb-6">{tier.price}</div>
-                
+
                 <ul className="space-y-3 mb-8 flex-grow">
                   {tier.benefits.map((benefit, bidx) => (
                     <li key={bidx} className="flex items-start gap-2 text-sm">
@@ -120,7 +120,7 @@ const Sponsors = () => {
                   ))}
                 </ul>
 
-                <Button variant={tier.color === "gold" ? "hero" : "outline_gold"} className="w-full" asChild>
+                <Button variant={tier.color === "gold" ? "hero" : "outline_gold"} className="w-full mt-auto" asChild>
                   <a href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Sponsorship Inquiry: ${tier.tier}`)}&body=${encodeURIComponent(`Hi HUECONA team,\n\nWe're interested in the ${tier.tier} sponsorship (${tier.price}).\n\nCompany:\nContact:\nPhone:\n\nThanks!`)}`}>
                     Select {tier.tier}
                   </a>
