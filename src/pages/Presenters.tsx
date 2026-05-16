@@ -252,19 +252,6 @@ function PresenterSection({
   presenter: Presenter;
   index: number;
   onOpen: () => void;
-}) {
-  // @ts-expect-error - legacy signature handled below
-  return _PresenterSectionImpl({ presenter: p, index: idx, onOpen });
-}
-
-const _PresenterSectionImpl = ({
-  presenter: p,
-  index: idx,
-  onOpen,
-}: {
-  presenter: Presenter;
-  index: number;
-  onOpen: () => void;
 }) => {
   const { ref, visible } = useReveal<HTMLElement>();
   const isGold = p.accent === "gold";
