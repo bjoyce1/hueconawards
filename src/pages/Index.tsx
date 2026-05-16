@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,21 +9,53 @@ import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 
 const Index = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const lastTimeRef = useRef(0);
+  const mutedRef = useRef(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    // Try to start unmuted; if browser blocks, fall back to muted autoplay
+    v.muted = false;
+    v.volume = 1;
+    const tryPlay = v.play();
+    if (tryPlay && typeof tryPlay.catch === "function") {
+      tryPlay.catch(() => {
+        v.muted = true;
+        mutedRef.current = true;
+        v.play().catch(() => {});
+      });
+    }
+
+    const onTimeUpdate = () => {
+      // Detect loop restart: currentTime jumps backwards
+      if (!mutedRef.current && v.currentTime + 0.5 < lastTimeRef.current) {
+        v.muted = true;
+        mutedRef.current = true;
+      }
+      lastTimeRef.current = v.currentTime;
+    };
+
+    v.addEventListener("timeupdate", onTimeUpdate);
+    return () => v.removeEventListener("timeupdate", onTimeUpdate);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navigation />
 
       {/* Promo Video Section — Hero */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Full-bleed looping video */}
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover z-0"
           autoPlay
-          muted
           loop
           playsInline
           preload="metadata"
-          poster=""
         >
           <source
             src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
@@ -30,31 +63,25 @@ const Index = () => {
           />
         </video>
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/60 z-0" />
-        
-        {/* Subtle ambient light */}
-        <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-houston/5 rounded-full blur-3xl animate-pulse delay-700" />
-        </div>
+        {/* Bottom gradient overlay for copy readability */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/80 to-transparent z-0" />
 
-        <div className="container mx-auto px-4 z-10 text-center">
-          <div className="max-w-5xl mx-auto text-center mb-10 animate-fade-in">
+        <div className="container mx-auto px-4 z-10 text-center mt-auto pb-12 pt-24">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">See the Vision</p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4">
               Experience <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">HUECONA</span>
             </h1>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-6" />
-            <p className="text-sm text-muted-foreground mb-8">
+            <p className="text-sm text-muted-foreground mb-6">
               Watch our cinematic promo showcasing the vision and energy of HUECONA
             </p>
-          </div>
 
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-gold/30 rounded-full mx-auto flex items-start justify-center p-2">
-              <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse" />
+            {/* Scroll Indicator */}
+            <div className="animate-bounce mt-4">
+              <div className="w-6 h-10 border-2 border-gold/30 rounded-full mx-auto flex items-start justify-center p-2">
+                <div className="w-1 h-2 bg-gold/60 rounded-full animate-pulse" />
+              </div>
             </div>
           </div>
         </div>
