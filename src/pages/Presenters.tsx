@@ -178,29 +178,49 @@ const Presenters = () => {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="pb-24 lg:pb-32 pt-8">
-        <div className="container mx-auto px-4">
-          <div className="space-y-20 lg:space-y-32 max-w-7xl mx-auto">
-            {presenters.map((p, idx) => (
-              <PresenterRow
-                key={p.id}
-                presenter={p}
-                index={idx}
-                onOpen={() => setActive(p)}
+      <div className="space-y-0">
+        {presenters.map((p, idx) => {
+          const isGold = p.accent === "gold";
+          return (
+            <section
+              key={p.id}
+              className="relative py-20 lg:py-28 overflow-hidden"
+              style={{
+                background: isGold
+                  ? `radial-gradient(ellipse at 25% 50%, hsl(var(--gold) / 0.14) 0%, transparent 55%), linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--gold) / 0.05) 40%, hsl(var(--gold) / 0.08) 60%, hsl(var(--background)) 100%)`
+                  : `radial-gradient(ellipse at 75% 50%, hsl(var(--houston-blue) / 0.14) 0%, transparent 55%), linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--houston-blue) / 0.05) 40%, hsl(var(--houston-blue) / 0.08) 60%, hsl(var(--background)) 100%)`,
+              }}
+            >
+              {/* Subtle noise overlay */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                }}
               />
-            ))}
-          </div>
+              <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                  <PresenterRow
+                    presenter={p}
+                    index={idx}
+                    onOpen={() => setActive(p)}
+                  />
+                </div>
+              </div>
+            </section>
+          );
+        })}
 
-          {/* More to come */}
-          <div className="mt-24 lg:mt-32 text-center">
+        {/* More to come */}
+        <section className="py-24 lg:py-32 text-center relative">
+          <div className="container mx-auto px-4">
             <div className="inline-block px-6 py-4 rounded-2xl border border-dashed border-border/60 bg-background/30 hover:border-gold/40 transition-colors duration-500">
               <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground font-semibold">
                 More presenters announced soon
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Lightbox */}
       <Dialog open={active !== null} onOpenChange={() => setActive(null)}>
