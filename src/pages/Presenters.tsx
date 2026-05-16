@@ -358,7 +358,7 @@ const PresenterRow = ({
         onClick={onOpen}
         onMouseMove={handleTilt}
         onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-        className={`lg:col-span-7 group relative block w-full rounded-2xl overflow-hidden border ${accentBorder} ${accentGlow} bg-background/40 transition-all duration-500 hover:-translate-y-2`}
+        className={`lg:col-span-7 group relative block w-full rounded-2xl overflow-hidden border ${accentBorder} bg-background/40 transition-all duration-500 hover:-translate-y-2`}
         style={{
           transform: `perspective(1200px) rotateX(${tilt.y * -4}deg) rotateY(${tilt.x * 4}deg)`,
           transition: "transform 0.25s ease-out",
