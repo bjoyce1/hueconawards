@@ -83,7 +83,13 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
                   asChild
                   className="group transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
                 >
-                  <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <a
+                    href={MARBLISM_URL}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    onClick={() => trackAffiliateClick("meet_your_ai_team")}
+                    onAuxClick={() => trackAffiliateClick("meet_your_ai_team")}
+                  >
                     Meet Your AI Team
                     <ArrowUpRight className="ml-1 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
@@ -94,7 +100,13 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
                   asChild
                   className="transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
                 >
-                  <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <a
+                    href={MARBLISM_URL}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    onClick={() => trackAffiliateClick("claim_huecona_offer")}
+                    onAuxClick={() => trackAffiliateClick("claim_huecona_offer")}
+                  >
                     Claim HUECONA Offer
                   </a>
                 </Button>
