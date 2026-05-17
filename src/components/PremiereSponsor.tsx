@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Sparkles, ArrowUpRight } from "lucide-react";
 import marblismLogo from "@/assets/sponsors/marblism.png";
+import marblismBg from "@/assets/sponsors/marblism-bg.png";
 
 const MARBLISM_URL = "https://marblism.link/huecona-awards";
 
@@ -10,8 +11,14 @@ interface PremiereSponsorProps {
 
 const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
   return (
-    <section className={`py-20 bg-background ${className}`}>
-      <div className="container mx-auto px-4">
+    <section className={`relative py-20 overflow-hidden ${className}`}>
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{ backgroundImage: `url(${marblismBg})` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-background/80 z-0" aria-hidden="true" />
+      <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-10">
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-3 inline-flex items-center gap-2">
             <Sparkles size={14} /> Premiere Sponsor
