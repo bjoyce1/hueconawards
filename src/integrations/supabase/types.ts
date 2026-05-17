@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      affiliate_clicks: {
+        Row: {
+          created_at: string
+          cta: string
+          destination_url: string
+          id: string
+          partner: string
+          referrer_path: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          cta: string
+          destination_url: string
+          id?: string
+          partner: string
+          referrer_path?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          cta?: string
+          destination_url?: string
+          id?: string
+          partner?: string
+          referrer_path?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
