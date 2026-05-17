@@ -2,8 +2,24 @@ import { Button } from "./ui/button";
 import { Sparkles, ArrowUpRight } from "lucide-react";
 import marblismLogo from "@/assets/sponsors/marblism.png";
 import marblismBg from "@/assets/sponsors/marblism-bg.png";
+import { supabase } from "@/integrations/supabase/client";
 
 const MARBLISM_URL = "https://marblism.link/huecona-awards";
+
+const trackAffiliateClick = (cta: string) => {
+  // Fire-and-forget; never block navigation if logging fails.
+  try {
+    void supabase.from("affiliate_clicks").insert({
+      partner: "marblism",
+      cta,
+      destination_url: MARBLISM_URL,
+      referrer_path: typeof window !== "undefined" ? window.location.pathname : null,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    });
+  } catch {
+    // ignore
+  }
+};
 
 interface PremiereSponsorProps {
   className?: string;
