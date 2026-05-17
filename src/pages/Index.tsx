@@ -72,7 +72,8 @@ const Index = () => {
           autoPlay
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
+          poster={heroHome}
         >
           <source
             src="https://zrxsztpwawevybwwnegc.supabase.co/storage/v1/object/public/reels/Hunecona_Sizzle_DT_v07.mp4"
