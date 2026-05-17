@@ -45,8 +45,8 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto rounded-2xl border border-gold/40 bg-gradient-to-br from-charcoal via-charcoal to-background p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-5xl mx-auto rounded-2xl border border-gold/40 bg-gradient-to-br from-charcoal via-charcoal to-background p-5 sm:p-8 md:p-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <a
               href={MARBLISM_URL}
               target="_blank"
@@ -54,12 +54,12 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
               aria-label="Visit Marblism"
               onClick={() => trackAffiliateClick("logo")}
               onAuxClick={() => trackAffiliateClick("logo")}
-              className="block bg-white rounded-xl p-10 flex items-center justify-center min-h-[180px] transition-transform duration-500 hover:scale-[1.02]"
+              className="bg-white rounded-xl p-5 sm:p-8 md:p-10 flex items-center justify-center min-h-[120px] sm:min-h-[160px] md:min-h-[180px] transition-transform duration-500 hover:scale-[1.02]"
             >
               <img
                 src={marblismLogo}
                 alt="Marblism — AI Employees Dream Team"
-                className="max-h-24 w-auto object-contain"
+                className="max-h-16 sm:max-h-20 md:max-h-24 w-auto object-contain"
                 loading="lazy"
               />
             </a>
