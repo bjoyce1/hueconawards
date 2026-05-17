@@ -125,7 +125,7 @@ const MarblismFeature = () => {
             {pains.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 rounded-lg border-2 border-neutral-900 bg-white/70 backdrop-blur px-4 py-3 text-sm text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-[color:var(--m-yellow)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0a0a0a] motion-reduce:transition-none"
+                className="flex items-center gap-3 rounded-lg border-2 border-neutral-900 bg-white px-4 py-3 text-sm text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-[color:var(--m-yellow)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_#0a0a0a] motion-reduce:transition-none"
                 style={{ ['--m-yellow' as any]: MARBLISM_YELLOW, animationDelay: `${i * 80}ms` }}
               >
                 <span className="flex-shrink-0">{p.icon}</span>
