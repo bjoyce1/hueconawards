@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import MarblismRibbon from "@/components/MarblismRibbon";
 import TicketTierCard from "@/components/TicketTierCard";
 import TravelPackageCard from "@/components/TravelPackageCard";
 import { Button } from "@/components/ui/button";
@@ -548,6 +549,12 @@ const Tickets = () => {
         </div>
       </section>
 
+      <MarblismRibbon
+        eyebrow="Attendee Perk"
+        headline="Every HUECONA ticket unlocks exclusive access to Marblism AI Employees."
+        ctaLabel="Claim HUECONA Offer"
+        ctaKey="tickets_ribbon"
+      />
       <Footer />
     </div>
   );

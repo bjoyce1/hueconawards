@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import MarblismRibbon from "@/components/MarblismRibbon";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, Clock, MapPin, Download } from "lucide-react";
@@ -311,6 +312,12 @@ const Schedule = () => {
         </div>
       </section>
 
+      <MarblismRibbon
+        eyebrow="Networking Lounge Sponsor"
+        headline="Recharge between sessions in the Marblism AI Lounge."
+        ctaLabel="Meet Your AI Team"
+        ctaKey="schedule_ribbon"
+      />
       <Footer />
     </div>
   );
