@@ -68,7 +68,7 @@ const Index = () => {
         {/* Full-bleed looping video */}
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-contain md:object-contain lg:object-cover bg-background z-0"
           autoPlay
           loop
           playsInline
