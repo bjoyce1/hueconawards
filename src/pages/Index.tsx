@@ -387,6 +387,7 @@ const Index = () => {
         </div>
       </section>
 
+      <PremiereSponsor />
       <SponsorWall />
       </main>
 
