@@ -2,8 +2,24 @@ import { Button } from "./ui/button";
 import { Sparkles, ArrowUpRight } from "lucide-react";
 import marblismLogo from "@/assets/sponsors/marblism.png";
 import marblismBg from "@/assets/sponsors/marblism-bg.png";
+import { supabase } from "@/integrations/supabase/client";
 
 const MARBLISM_URL = "https://marblism.link/huecona-awards";
+
+const trackAffiliateClick = (cta: string) => {
+  // Fire-and-forget; never block navigation if logging fails.
+  try {
+    void supabase.from("affiliate_clicks").insert({
+      partner: "marblism",
+      cta,
+      destination_url: MARBLISM_URL,
+      referrer_path: typeof window !== "undefined" ? window.location.pathname : null,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    });
+  } catch {
+    // ignore
+  }
+};
 
 interface PremiereSponsorProps {
   className?: string;
@@ -35,6 +51,8 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
               target="_blank"
               rel="sponsored noopener noreferrer"
               aria-label="Visit Marblism"
+              onClick={() => trackAffiliateClick("logo")}
+              onAuxClick={() => trackAffiliateClick("logo")}
               className="block bg-white rounded-xl p-10 flex items-center justify-center min-h-[180px] transition-transform duration-500 hover:scale-[1.02]"
             >
               <img
@@ -65,7 +83,13 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
                   asChild
                   className="group transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
                 >
-                  <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <a
+                    href={MARBLISM_URL}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    onClick={() => trackAffiliateClick("meet_your_ai_team")}
+                    onAuxClick={() => trackAffiliateClick("meet_your_ai_team")}
+                  >
                     Meet Your AI Team
                     <ArrowUpRight className="ml-1 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
@@ -76,7 +100,13 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
                   asChild
                   className="transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
                 >
-                  <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <a
+                    href={MARBLISM_URL}
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                    onClick={() => trackAffiliateClick("claim_huecona_offer")}
+                    onAuxClick={() => trackAffiliateClick("claim_huecona_offer")}
+                  >
                     Claim HUECONA Offer
                   </a>
                 </Button>
