@@ -51,6 +51,8 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
               target="_blank"
               rel="sponsored noopener noreferrer"
               aria-label="Visit Marblism"
+              onClick={() => trackAffiliateClick("logo")}
+              onAuxClick={() => trackAffiliateClick("logo")}
               className="block bg-white rounded-xl p-10 flex items-center justify-center min-h-[180px] transition-transform duration-500 hover:scale-[1.02]"
             >
               <img
