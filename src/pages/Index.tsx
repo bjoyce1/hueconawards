@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
 import PremiereSponsor from "@/components/PremiereSponsor";
+import MarblismFeature from "@/components/MarblismFeature";
 import EventCard from "@/components/EventCard";
 import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
@@ -163,6 +164,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Marblism — Premiere Sponsor Feature */}
+      <MarblismFeature />
 
       {/* What Is HUECONA Section */}
       <section className="py-28 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-card/50 via-background to-background">
