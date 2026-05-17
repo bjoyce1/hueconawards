@@ -59,13 +59,23 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
                 our official partner link.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button variant="hero" size="lg" asChild>
+                <Button
+                  variant="hero"
+                  size="lg"
+                  asChild
+                  className="group transition-all duration-300 ease-out hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
+                >
                   <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
                     Meet Your AI Team
-                    <ArrowUpRight className="ml-1" />
+                    <ArrowUpRight className="ml-1 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </Button>
-                <Button variant="outline_gold" size="lg" asChild>
+                <Button
+                  variant="outline_gold"
+                  size="lg"
+                  asChild
+                  className="transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
+                >
                   <a href={MARBLISM_URL} target="_blank" rel="sponsored noopener noreferrer">
                     Claim HUECONA Offer
                   </a>
