@@ -28,7 +28,7 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto rounded-2xl border border-gold/40 bg-gradient-to-br from-charcoal via-charcoal to-background p-8 md:p-12 shadow-[0_10px_60px_-20px_hsl(var(--gold)/0.35)]">
+        <div className="max-w-5xl mx-auto rounded-2xl border border-gold/40 bg-gradient-to-br from-charcoal via-charcoal to-background p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <a
               href={MARBLISM_URL}
