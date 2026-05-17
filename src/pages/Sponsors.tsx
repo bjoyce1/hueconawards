@@ -11,6 +11,7 @@ import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
 import SponsorWall from "@/components/SponsorWall";
+import PremiereSponsor from "@/components/PremiereSponsor";
 
 const Sponsors = () => {
   const sponsorTiers = [
