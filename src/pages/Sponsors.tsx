@@ -89,6 +89,8 @@ const Sponsors = () => {
         </div>
       </section>
 
+      <PremiereSponsor />
+
       {/* Sponsorship Tiers */}
       <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
