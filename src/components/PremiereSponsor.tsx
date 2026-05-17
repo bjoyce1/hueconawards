@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Sparkles, ArrowUpRight } from "lucide-react";
 import marblismLogo from "@/assets/sponsors/marblism.png";
+import marblismBg from "@/assets/sponsors/marblism-bg.png";
 
 const MARBLISM_URL = "https://marblism.link/huecona-awards";
 
