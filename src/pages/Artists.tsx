@@ -66,9 +66,9 @@ const Artists = () => {
     <div className="min-h-screen">
       <Navigation />
       <SEO
-        title="Special Guest & Production Team — HUECONA 2026"
+        title="Special Guests & Production Team — HUECONA 2026"
         description="Meet the special guests and production team behind HUECONA 2026 — actors, writers, casting directors, producers, and creative leaders."
-        path="/artists"
+        path="/guests"
       />
 
       {/* Hero Section */}
@@ -84,7 +84,7 @@ const Artists = () => {
             alt="HUE"
             className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in"
           />
-          <DisplayHeadline accent="Guest" className="mb-6 animate-fade-in">Special</DisplayHeadline>
+          <DisplayHeadline accent="Guests" className="mb-6 animate-fade-in">Special</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
             Celebrating the talent, creativity, and vision of Houston's entertainment community
           </p>
