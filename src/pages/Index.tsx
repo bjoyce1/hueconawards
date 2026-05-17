@@ -62,7 +62,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <SEO title="HUECONA Conference & Awards — Houston Entertainment" description="Two days uniting Hollywood and Houston across Film, Music, Arts, Fashion, Sports & Culinary at Blossom Hotel Houston, July 16–17, 2026." path="/" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
-
+      <main>
       {/* Promo Video Section — Hero */}
       <section ref={heroRef} className="min-h-screen flex flex-col relative overflow-hidden">
         {/* Full-bleed looping video */}
@@ -386,6 +386,7 @@ const Index = () => {
       </section>
 
       <SponsorWall />
+      </main>
 
       <Footer />
     </div>
