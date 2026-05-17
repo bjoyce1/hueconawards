@@ -117,6 +117,8 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
               </p>
             </div>
           </div>
+
+          <MarblismAITeam />
         </div>
       </div>
     </section>
