@@ -339,7 +339,7 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-28">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-card/60 to-card/20 border border-border/50 rounded-2xl p-14">
+          <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-card/60 to-card/20 border border-border/50 rounded-2xl p-6 sm:p-10 md:p-14">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">Be Part of It</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Join the <span className="text-gold">Movement</span>
