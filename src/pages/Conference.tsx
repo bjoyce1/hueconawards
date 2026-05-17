@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import MarblismRibbon from "@/components/MarblismRibbon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -189,6 +190,12 @@ const Conference = () => {
         </DialogContent>
       </Dialog>
 
+      <MarblismRibbon
+        eyebrow="Conference Premiere Sponsor"
+        headline="Behind every modern creator: an AI team. Meet Marblism."
+        ctaLabel="Hire AI Employees"
+        ctaKey="conference_ribbon"
+      />
       <Footer />
     </div>
   );

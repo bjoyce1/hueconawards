@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom";
-import { Instagram, Twitter, Facebook, Youtube, Mail } from "lucide-react";
+import { Instagram, Twitter, Facebook, Youtube, Mail, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { supabase } from "@/integrations/supabase/client";
 import hueLogo from "@/assets/hue-logo.png";
+import marblismLogo from "@/assets/sponsors/marblism/logo-full-dark.png";
+
+const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const trackFooterClick = () => {
+  try {
+    void supabase.from("affiliate_clicks").insert({
+      partner: "marblism",
+      cta: "footer_logo",
+      destination_url: MARBLISM_URL,
+      referrer_path: typeof window !== "undefined" ? window.location.pathname : null,
+      user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+    });
+  } catch {
+    // ignore
+  }
+};
 
 const Footer = () => {
   return (
@@ -108,22 +125,23 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Sponsor Logos Placeholder */}
+        {/* Premiere Sponsor */}
         <div className="mt-8 pt-8 border-t border-border">
-          <p className="text-center text-muted-foreground text-sm mb-4">Proud Partners & Sponsors</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
-            <div className="w-32 h-16 bg-muted rounded flex items-center justify-center text-xs">
-              Sponsor Logo
-            </div>
-            <div className="w-32 h-16 bg-muted rounded flex items-center justify-center text-xs">
-              Sponsor Logo
-            </div>
-            <div className="w-32 h-16 bg-muted rounded flex items-center justify-center text-xs">
-              Sponsor Logo
-            </div>
-            <div className="w-32 h-16 bg-muted rounded flex items-center justify-center text-xs">
-              Sponsor Logo
-            </div>
+          <p className="text-center text-gold uppercase tracking-[0.3em] text-xs mb-4 inline-flex items-center gap-2 w-full justify-center">
+            <Sparkles size={12} /> Premiere Sponsor
+          </p>
+          <div className="flex justify-center">
+            <a
+              href={MARBLISM_URL}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              aria-label="Visit Marblism — Premiere Sponsor"
+              onClick={trackFooterClick}
+              onAuxClick={trackFooterClick}
+              className="bg-white rounded-md px-6 py-3 transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100"
+            >
+              <img src={marblismLogo} alt="Marblism — Premiere Sponsor" className="h-10 w-auto object-contain" loading="lazy" />
+            </a>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
+import MarblismRibbon from "@/components/MarblismRibbon";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Film, Music, Palette, UtensilsCrossed, Trophy, Send, Star, Award } from "lucide-react";
@@ -242,6 +243,12 @@ const Awards = () => {
         </DialogContent>
       </Dialog>
 
+      <MarblismRibbon
+        eyebrow="Awards Night Sponsor"
+        headline="Tonight's stage is powered by Marblism — your AI Employee dream team."
+        ctaLabel="Hire AI Employees"
+        ctaKey="awards_ribbon"
+      />
       <Footer />
     </div>
   );

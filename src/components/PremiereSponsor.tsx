@@ -3,6 +3,7 @@ import { Sparkles, ArrowUpRight } from "lucide-react";
 import marblismLogo from "@/assets/sponsors/marblism.png";
 import marblismBg from "@/assets/sponsors/marblism-bg.png";
 import { supabase } from "@/integrations/supabase/client";
+import MarblismAITeam from "./MarblismAITeam";
 
 const MARBLISM_URL = "https://marblism.link/huecona-awards";
 
@@ -116,6 +117,8 @@ const PremiereSponsor = ({ className = "" }: PremiereSponsorProps) => {
               </p>
             </div>
           </div>
+
+          <MarblismAITeam />
         </div>
       </div>
     </section>
