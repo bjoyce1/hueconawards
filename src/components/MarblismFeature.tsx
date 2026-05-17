@@ -221,7 +221,7 @@ const MarblismFeature = () => {
             </a>
           </Button>
         </div>
-        <p className="text-center text-xs text-neutral-800/70 mt-5">
+        <p className="text-center text-xs text-neutral-900/80 mt-5 font-medium">
           Affiliate partnership — HUECONA may earn a commission.
         </p>
       </div>
