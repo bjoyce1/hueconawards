@@ -212,40 +212,38 @@ const Index = () => {
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto" />
         </div>
 
-        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+        <div className="relative md:h-[600px] overflow-hidden flex flex-col md:block">
           <div
-            className="absolute top-0 left-0 h-full w-full md:w-[60%] overflow-hidden"
+            className="relative md:absolute md:top-0 md:left-0 h-[300px] sm:h-[380px] md:h-full w-full md:w-[60%] overflow-hidden md:[clip-path:polygon(0_0,100%_0,calc(100%-80px)_100%,0_100%)]"
             style={{
-              clipPath: "polygon(0 0, 100% 0, calc(100% - 80px) 100%, 0 100%)",
               background:
                 "linear-gradient(135deg, hsla(43, 60%, 30%, 0.7), hsla(0, 0%, 0%, 0.85)), radial-gradient(circle at 30% 40%, hsl(43, 74%, 35%), hsl(0, 0%, 5%) 70%)",
             }}
           >
-            <div className="absolute inset-0 p-8 md:p-20 flex flex-col justify-end items-start">
-              <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-gold mb-4">From Hollywood</p>
-              <h3 className="font-serif text-5xl md:text-7xl font-medium leading-none tracking-tight">
+            <div className="absolute inset-0 p-6 sm:p-10 md:p-20 flex flex-col justify-end items-start">
+              <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.35em] sm:tracking-[0.4em] uppercase text-gold mb-3 md:mb-4">From Hollywood</p>
+              <h3 className="font-serif text-4xl sm:text-5xl md:text-7xl font-medium leading-none tracking-tight">
                 Star <span className="italic text-gold-highlight">Capital</span>
               </h3>
-              <p className="text-sm text-muted-foreground mt-4 max-w-xs leading-relaxed">
+              <p className="text-sm text-muted-foreground mt-3 md:mt-4 max-w-xs leading-relaxed">
                 A century of craft. The stages, soundtracks, and screens that taught the world what entertainment looks like.
               </p>
             </div>
           </div>
 
           <div
-            className="absolute top-0 right-0 h-full w-full md:w-[60%] overflow-hidden"
+            className="relative md:absolute md:top-0 md:right-0 h-[300px] sm:h-[380px] md:h-full w-full md:w-[60%] overflow-hidden md:[clip-path:polygon(80px_0,100%_0,100%_100%,0_100%)]"
             style={{
-              clipPath: "polygon(80px 0, 100% 0, 100% 100%, 0 100%)",
               background:
                 "linear-gradient(225deg, hsla(226, 70%, 30%, 0.7), hsla(0, 0%, 0%, 0.85)), radial-gradient(circle at 70% 60%, hsl(226, 100%, 30%), hsl(0, 0%, 5%) 70%)",
             }}
           >
-            <div className="absolute inset-0 p-8 md:p-20 flex flex-col justify-end items-end text-right">
-              <p className="text-[11px] font-bold tracking-[0.4em] uppercase text-[hsl(226,100%,70%)] mb-4">To Houston</p>
-              <h3 className="font-serif text-5xl md:text-7xl font-medium leading-none tracking-tight">
+            <div className="absolute inset-0 p-6 sm:p-10 md:p-20 flex flex-col justify-end items-end text-right">
+              <p className="text-[10px] sm:text-[11px] font-bold tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[hsl(226,100%,70%)] mb-3 md:mb-4">To Houston</p>
+              <h3 className="font-serif text-4xl sm:text-5xl md:text-7xl font-medium leading-none tracking-tight">
                 <span className="italic text-[hsl(226,100%,75%)]">Lone Star</span> State
               </h3>
-              <p className="text-sm text-muted-foreground mt-4 max-w-xs leading-relaxed">
+              <p className="text-sm text-muted-foreground mt-3 md:mt-4 max-w-xs leading-relaxed">
                 The next chapter. A city writing its own grammar for film, music, fashion, and food on its own terms.
               </p>
             </div>
@@ -341,7 +339,7 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-28">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-card/60 to-card/20 border border-border/50 rounded-2xl p-14">
+          <div className="max-w-4xl mx-auto text-center bg-gradient-to-b from-card/60 to-card/20 border border-border/50 rounded-2xl p-6 sm:p-10 md:p-14">
             <p className="text-gold/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">Be Part of It</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Join the <span className="text-gold">Movement</span>
