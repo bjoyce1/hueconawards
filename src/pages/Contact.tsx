@@ -184,7 +184,7 @@ const Contact = () => {
       </section>
 
       {/* Volunteer Sign-up */}
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Users className="text-gold mx-auto mb-6" size={64} />

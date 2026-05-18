@@ -215,7 +215,7 @@ const Tickets = () => {
       </section>
 
       {/* You're Invited Section */}
-      <section className="py-28 bg-gradient-to-b from-charcoal via-charcoal to-background relative overflow-hidden">
+      <section className="py-28 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -286,7 +286,7 @@ const Tickets = () => {
       </section>
 
       {/* Countdown Timer */}
-      <section className="py-20 bg-gradient-to-b from-charcoal to-background relative overflow-hidden">
+      <section className="py-20 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.03)_50%,transparent_100%)]" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -459,7 +459,7 @@ const Tickets = () => {
       </section>
 
       {/* Event Details */}
-      <section className="py-28 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-28 bg-charcoal">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
