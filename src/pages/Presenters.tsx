@@ -11,6 +11,7 @@ import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
+import toniFlyer from "@/assets/presenters/toni-flyer.png";
 
 type Accent = "gold" | "houston" | "red";
 
