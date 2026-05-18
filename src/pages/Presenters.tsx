@@ -11,8 +11,9 @@ import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
+import toniFlyer from "@/assets/presenters/toni-flyer.png";
 
-type Accent = "gold" | "houston" | "red";
+type Accent = "gold" | "houston" | "red" | "pink";
 
 type Presenter = {
   id: string;
@@ -46,6 +47,17 @@ const presenters: Presenter[] = [
     tagline: "Pause. Realign. Move forward with clarity and intention.",
     accent: "gold",
     flyer: latanyaFlyer,
+  },
+  {
+    id: "toni",
+    name: "Toni Tomlin",
+    role: "The Intention Quotient™ Experience",
+    title: "Creator of The Intention Quotient™ · Founder, My Healing Suite™ · 20+ Year Navy Veteran",
+    session: "You Already Know",
+    tagline:
+      "A powerful masterclass for people ready to stop overriding themselves, reconnect with what they already know, and move forward with clarity, confidence, and intention.",
+    accent: "pink",
+    flyer: toniFlyer,
   },
   {
     id: "andre",
@@ -101,6 +113,12 @@ const accentTokens: Record<Accent, {
     numHover: "hsl(355 78% 60%)",
     role: "hsl(355 70% 65%)",
     session: "hsl(355 70% 75%)",
+  },
+  pink: {
+    num: "hsl(328 50% 32%)",
+    numHover: "hsl(328 85% 62%)",
+    role: "hsl(328 85% 70%)",
+    session: "hsl(328 80% 78%)",
   },
 };
 
