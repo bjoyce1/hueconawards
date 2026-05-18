@@ -136,10 +136,14 @@ const Presenters = () => {
 
       {/* HERO MARQUEE */}
       <section className="relative min-h-[80vh] flex flex-col justify-end pt-32 pb-20 overflow-hidden border-b border-gold-antique/40">
-        <div
+        <video
           aria-hidden="true"
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${presentersHeroBg})` }}
+          src={presentersHeroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 z-0 w-full h-full object-cover"
         />
         <div
           aria-hidden="true"
