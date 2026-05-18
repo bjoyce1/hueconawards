@@ -8,41 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cinematic Dark Theme - HUE Awards */
-    --background: 0 0% 4%;
+    /* BMW-inspired dark navy theme — HUECONA */
+    --background: 210 20% 8%;          /* deeper than surface-dark */
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 10%;
+    --card: 210 18% 13%;                /* matches surface-dark */
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
+    --popover: 210 18% 11%;
     --popover-foreground: 0 0% 98%;
 
-    /* Gold Accent - Luxury Hollywood Feel */
+    /* Gold Accent */
     --primary: 43 74% 53%;
-    --primary-foreground: 0 0% 10%;
+    --primary-foreground: 210 20% 8%;
 
     /* Houston Blue Accent */
     --secondary: 226 100% 56%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 15% 18%;
+    --muted-foreground: 210 8% 70%;
 
     --accent: 43 74% 53%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 210 20% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
+    --border: 210 15% 22%;              /* hairline on dark navy */
+    --input: 210 18% 14%;
     --ring: 43 74% 53%;
 
-    --radius: 0.5rem;
+
+    /* BMW-style sharp corners — square cards/buttons/inputs site-wide */
+    --radius: 0rem;
 
     /* Custom HUE Colors */
-    --charcoal: 0 0% 10%;
+    --charcoal: 210 18% 13%;          /* BMW surface-dark #1a2129 */
+    --charcoal-elevated: 215 18% 18%; /* BMW surface-dark-elevated #262e38 */
     --gold: 43 74% 53%;
     --gold-light: 43 74% 65%;
     --gold-highlight: 43 76% 71%;
@@ -51,14 +54,13 @@ All colors MUST be HSL.
     --houston-blue: 226 100% 56%;
     --pure-white: 0 0% 100%;
 
-    /* Cinematic Effects */
-    --vignette: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-    --gold-glow: 0 0 40px hsla(43, 74%, 53%, 0.5);
+    /* Subdued cinematic effects (BMW: no glows) */
+    --vignette: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(43, 74%, 53%), hsl(43, 74%, 65%));
-    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 4%), hsl(0, 0%, 8%));
+    --gradient-dark: linear-gradient(180deg, hsl(210, 18%, 10%), hsl(210, 18%, 13%));
   }
 }
 
@@ -137,18 +139,23 @@ All colors MUST be HSL.
     @apply transition-transform duration-700 ease-out;
   }
 
-  /* Gold Glow Effect */
+  /* BMW-style: no glow, no shadow — depth via color-block contrast only */
   .gold-glow {
-    @apply transition-all duration-300;
+    @apply transition-colors duration-300;
   }
 
   .gold-glow:hover {
-    box-shadow: var(--gold-glow);
+    @apply border-gold;
   }
 
-  /* Card Hover */
+  /* BMW-style card: flat, hairline border tightens on hover */
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    @apply transition-colors duration-300 hover:border-gold;
+  }
+
+  /* BMW eyebrow label */
+  .bmw-eyebrow {
+    @apply text-[11px] font-bold tracking-[0.15em] uppercase;
   }
 
   /* Cinematic Vignette */

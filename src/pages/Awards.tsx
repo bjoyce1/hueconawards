@@ -90,7 +90,7 @@ const Awards = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
+          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
           <div className="inline-block mb-4 px-4 py-1 bg-houston/20 border border-houston/40 rounded-full">
             <p className="text-houston font-semibold text-sm tracking-wider">
               NOMINATIONS NOW OPEN
