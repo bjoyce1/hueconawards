@@ -7,6 +7,20 @@ import HonoreesGrid from "@/components/HonoreesGrid";
 import { Users, Target, MapPin, Award } from "lucide-react";
 import heroAbout from "@/assets/hero-about.jpg";
 import hueLogo from "@/assets/hue-logo.png";
+import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
+import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
+import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
+import angelaLewis from "@/assets/guests/angela-lewis.png";
+import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
+
+const productionTeam = [
+  { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
+  { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
+  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
+  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
+  { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
+];
+
 
 const About = () => {
   return (
