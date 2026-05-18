@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import hueLogo from "@/assets/hue-logo.png";
 import marblismLogo from "@/assets/sponsors/marblism/logo-full-dark.png";
 
-const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const MARBLISM_URL = "https://marblism.link/huecona-awards?lang=en";
 const trackFooterClick = () => {
   try {
     void supabase.from("affiliate_clicks").insert({

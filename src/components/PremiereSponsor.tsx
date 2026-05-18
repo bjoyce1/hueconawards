@@ -5,7 +5,7 @@ import marblismBg from "@/assets/sponsors/marblism-bg.png";
 import { supabase } from "@/integrations/supabase/client";
 import MarblismAITeam from "./MarblismAITeam";
 
-const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const MARBLISM_URL = "https://marblism.link/huecona-awards?lang=en";
 
 const trackAffiliateClick = (cta: string) => {
   // Fire-and-forget; never block navigation if logging fails.
