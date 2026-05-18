@@ -34,7 +34,6 @@ const About = () => {
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroAbout})` }}
         />
-        <div className="absolute inset-0 bg-charcoal/70 z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
           <DisplayHeadline accent="HUECONA" className="mb-6 animate-fade-in">About</DisplayHeadline>
