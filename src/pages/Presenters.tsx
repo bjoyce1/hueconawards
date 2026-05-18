@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
+import hueconaLogo from "@/assets/huecona-logo-flame.png";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
@@ -123,6 +124,14 @@ const Presenters = () => {
             background:
               "radial-gradient(ellipse 80% 60% at 50% 100%, hsla(43, 60%, 25%, 0.4), transparent 70%), radial-gradient(ellipse 60% 40% at 20% 30%, hsla(43, 60%, 20%, 0.3), transparent 70%)",
           }}
+        />
+
+        <img
+          src={hueconaLogo}
+          alt="HUECONA"
+          aria-hidden="true"
+          className="huecona-logo-float pointer-events-auto absolute top-1/2 left-1/2 -translate-y-1/2 translate-x-[2vw] md:translate-x-[8vw] lg:translate-x-[14vw] z-[5] w-[200px] md:w-[320px] lg:w-[420px] h-auto opacity-90 select-none"
+          draggable={false}
         />
 
         <div className="relative z-10 px-[max(2rem,5vw)]">
