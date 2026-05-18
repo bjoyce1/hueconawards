@@ -13,7 +13,7 @@ import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import toniFlyer from "@/assets/presenters/toni-flyer.png";
 
-type Accent = "gold" | "houston" | "red";
+type Accent = "gold" | "houston" | "red" | "pink";
 
 type Presenter = {
   id: string;
