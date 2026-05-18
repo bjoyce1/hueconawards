@@ -114,6 +114,12 @@ const accentTokens: Record<Accent, {
     role: "hsl(355 70% 65%)",
     session: "hsl(355 70% 75%)",
   },
+  pink: {
+    num: "hsl(328 50% 32%)",
+    numHover: "hsl(328 85% 62%)",
+    role: "hsl(328 85% 70%)",
+    session: "hsl(328 80% 78%)",
+  },
 };
 
 const Presenters = () => {
