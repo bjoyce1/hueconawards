@@ -266,7 +266,7 @@ const Schedule = () => {
           <img
             src={hueLogo}
             alt="HUECONA"
-            className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in"
+            className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in"
           />
           <DisplayHeadline accent="Schedule" className="mb-6 animate-fade-in">Event</DisplayHeadline>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up mb-8">

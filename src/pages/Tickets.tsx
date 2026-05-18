@@ -192,14 +192,14 @@ const Tickets = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-charcoal z-0" />
         <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-fade-in" />
-          <div className="inline-block mb-6 px-5 py-2 bg-gold/10 backdrop-blur-sm border border-gold/30 rounded-full animate-fade-in">
+          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
+          <div className="inline-block mb-6 px-5 py-2 bg-gold/10 border border-gold/30 rounded-full animate-fade-in">
             <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
               Official Attendee Invitation
             </p>
           </div>
           <DisplayHeadline accent="& Awards" className="mb-8 animate-fade-in">HUECONA Conference</DisplayHeadline>
-          <div className="inline-flex items-center gap-2 sm:gap-3 mb-8 px-4 sm:px-6 py-2 sm:py-2.5 max-w-full bg-houston/10 backdrop-blur-sm border border-houston/30 rounded-full animate-slide-up">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-8 px-4 sm:px-6 py-2 sm:py-2.5 max-w-full bg-houston/10 border border-houston/30 rounded-full animate-slide-up">
             <span className="shrink-0 w-2 h-2 rounded-full bg-houston animate-pulse" />
             <p className="text-houston font-medium text-xs sm:text-sm tracking-wide text-center">
               July 16–17, 2026 • Blossom Hotel • Houston, Texas
@@ -236,14 +236,14 @@ const Tickets = () => {
                 { icon: <UtensilsCrossed size={24} />, label: "Culinary Arts" },
                 { icon: <Megaphone size={24} />, label: "Media & Innovation" },
               ].map((item, idx) => (
-                <div key={idx} className="group bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-5 transition-all duration-300 hover:border-gold/30 hover:bg-card/80">
+                <div key={idx} className="group bg-card/50 border border-border/50 rounded-xl p-5 transition-all duration-300 hover:border-gold/30 hover:bg-card/80">
                   <div className="text-gold/70 mb-3 flex justify-center transition-colors group-hover:text-gold">{item.icon}</div>
                   <p className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80 transition-colors">{item.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="inline-block px-8 py-4 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 border border-gold/20 rounded-2xl">
+            <div className="inline-block px-8 py-4 bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 border border-gold/20 rounded-none">
               <p className="text-base text-muted-foreground">
                 Whether you're building your career, launching a brand, or expanding your network —<br />
                 <span className="text-gold font-medium">HUECONA is where Houston's creative future happens.</span>
@@ -270,8 +270,8 @@ const Tickets = () => {
               { icon: <Award size={32} />, title: "HUE Awards Gala", desc: "Red carpet arrivals, live performances, culinary tastings, and recognition of Houston's brightest creatives." },
               { icon: <Sparkles size={32} />, title: "VIP Mixers & Activations", desc: "Exclusive lounges, brand experiences, and private receptions with speakers and honorees." },
             ].map((item, idx) => (
-              <div key={idx} className="group relative bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all duration-300 hover:border-gold/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              <div key={idx} className="group relative bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-none p-8 transition-all duration-300 hover:border-gold/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-none" />
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-gold/20">
                     <div className="text-gold">{item.icon}</div>
@@ -300,8 +300,8 @@ const Tickets = () => {
                 { label: "Seconds", value: timeLeft.seconds },
               ].map((item) => (
                 <div key={item.label} className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-b from-gold/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative bg-card/50 backdrop-blur-sm border border-gold/20 rounded-2xl p-4 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-b from-gold/10 to-transparent rounded-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative bg-card/50 border border-gold/20 rounded-none p-4 md:p-6">
                     <div className="text-3xl md:text-5xl font-bold text-gold mb-1 tabular-nums">{String(item.value).padStart(2, '0')}</div>
                     <div className="text-muted-foreground text-xs md:text-sm font-medium uppercase tracking-wider">{item.label}</div>
                   </div>
@@ -333,10 +333,10 @@ const Tickets = () => {
 
           {/* Group Rates */}
           <div className="mt-16 max-w-2xl mx-auto">
-            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-2xl p-10 text-center overflow-hidden">
+            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-none p-10 text-center overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-none bg-gold/10 flex items-center justify-center mx-auto mb-6">
                   <Users className="text-gold" size={32} />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Group Rates (5+)</h3>
@@ -357,7 +357,7 @@ const Tickets = () => {
       <section className="py-28 bg-charcoal relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-none bg-gold/10 flex items-center justify-center mx-auto mb-6">
               <Hotel className="text-gold" size={32} />
             </div>
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Stay With Us</p>
@@ -371,7 +371,7 @@ const Tickets = () => {
 
           {/* Hotel Info */}
           <div className="max-w-4xl mx-auto mb-20">
-            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-2xl p-10 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-card/80 to-card/40 border border-gold/20 rounded-none p-10 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
               <div className="relative z-10">
                 <p className="text-gold text-sm font-medium tracking-[0.15em] uppercase mb-2">Official Host Hotel</p>
@@ -383,7 +383,7 @@ const Tickets = () => {
                     { room: "Executive Rooms", price: "$209", note: "per night" },
                     { room: "Suites", price: "From $299", note: "per night" },
                   ].map((item, idx) => (
-                    <div key={idx} className="group text-center p-6 bg-background/30 backdrop-blur-sm rounded-xl border border-border/30 transition-all hover:border-gold/20">
+                    <div key={idx} className="group text-center p-6 bg-background/30 rounded-xl border border-border/30 transition-all hover:border-gold/20">
                       <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider mb-3">{item.room}</p>
                       <p className="text-2xl font-bold text-gold mb-1">{item.price}</p>
                       <p className="text-muted-foreground text-xs">{item.note}</p>
@@ -423,7 +423,7 @@ const Tickets = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-houston/5 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-14">
-            <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-none bg-gold/10 flex items-center justify-center mx-auto mb-6">
               <MapPin className="text-gold" size={32} />
             </div>
             <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Location</p>
@@ -437,7 +437,7 @@ const Tickets = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
             {whyHoustonStats.map((stat, idx) => (
-              <div key={idx} className="group bg-gradient-to-b from-card/80 to-card/40 border border-border/50 rounded-2xl p-6 text-center transition-all hover:border-gold/20">
+              <div key={idx} className="group bg-gradient-to-b from-card/80 to-card/40 border border-border/50 rounded-none p-6 text-center transition-all hover:border-gold/20">
                 <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
                 <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>
@@ -470,7 +470,7 @@ const Tickets = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-none p-8 transition-all hover:border-gold/20">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
                   <Calendar className="text-gold" size={24} />
                 </div>
@@ -481,7 +481,7 @@ const Tickets = () => {
                 </p>
               </div>
 
-              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+              <div className="group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-none p-8 transition-all hover:border-gold/20">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
                   <Clock className="text-gold" size={24} />
                 </div>
@@ -493,7 +493,7 @@ const Tickets = () => {
               </div>
             </div>
 
-            <div className="mt-6 group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-2xl p-8 transition-all hover:border-gold/20">
+            <div className="mt-6 group bg-gradient-to-br from-card/80 to-card/40 border border-border/50 rounded-none p-8 transition-all hover:border-gold/20">
               <div className="flex items-start gap-5 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-gold/20">
                   <MapPin className="text-gold" size={24} />
@@ -504,7 +504,7 @@ const Tickets = () => {
                   <p className="text-sm text-muted-foreground">Houston, TX</p>
                 </div>
               </div>
-              <div className="aspect-video bg-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-border/30">
+              <div className="aspect-video bg-background/30 rounded-xl flex items-center justify-center border border-border/30">
                 <span className="text-muted-foreground text-sm">Interactive Map Coming Soon</span>
               </div>
             </div>
@@ -516,8 +516,8 @@ const Tickets = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-houston/5 to-transparent rounded-3xl blur-xl" />
-            <div className="relative bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-sm border border-gold/20 rounded-3xl p-14">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 via-houston/5 to-transparent rounded-none blur-xl" />
+            <div className="relative bg-gradient-to-br from-card/60 to-card/30 border border-gold/20 rounded-none p-14">
               <p className="text-gold/80 text-sm font-medium tracking-[0.2em] uppercase mb-4">Don't Miss Out</p>
               <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Reserve Your Spot Today</h3>
               <p className="text-muted-foreground mb-10 max-w-md mx-auto">
