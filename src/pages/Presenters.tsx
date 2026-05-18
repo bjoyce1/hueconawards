@@ -128,6 +128,15 @@ const Presenters = () => {
         />
 
         <img
+          src={hueconaLogoFlat}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[140%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
+          style={{ opacity: 0.5, transform: "translate(-50%, -50%) rotate(30deg)" }}
+          draggable={false}
+        />
+
+        <img
           src={hueconaLogo}
           alt="HUECONA"
           aria-hidden="true"
