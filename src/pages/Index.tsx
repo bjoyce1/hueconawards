@@ -113,7 +113,6 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
-        <div className="absolute inset-0 bg-[#0f1419]/85 z-0" />
 
         <div className="container mx-auto px-4 z-10 relative text-center">
           <div className="animate-fade-in max-w-4xl mx-auto">
