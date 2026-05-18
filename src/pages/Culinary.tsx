@@ -117,7 +117,7 @@ const Culinary = () => {
       </section>
 
       {/* Cultural Showcases */}
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">
             Houston <span className="text-gold">Culture</span>

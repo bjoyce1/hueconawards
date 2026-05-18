@@ -169,7 +169,7 @@ const Sponsors = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">

@@ -131,7 +131,7 @@ const About = () => {
       </section>
 
       {/* Hollywood Production Team */}
-      <section className="py-24 bg-gradient-to-b from-charcoal to-background">
+      <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Users className="text-gold mx-auto mb-4" size={56} />
