@@ -8,36 +8,37 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cinematic Dark Theme - HUE Awards */
-    --background: 0 0% 4%;
+    /* BMW-inspired dark navy theme — HUECONA */
+    --background: 210 20% 8%;          /* deeper than surface-dark */
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 10%;
+    --card: 210 18% 13%;                /* matches surface-dark */
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
+    --popover: 210 18% 11%;
     --popover-foreground: 0 0% 98%;
 
-    /* Gold Accent - Luxury Hollywood Feel */
+    /* Gold Accent */
     --primary: 43 74% 53%;
-    --primary-foreground: 0 0% 10%;
+    --primary-foreground: 210 20% 8%;
 
     /* Houston Blue Accent */
     --secondary: 226 100% 56%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 15% 18%;
+    --muted-foreground: 210 8% 70%;
 
     --accent: 43 74% 53%;
-    --accent-foreground: 0 0% 10%;
+    --accent-foreground: 210 20% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
+    --border: 210 15% 22%;              /* hairline on dark navy */
+    --input: 210 18% 14%;
     --ring: 43 74% 53%;
+
 
     /* BMW-style sharp corners — square cards/buttons/inputs site-wide */
     --radius: 0rem;
