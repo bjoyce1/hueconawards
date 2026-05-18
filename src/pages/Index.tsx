@@ -5,7 +5,6 @@ import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
-import PremiereSponsor from "@/components/PremiereSponsor";
 import MarblismFeature from "@/components/MarblismFeature";
 import EventCard from "@/components/EventCard";
 import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
