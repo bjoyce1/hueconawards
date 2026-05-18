@@ -143,18 +143,20 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow cursor-pointer">
-                <div className="aspect-square bg-muted flex items-center justify-center">
-                  <Users className="text-muted-foreground" size={64} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-white/10 border border-white/10 max-w-6xl mx-auto">
+            {productionTeam.map((member) => (
+              <div key={member.name} className="group bg-card overflow-hidden transition-colors duration-300 hover:bg-[hsl(var(--charcoal-elevated))]">
+                <div className="aspect-[4/5] overflow-hidden bg-charcoal">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} — ${member.role}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Team Member {i}</h3>
-                  <p className="text-gold text-sm mb-3">Executive Producer</p>
-                  <p className="text-muted-foreground text-sm">
-                    Award-winning producer with 20+ years of Hollywood experience in major film and television productions.
-                  </p>
+                <div className="p-5">
+                  <p className="bmw-eyebrow text-gold mb-2">{member.role}</p>
+                  <h3 className="text-base font-bold tracking-tight text-white leading-snug">{member.name}</h3>
                 </div>
               </div>
             ))}
