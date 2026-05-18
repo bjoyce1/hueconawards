@@ -204,14 +204,16 @@ const Tickets = () => {
               July 16–17, 2026 • Blossom Hotel • Houston, Texas
             </p>
           </div>
-          <p className="text-lg md:text-xl text-gold/90 font-medium mb-6 animate-slide-up italic">
-            "Houston: The New Mecca for Film, Music & Creative Arts"
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up leading-relaxed">
-            Two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex flex-col items-center justify-center px-4 py-3 gap-1">
+        <p className="text-sm md:text-base text-gold/90 font-medium italic text-center">
+          "Houston: The New Mecca for Film, Music & Creative Arts"
+        </p>
+        <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto text-center leading-relaxed">
+          Two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
+        </p>
+      </div>
 
       {/* You're Invited Section */}
       <section className="py-28 bg-background relative overflow-hidden">

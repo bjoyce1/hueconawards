@@ -268,9 +268,6 @@ const Schedule = () => {
             className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in"
           />
           <DisplayHeadline accent="Schedule" className="mb-6 animate-fade-in">Event</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up mb-8">
-            Two days of panels, screenings, performances, and celebrations — July 16–17, 2026
-          </p>
           <Button variant="hero" size="lg" asChild>
             <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2" size={20} />
@@ -279,6 +276,11 @@ const Schedule = () => {
           </Button>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Two days of panels, screenings, performances, and celebrations — July 16–17, 2026
+        </p>
+      </div>
 
       {/* Schedule Tabs */}
       <section className="py-24 bg-background">

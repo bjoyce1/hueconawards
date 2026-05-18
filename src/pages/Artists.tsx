@@ -84,11 +84,13 @@ const Artists = () => {
             className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in"
           />
           <DisplayHeadline accent="Guests" className="mb-6 animate-fade-in">Special</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Celebrating the talent, creativity, and vision of Houston's entertainment community
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Celebrating the talent, creativity, and vision of Houston's entertainment community
+        </p>
+      </div>
 
       {/* Special Guests */}
       <section className="py-14 sm:py-20 bg-charcoal">

@@ -35,11 +35,13 @@ const Culinary = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
           <DisplayHeadline accent="Culture" className="mb-6 animate-fade-in">Culinary &</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Celebrating Houston's world-class food scene and vibrant cultural landscape
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Celebrating Houston's world-class food scene and vibrant cultural landscape
+        </p>
+      </div>
 
       {/* Houston Food Highlights */}
       <section className="py-24 bg-charcoal">
