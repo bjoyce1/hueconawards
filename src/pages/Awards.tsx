@@ -96,11 +96,13 @@ const Awards = () => {
             </p>
           </div>
           <DisplayHeadline accent="Awards" className="mb-6 animate-fade-in">HUECONA</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
+        </p>
+      </div>
 
       {/* Award Categories */}
       <section className="py-24 bg-charcoal">

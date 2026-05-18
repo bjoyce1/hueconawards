@@ -25,11 +25,13 @@ const Contact = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
           <DisplayHeadline accent="Touch" className="mb-6 animate-fade-in">Get in</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Have questions? Want to get involved? We'd love to hear from you
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Have questions? Want to get involved? We'd love to hear from you
+        </p>
+      </div>
 
       {/* Contact Options */}
       <section className="py-24 bg-charcoal">

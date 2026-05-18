@@ -82,11 +82,13 @@ const Sponsors = () => {
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
           <DisplayHeadline accent="Sponsor" className="mb-6 animate-fade-in">Become a</DisplayHeadline>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            Partner with HUECONA to support Houston's creative community and gain visibility with hundreds of entertainment professionals
-          </p>
         </div>
       </section>
+      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
+        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
+          Partner with HUECONA to support Houston's creative community and gain visibility with hundreds of entertainment professionals
+        </p>
+      </div>
 
       <PremiereSponsor />
 
