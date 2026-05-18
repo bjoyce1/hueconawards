@@ -132,7 +132,7 @@ const Presenters = () => {
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[140%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
-          style={{ opacity: 0.08, transform: "translate(-50%, -50%) rotate(30deg)" }}
+          style={{ opacity: 0.8, transform: "translate(-50%, -50%) rotate(30deg)" }}
           draggable={false}
         />
 
