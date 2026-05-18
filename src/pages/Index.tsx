@@ -267,12 +267,14 @@ const Index = () => {
       {/* Event Highlights */}
       <section className={`py-20 ${SURFACE_DARK} border-t ${HAIRLINE}`}>
         <div className="container mx-auto px-4">
-          <p className={`${EYEBROW} text-gold mb-4`}>What Awaits You</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-12 text-white">
-            Event <span className="text-gold">Highlights</span>
-          </h2>
+          <Reveal>
+            <p className={`${EYEBROW} text-gold mb-4`}>What Awaits You</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-12 text-white">
+              Event <span className="text-gold">Highlights</span>
+            </h2>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+          <Reveal delay={1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
             {[
               { icon: <Users size={22} />, title: "Panels & Q&A", description: "Engage with industry leaders and gain insights from Hollywood professionals" },
               { icon: <Film size={22} />, title: "Film Screenings", description: "Experience premiere screenings of groundbreaking independent films" },
@@ -290,18 +292,20 @@ const Index = () => {
                 <p className="text-sm font-light text-white/70 leading-relaxed">{item.description}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Silent Interlude — cleaner, less ornamental */}
       <section className="relative py-24 bg-[#0f1419] border-t border-white/10 overflow-hidden">
         <div className="container mx-auto px-4">
-          <p className={`${EYEBROW} text-gold mb-6`}>HUECONA · 2026</p>
-          <p className="text-3xl sm:text-4xl md:text-6xl font-black leading-[1.1] tracking-tight max-w-4xl text-white">
-            This isn't a stop on the tour.<br />
-            Houston is the <span className="text-gold">next stage</span>.
-          </p>
+          <Reveal>
+            <p className={`${EYEBROW} text-gold mb-6`}>HUECONA · 2026</p>
+            <p className="text-3xl sm:text-4xl md:text-6xl font-black leading-[1.1] tracking-tight max-w-4xl text-white">
+              This isn't a stop on the tour.<br />
+              Houston is the <span className="text-gold">next stage</span>.
+            </p>
+          </Reveal>
         </div>
       </section>
 
