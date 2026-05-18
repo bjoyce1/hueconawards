@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
 import presentersHeroVideo from "@/assets/presenters-hero.mp4";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
@@ -124,6 +124,17 @@ const accentTokens: Record<Accent, {
 
 const Presenters = () => {
   const [active, setActive] = useState<Presenter | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !muted;
+    v.muted = next;
+    if (!next) v.play().catch(() => {});
+    setMuted(next);
+  };
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -137,6 +148,7 @@ const Presenters = () => {
       {/* HERO MARQUEE */}
       <section className="relative min-h-[80vh] flex flex-col justify-end pt-32 pb-20 overflow-hidden border-b border-gold-antique/40">
         <video
+          ref={videoRef}
           aria-hidden="true"
           src={presentersHeroVideo}
           autoPlay
@@ -154,6 +166,14 @@ const Presenters = () => {
           }}
         />
 
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={muted ? "Unmute video" : "Mute video"}
+          className="absolute top-28 right-[max(1.5rem,4vw)] z-20 grid place-items-center w-11 h-11 rounded-full border border-gold/60 bg-background/40 backdrop-blur-md text-gold hover:bg-gold hover:text-background transition-colors"
+        >
+          {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
 
         <img
           src={hueconaLogo}
