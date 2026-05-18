@@ -9,8 +9,10 @@ import pandemonium from "@/assets/sponsors/pandemonium.png";
 import pinkElephant from "@/assets/sponsors/pink-elephant.png";
 import savvy from "@/assets/sponsors/savvy-designs.png";
 import popcornBar from "@/assets/sponsors/popcorn-bar.png";
+import marblism from "@/assets/sponsors/marblism-icon.png";
 
 export const sponsors = [
+  { name: "Marblism", logo: marblism, invert: false },
   { name: "Pandemonium Entertainment Partners", logo: pandemonium, invert: false },
   { name: "Empyrean Public Relations", logo: empyrean, invert: true },
   { name: "Meteor 17", logo: meteor, invert: false },
