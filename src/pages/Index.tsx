@@ -85,8 +85,8 @@ const Index = () => {
           />
         </video>
 
-        {/* Flat bottom band for copy readability — no soft gradient blur, BMW style */}
-        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#1a2129] via-[#1a2129]/85 to-transparent z-0" />
+        {/* Flat bottom band for copy readability — no gradient, BMW style */}
+        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-[#1a2129]/85 z-0" />
 
         <div className="container mx-auto px-4 z-10 text-center mt-auto pb-16 pt-24">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
@@ -114,7 +114,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center opacity-25 z-0"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f1419]/70 via-[#0f1419]/85 to-[#0f1419] z-0" />
+        <div className="absolute inset-0 bg-[#0f1419]/85 z-0" />
 
         <div className="container mx-auto px-4 z-10 relative text-center">
           <div className="animate-fade-in max-w-4xl mx-auto">
