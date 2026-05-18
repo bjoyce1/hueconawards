@@ -49,6 +49,17 @@ const presenters: Presenter[] = [
     flyer: latanyaFlyer,
   },
   {
+    id: "toni",
+    name: "Toni Tomlin",
+    role: "The Intention Quotient™ Experience",
+    title: "Creator of The Intention Quotient™ · Founder, My Healing Suite™ · 20+ Year Navy Veteran",
+    session: "You Already Know",
+    tagline:
+      "A powerful masterclass for people ready to stop overriding themselves, reconnect with what they already know, and move forward with clarity, confidence, and intention.",
+    accent: "pink",
+    flyer: toniFlyer,
+  },
+  {
     id: "andre",
     name: "Coach Andre",
     role: "The New Currency",
