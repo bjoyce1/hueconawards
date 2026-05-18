@@ -120,10 +120,15 @@ const Presenters = () => {
       <section className="relative min-h-[80vh] flex flex-col justify-end pt-32 pb-20 overflow-hidden border-b border-gold-antique/40">
         <div
           aria-hidden="true"
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${presentersHeroBg})` }}
+        />
+        <div
+          aria-hidden="true"
           className="absolute inset-0 z-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 100%, hsla(43, 60%, 25%, 0.4), transparent 70%), radial-gradient(ellipse 60% 40% at 20% 30%, hsla(43, 60%, 20%, 0.3), transparent 70%)",
+              "linear-gradient(180deg, hsla(210, 20%, 4%, 0.55) 0%, hsla(210, 20%, 4%, 0.35) 40%, hsla(210, 20%, 4%, 0.85) 100%), radial-gradient(ellipse 80% 60% at 50% 100%, hsla(43, 60%, 25%, 0.35), transparent 70%)",
           }}
         />
 
