@@ -5,7 +5,6 @@ import SEO from "@/components/SEO";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
-import hueconaLogoFlat from "@/assets/huecona-logo-flat-black.png";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
@@ -127,14 +126,6 @@ const Presenters = () => {
           }}
         />
 
-        <img
-          src={hueconaLogoFlat}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[140%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
-          style={{ opacity: 0.8, transform: "translate(-50%, -50%) rotate(30deg)" }}
-          draggable={false}
-        />
 
         <img
           src={hueconaLogo}
