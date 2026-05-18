@@ -267,7 +267,9 @@ const Schedule = () => {
             alt="HUECONA"
             className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in"
           />
-          <DisplayHeadline accent="Schedule" className="mb-6 animate-fade-in">Event</DisplayHeadline>
+          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
+            <DisplayHeadline accent="Schedule" className="animate-fade-in">Event</DisplayHeadline>
+          </div>
           <Button variant="hero" size="lg" asChild>
             <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2" size={20} />

@@ -24,7 +24,9 @@ const Contact = () => {
         />
         <div className="container mx-auto px-4 z-10 text-center">
           <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <DisplayHeadline accent="Touch" className="mb-6 animate-fade-in">Get in</DisplayHeadline>
+          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
+            <DisplayHeadline accent="Touch" className="animate-fade-in">Get in</DisplayHeadline>
+          </div>
         </div>
       </section>
       <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
