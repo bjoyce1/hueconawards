@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
 import MarblismFeature from "@/components/MarblismFeature";
 import EventCard from "@/components/EventCard";
+import Reveal from "@/components/Reveal";
 import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
 import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
@@ -87,12 +88,12 @@ const Index = () => {
 
 
         <div className="container mx-auto px-4 z-10 text-center mt-auto pb-16 pt-24">
-          <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <p className={`${EYEBROW} text-gold mb-5`}>See the Vision</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 text-white">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className={`${EYEBROW} text-gold mb-5 animate-fade-in`} style={{ animationDelay: "200ms", animationFillMode: "both" }}>See the Vision</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 text-white animate-fade-in" style={{ animationDelay: "420ms", animationFillMode: "both" }}>
               Experience <span className="text-gold">HUECONA</span>
             </h1>
-            <p className="text-sm font-light text-white/70 max-w-xl mx-auto">
+            <p className="text-sm font-light text-white/70 max-w-xl mx-auto animate-fade-in" style={{ animationDelay: "680ms", animationFillMode: "both" }}>
               Watch our cinematic promo showcasing the vision and energy of HUECONA
             </p>
           </div>
@@ -100,7 +101,7 @@ const Index = () => {
       </section>
 
       {/* M-style accent stripe — gold + houston blue divider */}
-      <div className="h-[3px] w-full flex">
+      <div className="h-[3px] w-full flex origin-left animate-hairline-sweep">
         <div className="flex-1 bg-houston" />
         <div className="flex-1 bg-gold-deep" />
         <div className="flex-1 bg-gold" />
@@ -109,7 +110,7 @@ const Index = () => {
       {/* Hero Section — flat, no glows, no blurs */}
       <section className="relative pt-28 pb-24 bg-[#0f1419] overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25 z-0"
+          className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
         <div className="absolute inset-0 bg-[#0f1419]/85 z-0" />
@@ -161,7 +162,7 @@ const Index = () => {
       {/* What Is HUECONA — denser BMW-grid */}
       <section className={`py-20 ${SURFACE_DARK}`}>
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mb-16">
+          <Reveal className="max-w-3xl mb-16">
             <p className={`${EYEBROW} text-gold mb-4`}>About the Event</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 text-white">
               What Is <span className="text-gold">HUECONA?</span>
@@ -172,10 +173,10 @@ const Index = () => {
             <p className="text-base font-light text-white/75 leading-relaxed">
               With a production team hailing from Hollywood, we're expanding opportunities to existing and rising talent in Texas. Houston, now the culture and culinary capital, is the new Mecca for entertainment innovation.
             </p>
-          </div>
+          </Reveal>
 
           {/* 4-up BMW model-card grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
+          <Reveal delay={1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
             {[
               { label: "Vision", text: "Bringing Hollywood excellence to Houston's vibrant cultural scene" },
               { label: "Mission", text: "Unite creators across Film, Music, Arts, and Culinary excellence" },
@@ -194,17 +195,19 @@ const Index = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Hollywood ↔ Houston Convergence */}
       <section className="relative bg-[#0f1419] overflow-hidden border-t border-white/10">
         <div className="container mx-auto px-4 pt-20 pb-12">
-          <p className={`${EYEBROW} text-gold mb-4`}>The Convergence</p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white max-w-3xl">
-            Two Cities. <span className="text-gold">One Stage.</span>
-          </h2>
+          <Reveal>
+            <p className={`${EYEBROW} text-gold mb-4`}>The Convergence</p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white max-w-3xl">
+              Two Cities. <span className="text-gold">One Stage.</span>
+            </h2>
+          </Reveal>
         </div>
 
         <div className="relative md:h-[560px] overflow-hidden flex flex-col md:block">
@@ -251,10 +254,12 @@ const Index = () => {
 
         <div className="py-20 px-4">
           <div className="container mx-auto">
-            <p className="text-2xl sm:text-3xl md:text-4xl font-black leading-snug tracking-tight max-w-3xl text-white">
-              Hollywood made the rules.<br />
-              Houston is writing the <span className="text-gold">next chapter</span>.
-            </p>
+            <Reveal as="p" className="text-2xl sm:text-3xl md:text-4xl font-black leading-snug tracking-tight max-w-3xl text-white">
+              <>
+                Hollywood made the rules.<br />
+                Houston is writing the <span className="text-gold">next chapter</span>.
+              </>
+            </Reveal>
           </div>
         </div>
       </section>
