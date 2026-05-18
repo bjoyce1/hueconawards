@@ -7,7 +7,7 @@ import sonny from "@/assets/sponsors/marblism/sonny.png";
 import penny from "@/assets/sponsors/marblism/penny.png";
 import stan from "@/assets/sponsors/marblism/stan.png";
 
-const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const MARBLISM_URL = "https://marblism.link/huecona-awards?lang=en";
 const MARBLISM_YELLOW = "#FFE34D";
 const MARBLISM_YELLOW_DEEP = "#F5C518";
 
