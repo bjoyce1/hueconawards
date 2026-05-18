@@ -126,6 +126,14 @@ const Presenters = () => {
           }}
         />
 
+        <img
+          src={hueconaLogo}
+          alt="HUECONA"
+          aria-hidden="true"
+          className="huecona-logo-float pointer-events-auto absolute top-1/2 left-1/2 -translate-y-1/2 translate-x-[2vw] md:translate-x-[8vw] lg:translate-x-[14vw] z-[5] w-[200px] md:w-[320px] lg:w-[420px] h-auto opacity-90 select-none"
+          draggable={false}
+        />
+
         <div className="relative z-10 px-[max(2rem,5vw)]">
           <div className="inline-flex items-center gap-4 mb-8">
             <span className="block w-16 h-px bg-gold" />
