@@ -153,6 +153,17 @@ const Presenters = () => {
               "linear-gradient(180deg, hsla(210, 20%, 4%, 0.55) 0%, hsla(210, 20%, 4%, 0.35) 40%, hsla(210, 20%, 4%, 0.85) 100%), radial-gradient(ellipse 80% 60% at 50% 100%, hsla(43, 60%, 25%, 0.35), transparent 70%)",
           }}
         />
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !muted;
+    v.muted = next;
+    if (!next) v.play().catch(() => {});
+    setMuted(next);
+  };
 
 
         <img
