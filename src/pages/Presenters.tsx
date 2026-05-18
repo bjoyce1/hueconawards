@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
+import hueconaLogoFlat from "@/assets/huecona-logo-flat-black.png";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
