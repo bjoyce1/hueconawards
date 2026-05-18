@@ -130,7 +130,7 @@ const Presenters = () => {
           src={hueconaLogo}
           alt="HUECONA"
           aria-hidden="true"
-          className="huecona-logo-float pointer-events-auto absolute top-1/2 left-1/2 -translate-y-1/2 translate-x-[2vw] md:translate-x-[8vw] lg:translate-x-[14vw] z-[5] w-[200px] md:w-[320px] lg:w-[420px] h-auto opacity-90 select-none"
+          className="huecona-logo-float pointer-events-auto absolute top-28 md:top-24 left-1/2 translate-x-[2vw] md:translate-x-[8vw] lg:translate-x-[14vw] z-[5] w-[160px] md:w-[240px] lg:w-[300px] h-auto opacity-90 select-none"
           draggable={false}
         />
 
