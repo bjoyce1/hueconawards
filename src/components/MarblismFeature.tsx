@@ -7,7 +7,7 @@ import sonny from "@/assets/sponsors/marblism/sonny.png";
 import penny from "@/assets/sponsors/marblism/penny.png";
 import stan from "@/assets/sponsors/marblism/stan.png";
 
-const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const MARBLISM_URL = "https://marblism.link/huecona-awards?lang=en";
 const MARBLISM_YELLOW = "#FFE34D";
 const MARBLISM_YELLOW_DEEP = "#F5C518";
 
@@ -186,8 +186,8 @@ const MarblismFeature = () => {
           </div>
         </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-14">
+        {/* CTA */}
+        <div className="flex justify-center items-center mt-14">
           <Button
             size="xl"
             asChild
@@ -201,23 +201,8 @@ const MarblismFeature = () => {
               onClick={() => trackClick("home_feature_primary")}
               onAuxClick={() => trackClick("home_feature_primary")}
             >
-              Hire Your AI Team
-              <ArrowUpRight className="ml-1 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </Button>
-          <Button
-            size="xl"
-            asChild
-            className="bg-white text-neutral-900 hover:bg-white hover:text-neutral-900 border-2 border-neutral-900 shadow-[6px_6px_0_0_#000] hover:shadow-[10px_10px_0_0_#000] hover:-translate-y-0.5 hover:-translate-x-0.5 active:shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:translate-x-0.5 transition-all duration-200 focus-visible:ring-4 focus-visible:ring-neutral-900/30 focus-visible:ring-offset-0 motion-reduce:transition-none"
-          >
-            <a
-              href={MARBLISM_URL}
-              target="_blank"
-              rel="sponsored noopener noreferrer"
-              onClick={() => trackClick("home_feature_secondary")}
-              onAuxClick={() => trackClick("home_feature_secondary")}
-            >
               Claim HUECONA Offer
+              <ArrowUpRight className="ml-1 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Button>
         </div>

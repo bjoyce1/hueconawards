@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import marblismLogo from "@/assets/sponsors/marblism/logo-full-dark.png";
 import marblismBanner from "@/assets/sponsors/marblism/banner.png";
 
-const MARBLISM_URL = "https://marblism.link/huecona-awards";
+const MARBLISM_URL = "https://marblism.link/huecona-awards?lang=en";
 
 const trackClick = (cta: string) => {
   try {
