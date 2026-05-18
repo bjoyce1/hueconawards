@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
-import presentersHeroBg from "@/assets/presenters-hero-bg.jpg";
+import presentersHeroVideo from "@/assets/presenters-hero.mp4";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
 import andreFlyer from "@/assets/presenters/andre-flyer.png";
 import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
