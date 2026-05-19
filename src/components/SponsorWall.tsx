@@ -10,6 +10,7 @@ import pinkElephant from "@/assets/sponsors/pink-elephant.png";
 import savvy from "@/assets/sponsors/savvy-designs.png";
 import popcornBar from "@/assets/sponsors/popcorn-bar.png";
 import marblism from "@/assets/sponsors/marblism-icon.png";
+import upwardArtistry from "@/assets/sponsors/upward-artistry.png";
 
 export const sponsors = [
   { name: "Marblism", logo: marblism, invert: false },
@@ -24,6 +25,7 @@ export const sponsors = [
   { name: "Pink Elephant Solution", logo: pinkElephant, invert: false },
   { name: "Savvy Designs", logo: savvy, invert: true },
   { name: "The Popcorn Bar", logo: popcornBar, invert: false },
+  { name: "Upward Artistry", logo: upwardArtistry, invert: false },
 ];
 
 interface SponsorWallProps {
