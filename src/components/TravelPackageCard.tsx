@@ -16,7 +16,7 @@ const TravelPackageCard = ({
 }: TravelPackageCardProps) => {
   return (
     <div
-      className={`group relative bg-gradient-to-b from-card/80 to-card/40 rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-4px] ${
+      className={`group relative bg-gradient-to-b from-card/80 to-card/40 rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-4px] flex flex-col h-full ${
         featured ? "border-2 border-gold" : "border border-border/50 hover:border-gold/30"
       }`}
     >
@@ -28,7 +28,7 @@ const TravelPackageCard = ({
       </div>
       <div className="text-xl font-bold text-gold mb-5">Starting at {price}</div>
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-5" />
-      <ul className="space-y-2.5 mb-6">
+      <ul className="space-y-2.5 mb-6 flex-grow">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
             <span className="text-gold/60 mt-1">•</span>
@@ -36,7 +36,7 @@ const TravelPackageCard = ({
           </li>
         ))}
       </ul>
-      <Button variant="outline_gold" className="w-full" asChild>
+      <Button variant="outline_gold" className="w-full mt-auto" asChild>
         <a href={`mailto:official@HUECONA.com?subject=${encodeURIComponent(`Travel Package: ${name}`)}&body=${encodeURIComponent(`Hi HUECONA team,\n\nI'd like to book the ${name} package (${price}).\n\nName:\nDates:\nGuests:\n\nThanks!`)}`}>
           Book Package
         </a>
