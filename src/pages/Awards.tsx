@@ -123,14 +123,14 @@ const Awards = () => {
               <div
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className="bg-card border border-border rounded-lg p-8 card-hover gold-glow cursor-pointer group"
+                className="bg-card border border-border rounded-lg p-8 card-hover gold-glow cursor-pointer group flex flex-col h-full"
               >
                 <div className="text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{category.title}</h3>
-                <p className="text-muted-foreground mb-4">{category.description}</p>
-                <div className="flex flex-col gap-2">
+                <p className="text-muted-foreground mb-4 flex-grow">{category.description}</p>
+                <div className="flex flex-col gap-2 mt-auto">
                   <Button variant="outline_gold" size="sm">
                     Learn More
                   </Button>

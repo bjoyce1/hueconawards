@@ -140,7 +140,7 @@ const Conference = () => {
               <div
                 key={panel.id}
                 onClick={() => setSelectedPanel(panel)}
-                className="bg-card border border-border rounded-lg p-6 card-hover gold-glow cursor-pointer group"
+                className="bg-card border border-border rounded-lg p-6 card-hover gold-glow cursor-pointer group flex flex-col h-full"
               >
                 <div className="text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
                   {panel.icon}
@@ -148,8 +148,8 @@ const Conference = () => {
                 <div className="text-houston text-sm font-semibold mb-2">{panel.category}</div>
                 <h3 className="text-xl font-bold mb-3">{panel.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{panel.speakers}</p>
-                <p className="text-muted-foreground">{panel.description}</p>
-                <Button variant="outline_gold" size="sm" className="mt-4">
+                <p className="text-muted-foreground flex-grow">{panel.description}</p>
+                <Button variant="outline_gold" size="sm" className="mt-4 self-start">
                   Learn More
                 </Button>
               </div>
