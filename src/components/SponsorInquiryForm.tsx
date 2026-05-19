@@ -68,11 +68,14 @@ const SponsorInquiryForm = () => {
       }
 
       const { error } = await supabase.from("sponsor_submissions").insert({
-        ...parsed.data,
-        phone: parsed.data.phone || null,
-        website: parsed.data.website || null,
-        message: parsed.data.message || null,
-        logo_url,
+        company_name: parsed.data.company_name,
+        contact_name: parsed.data.contact_name,
+        email: parsed.data.email,
+        tier: parsed.data.tier,
+        phone: parsed.data.phone || undefined,
+        website: parsed.data.website || undefined,
+        message: parsed.data.message || undefined,
+        logo_url: logo_url || undefined,
       });
       if (error) throw error;
 
