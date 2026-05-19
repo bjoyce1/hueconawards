@@ -184,62 +184,7 @@ const Sponsors = () => {
               </p>
             </div>
 
-            <form className="space-y-6 bg-card border border-border rounded-lg p-8">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company Name *</Label>
-                  <Input id="company" placeholder="Your company" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="contact">Contact Name *</Label>
-                  <Input id="contact" placeholder="Your name" required />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input id="email" type="email" placeholder="company@email.com" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="(555) 123-4567" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="website">Company Website</Label>
-                <Input id="website" type="url" placeholder="https://yourcompany.com" />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="tier">Interested Sponsorship Tier *</Label>
-                <select
-                  id="tier"
-                  className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
-                  required
-                >
-                  <option value="">Select a tier</option>
-                  <option value="gold">Gold Sponsor</option>
-                  <option value="silver">Silver Sponsor</option>
-                  <option value="bronze">Bronze Sponsor</option>
-                  <option value="custom">Custom Package</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Message / Questions</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell us about your sponsorship goals and any questions you have..."
-                  rows={6}
-                />
-              </div>
-
-              <Button variant="hero" type="submit" className="w-full" size="lg">
-                Submit Inquiry
-              </Button>
-            </form>
+            <SponsorInquiryForm />
           </div>
         </div>
       </section>
