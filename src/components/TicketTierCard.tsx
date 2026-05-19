@@ -25,7 +25,7 @@ const TicketTierCard = ({
 }: TicketTierCardProps) => {
   return (
     <div
-      className={`group relative bg-gradient-to-b from-card/80 to-card/40 rounded-2xl p-7 transition-all duration-300 hover:translate-y-[-4px] ${
+      className={`group relative bg-gradient-to-b from-card/80 to-card/40 rounded-2xl p-7 transition-all duration-300 hover:translate-y-[-4px] flex flex-col h-full ${
         popular ? "border-2 border-gold scale-[1.02] z-10" : "border border-border/50 hover:border-gold/30"
       }`}
     >
@@ -44,7 +44,7 @@ const TicketTierCard = ({
 
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6" />
 
-      <ul className="space-y-3 mb-8">
+      <ul className="space-y-3 mb-8 flex-grow">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-start gap-3 text-sm">
             <CheckCircle size={14} className="text-gold flex-shrink-0 mt-0.5" />
@@ -55,7 +55,7 @@ const TicketTierCard = ({
 
       <Button
         variant={variant}
-        className="w-full"
+        className="w-full mt-auto"
         size="lg"
         asChild
       >
