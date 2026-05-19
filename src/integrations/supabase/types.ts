@@ -44,6 +44,45 @@ export type Database = {
         }
         Relationships: []
       }
+      sponsor_submissions: {
+        Row: {
+          company_name: string
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          logo_url: string | null
+          message: string | null
+          phone: string | null
+          tier: string
+          website: string | null
+        }
+        Insert: {
+          company_name: string
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          logo_url?: string | null
+          message?: string | null
+          phone?: string | null
+          tier: string
+          website?: string | null
+        }
+        Update: {
+          company_name?: string
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          logo_url?: string | null
+          message?: string | null
+          phone?: string | null
+          tier?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
