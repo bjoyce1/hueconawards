@@ -1,4 +1,4 @@
-import DisplayHeadline from "@/components/DisplayHeadline";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
