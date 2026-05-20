@@ -72,7 +72,7 @@ const Artists = () => {
       />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-center justify-center pt-20">
+      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroArtists})` }}
