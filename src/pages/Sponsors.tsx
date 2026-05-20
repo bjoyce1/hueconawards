@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Trophy, Star, Award, Crown, Download, CheckCircle } from "lucide-react";
+import { Trophy, Star, Award, Crown, ExternalLink, CheckCircle } from "lucide-react";
 import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
@@ -152,10 +152,10 @@ const Sponsors = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Showcase your brand at the HUECONA Showcase Hall — open both event days to all attendees, sponsors, and press. Limited booth space available.
               </p>
-              <a href={vendorFlyer} target="_blank" rel="noopener noreferrer">
+              <a href="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg">
-                  <Download className="mr-2" />
-                  Download Vendor Flyer
+                  <ExternalLink className="mr-2" />
+                  Become A Vendor
                 </Button>
               </a>
             </div>
