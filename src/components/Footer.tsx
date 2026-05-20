@@ -79,6 +79,11 @@ const Footer = () => {
                   Get Tickets
                 </Link>
               </li>
+              <li>
+                <a href="https://www.volunteerhou.org/need/detail/?need_id=1261365" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold transition-colors">
+                  Volunteer
+                </a>
+              </li>
             </ul>
           </div>
 
