@@ -17,6 +17,7 @@ import SponsorInquiryForm from "@/components/SponsorInquiryForm";
 import CheckoutModal from "@/components/CheckoutModal";
 
 const Sponsors = () => {
+  const [vendorOpen, setVendorOpen] = useState(false);
   const sponsorTiers = [
     {
       tier: "Gold Sponsor",
