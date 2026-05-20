@@ -17,23 +17,13 @@ const Contact = () => {
       <SEO title="Contact HUECONA — Get In Touch" description="Reach the HUECONA team at official@HUECONA.com. Find the venue location, dates and partnership inquiries." path="/contact"  />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroContact})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="Touch" className="animate-fade-in">Get in</DisplayHeadline>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Have questions? Want to get involved? We'd love to hear from you
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroContact}
+        eyebrow="Connect With Us"
+        title="Get in"
+        accent="Touch"
+        description="Have questions? Want to get involved? We'd love to hear from you."
+      />
 
       {/* Contact Options */}
       <section className="py-24 bg-charcoal">

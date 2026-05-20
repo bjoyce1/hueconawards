@@ -1,4 +1,4 @@
-import DisplayHeadline from "@/components/DisplayHeadline";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
@@ -28,24 +28,13 @@ const About = () => {
       <Navigation />
       <SEO title="About HUECONA — Houston's Entertainment Movement" description="Learn about HUECONA: the mission, the team, and how Hollywood expertise is uniting with Houston's diverse cultural scene." path="/about"  />
 
-      {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroAbout})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="HUECONA" className="animate-fade-in">About</DisplayHeadline>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Houston United in Entertainment - A movement celebrating creativity across Film, Music, Arts, and Culinary excellence
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroAbout}
+        eyebrow="The Movement"
+        title="About"
+        accent="HUECONA"
+        description="Houston United in Entertainment — a movement celebrating creativity across Film, Music, Arts, and Culinary excellence."
+      />
 
       {/* Mission Statement */}
       <section className="py-24 bg-charcoal">

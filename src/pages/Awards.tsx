@@ -82,29 +82,13 @@ const Awards = () => {
       <Navigation />
       <SEO title="HUE Awards 2026 — Eight Categories Honoring Houston's Best" description="Discover the eight HUE Award categories celebrating Film, Music, Fashion, Culinary, Community Impact, Visual Arts and Lifetime Achievement. Submit nominations now." path="/awards"  />
 
-      {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroAwards})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block mb-4 px-4 py-1 bg-houston/0 border border-houston/0 rounded-full h-8">
-            <p className="text-houston font-semibold text-sm tracking-wider opacity-0">
-              ​
-            </p>
-          </div>
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="Awards" className="animate-fade-in">HUECONA</DisplayHeadline>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroAwards}
+        eyebrow="Eight Categories"
+        title="HUECONA"
+        accent="Awards"
+        description="Honoring visionaries, storytellers, and change-makers across Film, Music, Fashion, Arts, Culinary, and more."
+      />
 
       {/* Award Categories */}
       <section className="py-24 bg-charcoal">

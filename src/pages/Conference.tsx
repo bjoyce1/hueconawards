@@ -94,23 +94,13 @@ const Conference = () => {
       <SEO title="HUECONA Conference 2026 — Panels, Keynotes & Masterclasses" description="Two days of industry panels, keynotes, masterclasses and networking with Hollywood producers and Houston creators at Blossom Hotel Houston." path="/conference" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroConference})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUECONA" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="Conference" className="animate-fade-in">HUECONA</DisplayHeadline>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Panel discussions, Q&A sessions, and networking opportunities with industry leaders
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroConference}
+        eyebrow="July 16–17, 2026"
+        title="HUECONA"
+        accent="Conference"
+        description="Panel discussions, Q&A sessions, and networking opportunities with industry leaders."
+      />
 
       {/* Featured Panels - Horizontal Scroll */}
       <section className="py-16 bg-charcoal">
