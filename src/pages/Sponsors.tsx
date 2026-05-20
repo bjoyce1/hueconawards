@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -13,6 +14,7 @@ import vendorFlyer from "@/assets/vendor-flyer.jpg";
 import SponsorWall from "@/components/SponsorWall";
 import PremiereSponsor from "@/components/PremiereSponsor";
 import SponsorInquiryForm from "@/components/SponsorInquiryForm";
+import CheckoutModal from "@/components/CheckoutModal";
 
 const Sponsors = () => {
   const sponsorTiers = [
