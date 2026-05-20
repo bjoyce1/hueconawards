@@ -1,35 +1,39 @@
-# Become A Vendor — In-Site Popup Checkout
+# Hybrid Checkout — Native "Become A Vendor"
 
-Open the TicketLeap vendor page inside a modal on hueconawards.com so visitors complete the process without leaving the site.
+Build a native, on-site checkout for the single "Become A Vendor" SKU using Lovable's built-in Stripe payments. Keep TicketLeap untouched for all other tickets.
 
-## Scope (this round)
-- Only the **"Become A Vendor"** button on `src/pages/Sponsors.tsx`.
-- The Get Tickets button will be handled in a follow-up once you share its link.
+## What the visitor will experience
+- Clicks "Become A Vendor" on `/sponsors` → an in-site modal opens.
+- Modal shows: booth summary, price ($350 + $8 service fee = **$358**), and a "Proceed to Checkout" button.
+- Clicking proceed redirects to a Stripe-hosted checkout (still feels seamless, no third-party branding, returns to a success page on hueconawards.com).
+- After success, they land on `/sponsors/vendor-success` with a confirmation message and an order reference.
 
-## What you'll see
-- Click "Become A Vendor" → a large dark modal slides in over the page.
-- The TicketLeap checkout (`https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards`) loads inside the modal as an embedded frame.
-- Close button (X) in the top right + click-outside-to-close + ESC key support.
-- Mobile: modal goes full-screen so the checkout has room to breathe.
-- Background page scroll is locked while open.
+## Why Stripe (not Paddle)
+Vendor booths are an in-person event service tied to a physical venue — outside Paddle's digital-products policy. Stripe handles this cleanly.
 
-## Technical details
-1. **New component** `src/components/CheckoutModal.tsx`
-   - Built on the existing shadcn `Dialog` primitive (already in the project).
-   - Props: `open`, `onOpenChange`, `url`, `title`.
-   - Contains an `<iframe>` sized to ~90vh desktop / 100vh mobile, with `allow="payment"` and proper sandbox attributes so TicketLeap's payment flow works.
-   - Loading spinner shown until the iframe `onLoad` fires.
-   - Styled with existing dark theme tokens (no new colors).
-
-2. **Edit** `src/pages/Sponsors.tsx`
-   - Add `useState` for modal open state.
-   - Replace the `<a href=...>` "Become A Vendor" button with a `<button>` that opens the modal.
-   - Mount `<CheckoutModal>` with the TicketLeap URL.
-
-## Caveats to know
-- TicketLeap controls the iframe content; if they ever send an `X-Frame-Options: DENY` header the embed would break. Quick check during implementation — if blocked, fallback is opening in a new tab. (Most event/ticketing pages allow embedding.)
-- The transaction itself still happens on TicketLeap's secure domain (required for PCI compliance) — visually it's seamless inside your site.
+## Setup steps (in order)
+1. **Confirm prerequisites** — Project already has Lovable Cloud ✅. Payments requires a **Pro plan** — please confirm you're on Pro (or willing to upgrade) before I proceed.
+2. **Run eligibility check** (`recommend_payment_provider`) for the record.
+3. **Enable Stripe payments** (`enable_stripe_payments`) — sets up a test environment immediately so we can verify end-to-end before going live. Accepting real money later requires claiming the Stripe account (quick form, your info).
+4. **Tax handling decision** — I'll ask you to choose between:
+   - Full compliance handling (Stripe files taxes for you, +3.5% fee)
+   - Tax calculation only (+0.5%, you file)
+   - No tax automation (you handle it)
+   For a single domestic Texas vendor SKU, **"no tax automation"** is usually fine — but your call.
+5. **Create the product** in Stripe: "HUECONA 2026 Vendor Booth" — $358 one-time.
+6. **Build the checkout flow:**
+   - Edge function `create-vendor-checkout` → creates a Stripe Checkout Session.
+   - Edge function `vendor-webhook` → records successful payments in a new `vendor_orders` table (email, name, business name, amount, Stripe session id, created_at).
+   - Update `CheckoutModal` usage on `/sponsors` to show the summary card instead of an iframe, with a "Proceed to Checkout" button calling the edge function.
+   - New page `/sponsors/vendor-success` to confirm purchase.
+7. **Test in sandbox** with Stripe's test card `4242 4242 4242 4242`.
 
 ## Out of scope
-- Get Tickets button (next round).
-- Any changes to other pages, styling, or content.
+- All other tickets stay on TicketLeap (Get Tickets button still opens TicketLeap in a new tab — we revert it from the iframe modal since that won't work either).
+- No changes to other pages, branding, or content.
+
+## What I need from you before starting
+1. Confirm you're on the **Pro plan** (required for payments).
+2. Confirm the vendor price is **$358 total** ($350 booth + $8 fee), or give me the exact amount you want to charge on-site.
+3. Tax handling choice (or "default to no automation").
+4. Should the "Get Tickets" buttons sitewide be reverted to open TicketLeap in a new tab? (Currently they don't use the broken iframe modal — only "Become A Vendor" does — but worth confirming.)
