@@ -69,20 +69,26 @@ const Navigation = () => {
 
           {/* CTA — desktop only (mobile uses bottom nav Tickets tab) */}
           <div className="hidden lg:block">
-            <Link to="/tickets">
-              <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" asChild>
+              <a
+                href="https://www.eventbrite.com/e/huecona-conference-awards-tickets-1987844764201?aff=oddtdtcreator&keep_tld=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get Tickets
-              </Button>
-            </Link>
+              </a>
+            </Button>
           </div>
 
           {/* Mobile quick CTA — Tickets pill */}
-          <Link
-            to="/tickets"
+          <a
+            href="https://www.eventbrite.com/e/huecona-conference-awards-tickets-1987844764201?aff=oddtdtcreator&keep_tld=true"
+            target="_blank"
+            rel="noopener noreferrer"
             className="lg:hidden flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gold text-primary-foreground text-xs font-bold tracking-wide active:scale-95 transition-transform shadow-md"
           >
             Tickets
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
