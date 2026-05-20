@@ -1,19 +1,15 @@
-import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Trophy, Star, Award, Crown, ExternalLink, Download, CheckCircle } from "lucide-react";
+import { Trophy, Award, Crown, ExternalLink, Download, CheckCircle } from "lucide-react";
 import heroSponsors from "@/assets/hero-sponsors.jpg";
-import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
 import SponsorWall from "@/components/SponsorWall";
 import PremiereSponsor from "@/components/PremiereSponsor";
 import SponsorInquiryForm from "@/components/SponsorInquiryForm";
+
 
 
 const Sponsors = () => {
