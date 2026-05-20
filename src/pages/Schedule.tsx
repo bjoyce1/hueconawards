@@ -1,4 +1,4 @@
-import DisplayHeadline from "@/components/DisplayHeadline";
+import PageHero from "@/components/PageHero";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -256,33 +256,20 @@ const Schedule = () => {
       <SEO title="Event Schedule — HUECONA Conference & Awards 2026" description="Full two-day HUECONA schedule for July 16–17, 2026: panels, screenings, masterclasses, performances and the Awards ceremony." path="/schedule" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroSchedule})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img
-            src={hueLogo}
-            alt="HUECONA"
-            className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in"
-          />
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="Schedule" className="animate-fade-in">Event</DisplayHeadline>
-          </div>
-          <Button variant="hero" size="lg" asChild>
-            <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
-              <Download className="mr-2" size={20} />
-              Download Event Info (PDF)
-            </a>
-          </Button>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Two days of panels, screenings, performances, and celebrations — July 16–17, 2026
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroSchedule}
+        eyebrow="July 16–17, 2026"
+        title="Event"
+        accent="Schedule"
+        description="Two days of panels, screenings, performances, and celebrations."
+      >
+        <Button variant="hero" size="lg" className="rounded-none" asChild>
+          <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
+            <Download className="mr-2" size={20} />
+            Download Event Info (PDF)
+          </a>
+        </Button>
+      </PageHero>
 
       {/* Schedule Tabs */}
       <section className="py-24 bg-background">

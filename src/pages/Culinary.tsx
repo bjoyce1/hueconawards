@@ -1,4 +1,4 @@
-import DisplayHeadline from "@/components/DisplayHeadline";
+import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
@@ -27,23 +27,13 @@ const Culinary = () => {
       <SEO title="Culinary & Culture — HUECONA 2026" description="Houston's culinary innovators and cultural programming come together at HUECONA 2026. Tastings, chef showcases and creative collaborations." path="/culinary"  />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroCulinary})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="Culture" className="animate-fade-in">Culinary &</DisplayHeadline>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex items-center justify-center px-4 py-3">
-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto text-center">
-          Celebrating Houston's world-class food scene and vibrant cultural landscape
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroCulinary}
+        eyebrow="Taste of Houston"
+        title="Culinary &"
+        accent="Culture"
+        description="Celebrating Houston's world-class food scene and vibrant cultural landscape."
+      />
 
       {/* Houston Food Highlights */}
       <section className="py-24 bg-charcoal">
