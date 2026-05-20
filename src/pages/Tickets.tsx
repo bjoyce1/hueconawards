@@ -1,4 +1,4 @@
-import DisplayHeadline from "@/components/DisplayHeadline";
+import PageHero from "@/components/PageHero";
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -185,37 +185,14 @@ const Tickets = () => {
       <SEO title="Tickets & Travel Packages — HUECONA 2026" description="Reserve your HUECONA 2026 pass: Early Bird, General, Creative Professional, VIP and All-Access Platinum. Group rates and Blossom Hotel Houston travel packages available." path="/tickets" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroTickets})` }}
-        />
-        <div className="container mx-auto px-4 z-10 text-center">
-          <img src={hueLogo} alt="HUE" className="h-20 md:h-28 w-auto mx-auto mb-8 animate-fade-in" />
-          <div className="inline-block mb-6 px-5 py-2 bg-gold/10 border border-gold/30 rounded-full animate-fade-in">
-            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase">
-              Official Attendee Invitation
-            </p>
-          </div>
-          <div className="inline-block bg-black/50 backdrop-blur-md border border-white/10 rounded-xl px-6 md:px-10 py-5 md:py-7 mb-6 shadow-2xl">
-            <DisplayHeadline accent="& Awards" className="animate-fade-in">HUECONA Conference</DisplayHeadline>
-          </div>
-          <div className="inline-flex items-center gap-2 sm:gap-3 mb-8 px-4 sm:px-6 py-2 sm:py-2.5 max-w-full bg-houston/10 border border-houston/30 rounded-full animate-slide-up">
-            <span className="shrink-0 w-2 h-2 rounded-full bg-houston animate-pulse" />
-            <p className="text-houston font-medium text-xs sm:text-sm tracking-wide text-center">
-              July 16–17, 2026 • Blossom Hotel • Houston, Texas
-            </p>
-          </div>
-        </div>
-      </section>
-      <div className="bg-black min-h-[60px] flex flex-col items-center justify-center px-4 py-3 gap-1">
-        <p className="text-sm md:text-base text-gold/90 font-medium italic text-center">
-          "Houston: The New Mecca for Film, Music & Creative Arts"
-        </p>
-        <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto text-center leading-relaxed">
-          Two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.
-        </p>
-      </div>
+      <PageHero
+        backgroundImage={heroTickets}
+        eyebrow="Official Attendee Invitation"
+        eyebrowSecondary="July 16–17, 2026 · Blossom Hotel Houston"
+        title="HUECONA Conference"
+        accent="& Awards"
+        description={`"Houston: The New Mecca for Film, Music & Creative Arts" — Two unforgettable days where culture meets commerce, creativity meets opportunity, and talent meets access.`}
+      />
 
       {/* You're Invited Section */}
       <section className="py-28 bg-background relative overflow-hidden">
