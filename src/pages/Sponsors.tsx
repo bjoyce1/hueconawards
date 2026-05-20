@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Trophy, Star, Award, Crown, ExternalLink, CheckCircle } from "lucide-react";
+import { Trophy, Star, Award, Crown, ExternalLink, Download, CheckCircle } from "lucide-react";
 import heroSponsors from "@/assets/hero-sponsors.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
