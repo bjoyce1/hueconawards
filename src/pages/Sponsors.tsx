@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -13,8 +14,10 @@ import vendorFlyer from "@/assets/vendor-flyer.jpg";
 import SponsorWall from "@/components/SponsorWall";
 import PremiereSponsor from "@/components/PremiereSponsor";
 import SponsorInquiryForm from "@/components/SponsorInquiryForm";
+import CheckoutModal from "@/components/CheckoutModal";
 
 const Sponsors = () => {
+  const [vendorOpen, setVendorOpen] = useState(false);
   const sponsorTiers = [
     {
       tier: "Gold Sponsor",
@@ -152,12 +155,16 @@ const Sponsors = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Showcase your brand at the HUECONA Showcase Hall — open both event days to all attendees, sponsors, and press. Limited booth space available.
               </p>
-              <a href="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards" target="_blank" rel="noopener noreferrer">
-                <Button variant="hero" size="lg">
-                  <ExternalLink className="mr-2" />
-                  Become A Vendor
-                </Button>
-              </a>
+              <Button variant="hero" size="lg" onClick={() => setVendorOpen(true)}>
+                <ExternalLink className="mr-2" />
+                Become A Vendor
+              </Button>
+              <CheckoutModal
+                open={vendorOpen}
+                onOpenChange={setVendorOpen}
+                url="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards"
+                title="Become A Vendor"
+              />
             </div>
           </div>
         </div>

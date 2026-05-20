@@ -1,17 +1,35 @@
-## Goal
-Replace the placeholder map on `/contact` with a real embedded Google Map pinned to the event venue.
+# Become A Vendor — In-Site Popup Checkout
 
-## Venue
-**Blossom Hotel Houston** — 7611 Main Street, Houston, TX 77030
+Open the TicketLeap vendor page inside a modal on hueconawards.com so visitors complete the process without leaving the site.
 
-## Changes
+## Scope (this round)
+- Only the **"Become A Vendor"** button on `src/pages/Sponsors.tsx`.
+- The Get Tickets button will be handled in a follow-up once you share its link.
 
-**`src/pages/Contact.tsx`** — replace the placeholder `aspect-square` block (currently a centered MapPin icon + text + "Get Directions" button) with a live Google Maps embed:
+## What you'll see
+- Click "Become A Vendor" → a large dark modal slides in over the page.
+- The TicketLeap checkout (`https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards`) loads inside the modal as an embedded frame.
+- Close button (X) in the top right + click-outside-to-close + ESC key support.
+- Mobile: modal goes full-screen so the checkout has room to breathe.
+- Background page scroll is locked while open.
 
-- Use `<iframe>` pointed at `https://www.google.com/maps?q=Blossom+Hotel+Houston,+7611+Main+St,+Houston+TX+77030&output=embed`
-- Container: keep `aspect-square` (or switch to `aspect-video` for better proportions — will use `aspect-square` to preserve current layout), `rounded-lg`, `border border-border`, `overflow-hidden`
-- iframe attributes: `width="100%"`, `height="100%"`, `loading="lazy"`, `referrerPolicy="no-referrer-when-downgrade"`, `title="Blossom Hotel Houston map"`, no border
-- Below the map, keep a small caption strip with venue name + a "Get Directions" link that opens Google Maps in a new tab using the full address (`https://www.google.com/maps/dir/?api=1&destination=Blossom+Hotel+Houston,+7611+Main+St,+Houston+TX+77030`)
-- Update the existing "Venue" address block above to include the street address (currently just says "Houston, TX")
+## Technical details
+1. **New component** `src/components/CheckoutModal.tsx`
+   - Built on the existing shadcn `Dialog` primitive (already in the project).
+   - Props: `open`, `onOpenChange`, `url`, `title`.
+   - Contains an `<iframe>` sized to ~90vh desktop / 100vh mobile, with `allow="payment"` and proper sandbox attributes so TicketLeap's payment flow works.
+   - Loading spinner shown until the iframe `onLoad` fires.
+   - Styled with existing dark theme tokens (no new colors).
 
-No new dependencies, no API key required (the `output=embed` URL works without one).
+2. **Edit** `src/pages/Sponsors.tsx`
+   - Add `useState` for modal open state.
+   - Replace the `<a href=...>` "Become A Vendor" button with a `<button>` that opens the modal.
+   - Mount `<CheckoutModal>` with the TicketLeap URL.
+
+## Caveats to know
+- TicketLeap controls the iframe content; if they ever send an `X-Frame-Options: DENY` header the embed would break. Quick check during implementation — if blocked, fallback is opening in a new tab. (Most event/ticketing pages allow embedding.)
+- The transaction itself still happens on TicketLeap's secure domain (required for PCI compliance) — visually it's seamless inside your site.
+
+## Out of scope
+- Get Tickets button (next round).
+- Any changes to other pages, styling, or content.
