@@ -1,23 +1,18 @@
-import { useState } from "react";
 import PageHero from "@/components/PageHero";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Trophy, Star, Award, Crown, ExternalLink, Download, CheckCircle } from "lucide-react";
+import { Trophy, Award, Crown, ExternalLink, Download, CheckCircle } from "lucide-react";
 import heroSponsors from "@/assets/hero-sponsors.jpg";
-import hueLogo from "@/assets/hue-logo.png";
 import vendorFlyer from "@/assets/vendor-flyer.jpg";
 import SponsorWall from "@/components/SponsorWall";
 import PremiereSponsor from "@/components/PremiereSponsor";
 import SponsorInquiryForm from "@/components/SponsorInquiryForm";
-import CheckoutModal from "@/components/CheckoutModal";
+
+
 
 const Sponsors = () => {
-  const [vendorOpen, setVendorOpen] = useState(false);
   const sponsorTiers = [
     {
       tier: "Gold Sponsor",
@@ -155,16 +150,15 @@ const Sponsors = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Showcase your brand at the HUECONA Showcase Hall — open both event days to all attendees, sponsors, and press. Limited booth space available.
               </p>
-              <Button variant="hero" size="lg" onClick={() => setVendorOpen(true)}>
-                <ExternalLink className="mr-2" />
+              <a
+                href="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-gold to-[#C5A028] text-black font-bold uppercase tracking-widest px-8 py-4 rounded hover:shadow-lg transition-all duration-300 text-sm"
+              >
+                <ExternalLink className="w-4 h-4" />
                 Become A Vendor
-              </Button>
-              <CheckoutModal
-                open={vendorOpen}
-                onOpenChange={setVendorOpen}
-                url="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards"
-                title="Become A Vendor"
-              />
+              </a>
             </div>
           </div>
         </div>
