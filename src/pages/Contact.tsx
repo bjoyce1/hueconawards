@@ -17,7 +17,7 @@ const Contact = () => {
       <SEO title="Contact HUECONA — Get In Touch" description="Reach the HUECONA team at official@HUECONA.com. Find the venue location, dates and partnership inquiries." path="/contact"  />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-center justify-center pt-20">
+      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroContact})` }}

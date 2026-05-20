@@ -75,7 +75,7 @@ const Sponsors = () => {
       <SEO title="Sponsors & Partners — HUECONA 2026" description="Become a HUECONA 2026 sponsor. Explore partnership tiers and meet the brands championing Houston's entertainment future." path="/sponsors"  />
 
       {/* Hero Section */}
-      <section className="hero-section vignette relative flex items-center justify-center pt-20">
+      <section className="hero-section vignette relative flex items-end justify-center pt-20 pb-10 md:pb-14">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroSponsors})` }}
