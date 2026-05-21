@@ -150,6 +150,11 @@ const Index = () => {
                   Get Tickets
                 </Button>
               </Link>
+              <a href="https://events.ticketleap.com/tickets/riche/huecona-conference-and-awards" target="_blank" rel="noopener noreferrer">
+                <Button variant="houston" size="xl" className="rounded-none">
+                  Become A Vendor
+                </Button>
+              </a>
             </div>
           </div>
         </div>
