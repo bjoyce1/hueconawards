@@ -179,14 +179,17 @@ const Culinary = () => {
             </h2>
             
             <div className="relative aspect-video bg-charcoal rounded-lg border-2 border-gold/30 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gold/20 to-houston/20">
-                <div className="text-center">
-                  <Sparkles className="text-gold mx-auto mb-4 animate-pulse" size={64} />
-                  <p className="text-foreground font-bold text-xl">Culture Montage Video</p>
-                  <p className="text-muted-foreground">30-second loop showcasing Houston's vibrant scene</p>
-                </div>
-              </div>
+              <video
+                src="/videos/culinary-clip.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              />
             </div>
+
           </div>
         </div>
       </section>
