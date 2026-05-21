@@ -84,6 +84,8 @@ const Awards = () => {
 
       <PageHero
         backgroundImage={heroAwards}
+        videoSrc="/videos/award-hero.mp4"
+        audioSrc="/audio/awards-voiceover.mp3"
         eyebrow="Eight Categories"
         title="HUECONA"
         accent="Awards"

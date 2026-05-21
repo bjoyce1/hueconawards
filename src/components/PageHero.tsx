@@ -1,8 +1,11 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import hueLogo from "@/assets/hue-logo.png";
 
 interface PageHeroProps {
   backgroundImage: string;
+  videoSrc?: string;
+  audioSrc?: string;
   eyebrow?: string;
   eyebrowSecondary?: string;
   title: ReactNode;
@@ -19,6 +22,8 @@ interface PageHeroProps {
  */
 const PageHero = ({
   backgroundImage,
+  videoSrc,
+  audioSrc,
   eyebrow,
   eyebrowSecondary,
   title,
@@ -26,12 +31,53 @@ const PageHero = ({
   description,
   children,
 }: PageHeroProps) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [audioOn, setAudioOn] = useState(false);
+
+  const toggleAudio = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (audioOn) {
+      a.pause();
+      setAudioOn(false);
+    } else {
+      a.play().then(() => setAudioOn(true)).catch(() => setAudioOn(false));
+    }
+  };
+
   return (
     <section className="relative pt-28 pb-24 bg-[#0f1419] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
+      {videoSrc ? (
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+          src={videoSrc}
+          poster={backgroundImage}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ) : (
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+      )}
+
+      {audioSrc && (
+        <>
+          <audio ref={audioRef} src={audioSrc} preload="auto" />
+          <button
+            type="button"
+            onClick={toggleAudio}
+            aria-label={audioOn ? "Mute voiceover" : "Play voiceover"}
+            aria-pressed={audioOn}
+            className="absolute top-32 right-6 z-20 h-11 w-11 rounded-full border border-gold/40 bg-black/50 backdrop-blur text-gold hover:bg-gold hover:text-charcoal transition-colors flex items-center justify-center"
+          >
+            {audioOn ? <Volume2 size={18} /> : <VolumeX size={18} />}
+          </button>
+        </>
+      )}
 
       <div className="container mx-auto px-4 z-10 relative text-center">
         <div className="animate-fade-in max-w-4xl mx-auto">
