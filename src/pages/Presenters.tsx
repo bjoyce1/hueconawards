@@ -530,4 +530,128 @@ const Billing = ({
   );
 };
 
+const PresenterDetail = ({ presenter: p }: { presenter: Presenter }) => {
+  const tokens = accentTokens[p.accent];
+  const gallery = p.gallery && p.gallery.length > 0 ? p.gallery : [p.flyer];
+
+  return (
+    <div className="grid md:grid-cols-2 gap-0">
+      {/* Gallery */}
+      <div className="bg-charcoal p-4 md:p-6 border-b md:border-b-0 md:border-r border-gold/20">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {gallery.map((src, i) => (
+              <CarouselItem key={i}>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-background border border-gold-antique/40">
+                  <img
+                    src={src}
+                    alt={`${p.name} — image ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {gallery.length > 1 && (
+            <>
+              <CarouselPrevious className="left-2 bg-background/80 border-gold/40 text-gold hover:bg-gold hover:text-background" />
+              <CarouselNext className="right-2 bg-background/80 border-gold/40 text-gold hover:bg-gold hover:text-background" />
+              <div className="mt-3 text-center text-[10px] tracking-[0.3em] uppercase text-gold-antique">
+                {gallery.length} images
+              </div>
+            </>
+          )}
+        </Carousel>
+      </div>
+
+      {/* Details */}
+      <div className="p-6 md:p-8 lg:p-10">
+        <div
+          className="text-[10px] font-bold tracking-[0.35em] uppercase mb-4"
+          style={{ color: tokens.role }}
+        >
+          {p.role}
+        </div>
+
+        <DialogTitle asChild>
+          <h2
+            className="font-serif font-medium leading-none tracking-[-0.02em] mb-3"
+            style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+          >
+            {p.name}
+          </h2>
+        </DialogTitle>
+
+        <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-muted-foreground mb-5">
+          {p.title}
+        </p>
+
+        <p
+          className="font-serif italic leading-snug mb-6"
+          style={{ fontSize: "clamp(1.125rem, 1.4vw, 1.35rem)", color: tokens.session }}
+        >
+          <span style={{ color: tokens.num }}>"</span>
+          {p.session}
+          <span style={{ color: tokens.num }}>"</span>
+        </p>
+
+        {(p.date || p.time || p.location) && (
+          <div className="grid gap-2 mb-6 pb-6 border-b border-border">
+            {p.date && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <Calendar size={14} className="text-gold shrink-0" />
+                <span>{p.date}</span>
+              </div>
+            )}
+            {p.time && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <Clock size={14} className="text-gold shrink-0" />
+                <span>{p.time}</span>
+              </div>
+            )}
+            {p.location && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <MapPin size={14} className="text-gold shrink-0" />
+                <span>{p.location}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        <DialogDescription asChild>
+          <div className="space-y-4 mb-6">
+            {(p.description ?? [p.tagline]).map((para, i) => (
+              <p key={i} className="font-serif text-base leading-relaxed text-foreground/85">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DialogDescription>
+
+        {p.takeaways && p.takeaways.length > 0 && (
+          <div>
+            <h3 className="text-[10px] font-bold tracking-[0.35em] uppercase text-gold mb-4">
+              What You'll Take Away
+            </h3>
+            <ul className="space-y-3">
+              {p.takeaways.map((t, i) => (
+                <li key={i} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+                  <span
+                    className="font-serif italic shrink-0 mt-0.5"
+                    style={{ color: tokens.role }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export default Presenters;
+
