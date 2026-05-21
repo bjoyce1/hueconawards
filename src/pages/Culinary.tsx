@@ -80,36 +80,6 @@ const Culinary = () => {
         </div>
       </section>
 
-      {/* Chef Spotlights */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <ChefHat className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-4xl font-bold mb-6">
-              Featured <span className="text-gold">Chefs</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Meet the culinary visionaries who are putting Houston on the global food map
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {chefSpotlights.map((chef, idx) => (
-              <div key={idx} className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow cursor-pointer">
-                <div className="aspect-square bg-muted flex items-center justify-center">
-                  <ChefHat className="text-muted-foreground" size={64} />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{chef.name}</h3>
-                  <p className="text-gold text-sm mb-1">{chef.specialty}</p>
-                  <p className="text-muted-foreground text-sm">{chef.restaurant}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Featured Voice — Bao Ong */}
       <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-4">
@@ -141,6 +111,36 @@ const Culinary = () => {
                 Previously on staff at Eater New York, Bon Appétit, and Time Out New York, Bao won the top award in Comment and Criticism from the Texas Managing Editors in his first year as a columnist — bringing rigorous reporting and a deep love of food culture to every story.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chef Spotlights */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <ChefHat className="text-gold mx-auto mb-4" size={56} />
+            <h2 className="text-4xl font-bold mb-6">
+              Featured <span className="text-gold">Chefs</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Meet the culinary visionaries who are putting Houston on the global food map
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {chefSpotlights.map((chef, idx) => (
+              <div key={idx} className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow cursor-pointer">
+                <div className="aspect-square bg-muted flex items-center justify-center">
+                  <ChefHat className="text-muted-foreground" size={64} />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{chef.name}</h3>
+                  <p className="text-gold text-sm mb-1">{chef.specialty}</p>
+                  <p className="text-muted-foreground text-sm">{chef.restaurant}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
