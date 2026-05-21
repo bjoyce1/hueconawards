@@ -8,6 +8,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroConference from "@/assets/hero-conference.jpg";
+import heroVolunteer from "@/assets/hero-volunteer.jpg";
+import volunteerGraphic from "@/assets/volunteer-graphic.png";
 import hueLogo from "@/assets/hue-logo.png";
 
 const Conference = () => {
@@ -147,6 +149,58 @@ const Conference = () => {
           </div>
         </div>
       </section>
+
+      {/* Volunteer Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroVolunteer})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* PFP Image */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute -inset-2 bg-gradient-to-br from-gold/40 to-houston/40 rounded-2xl blur-xl" />
+                <img
+                  src={volunteerGraphic}
+                  alt="2026 HUECONA Conference & Awards Volunteer"
+                  width={1000}
+                  height={760}
+                  loading="lazy"
+                  className="relative rounded-2xl border-2 border-gold/40 shadow-2xl max-w-md w-full"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div>
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-gold px-3 py-1.5 border border-white/10 bg-[#1a2129] inline-block mb-6">
+                Join The Team
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-white">
+                Volunteer at <span className="text-gold">HUECONA</span>
+              </h2>
+              <p className="text-base md:text-lg text-white/75 leading-relaxed mb-8">
+                Be part of the magic behind Houston's premier entertainment conference and awards. Volunteers receive free event access, exclusive HUECONA swag, and unforgettable behind-the-scenes experiences alongside industry leaders.
+              </p>
+              <a
+                href="https://www.volunteerhou.org/agency/detail/HeartbeatPerformingArtsCharities/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" size="xl">
+                  Volunteer
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Panel Detail Modal */}
       <Dialog open={selectedPanel !== null} onOpenChange={() => setSelectedPanel(null)}>
