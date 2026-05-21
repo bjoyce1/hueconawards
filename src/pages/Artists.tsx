@@ -21,6 +21,10 @@ import andreNotice from "@/assets/guests/andre-notice.png";
 import angelaLewis from "@/assets/guests/angela-lewis.png";
 import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
 import drCamHill from "@/assets/guests/dr-cam-hill.png";
+import emmaiAlaquiva from "@/assets/guests/emmai-alaquiva.png";
+import corneliusPratt from "@/assets/guests/cornelius-pratt.png";
+import spencerProffer from "@/assets/guests/spencer-proffer.png";
+import murielFunches from "@/assets/guests/muriel-funches.png";
 
 const specialGuests = [
   { name: "Eve Pomerance", role: "Casting Director", image: evePomerance },
@@ -34,11 +38,15 @@ const specialGuests = [
   { name: "Andre Notice", role: "Speaker & Coach", image: andreNotice },
   { name: "Anita Osuigwe-Spencer", role: "Writer & Director", image: anitaOsuigweSpencer },
   { name: "Dr. Cam Hill", role: "Moderator", image: drCamHill },
+  { name: "Emmai Alaquiva", role: "Producer & Director", image: emmaiAlaquiva },
+  { name: "Cornelius Pratt", role: "Author, Speaker, Artist", image: corneliusPratt },
+  { name: "Spencer Proffer", role: "Music & Media Producer", image: spencerProffer },
 ];
 
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
   { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
+  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
   { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
   { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
   { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
