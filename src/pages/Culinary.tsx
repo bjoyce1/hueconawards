@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { UtensilsCrossed, ChefHat, Sparkles, Wine, Coffee, IceCream } from "lucide-react";
 import heroCulinary from "@/assets/hero-culinary.jpg";
 import hueLogo from "@/assets/hue-logo.png";
+import baoOng from "@/assets/chefs/bao-ong.jpeg";
 
 const Culinary = () => {
   const chefSpotlights = [
@@ -105,6 +106,41 @@ const Culinary = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Voice — Bao Ong */}
+      <section className="py-24 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-gradient-to-br from-gold/30 to-houston/20 rounded-2xl blur-2xl opacity-60" />
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-gold/30">
+                <img
+                  src={baoOng}
+                  alt="Bao Ong, restaurant critic for the Houston Chronicle"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-gold px-3 py-1.5 border border-white/10 bg-[#1a2129] inline-block mb-6">
+                Featured Voice
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
+                Bao <span className="text-gold">Ong</span>
+              </h2>
+              <p className="text-gold text-sm uppercase tracking-[0.15em] font-bold mb-6">
+                Restaurant Critic · Houston Chronicle
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Bao Ong is the Houston Chronicle's restaurant critic, shaping the conversation around the city's ever-evolving dining scene. After nearly 900 restaurant meals in two years as a columnist, he stepped into the critic's chair to review everything from fine dining to food trucks and pop-ups.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Previously on staff at Eater New York, Bon Appétit, and Time Out New York, Bao won the top award in Comment and Criticism from the Texas Managing Editors in his first year as a columnist — bringing rigorous reporting and a deep love of food culture to every story.
+              </p>
+            </div>
           </div>
         </div>
       </section>
