@@ -50,6 +50,17 @@ const presenters: Presenter[] = [
     flyer: latanyaFlyer,
   },
   {
+    id: "eve",
+    name: "Eve Pomerance",
+    role: "Self-Tapes Masterclass",
+    title: "NY-Based Casting Director & Producer · Former Assistant Talent Agent at ICM UK",
+    session: "Self-Tapes with Eve Pomerance",
+    tagline:
+      "Learn how casting directors evaluate self-tapes and callbacks — live critique, callback exercises, and techniques to convey confidence on camera.",
+    accent: "red",
+    flyer: eveFlyer,
+  },
+  {
     id: "toni",
     name: "Toni Tomlin",
     role: "The Intention Quotient™ Experience",
