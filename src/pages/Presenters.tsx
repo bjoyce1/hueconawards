@@ -33,6 +33,12 @@ type Presenter = {
   role: string;
   accent: Accent;
   flyer: string;
+  date?: string;
+  time?: string;
+  location?: string;
+  description?: string[];
+  takeaways?: string[];
+  gallery?: string[];
 };
 
 const presenters: Presenter[] = [
@@ -46,6 +52,18 @@ const presenters: Presenter[] = [
       "Turn iconic music, real-life stories and cultural truth into story-driven projects that travel across screens, platforms and generations.",
     accent: "houston",
     flyer: spencerFlyer,
+    date: "July 16, 2026",
+    time: "Opening Keynote",
+    location: "Main Stage · Blossom Hotel Houston",
+    description: [
+      "Spencer Proffer opens HUECONA 2026 with a master class in turning culture into cinema. Drawing from decades producing iconic music, film and television, Spencer reveals the architecture behind stories that travel — projects rooted in real lives, real music and real cultural truth.",
+      "Expect a candid, behind-the-scenes look at the creative and business decisions that move audiences and shape generations.",
+    ],
+    takeaways: [
+      "How to identify story DNA worth scaling across platforms",
+      "Building creative teams that protect the vision",
+      "Translating cultural truth into commercial momentum",
+    ],
   },
   {
     id: "latanya",
@@ -56,6 +74,18 @@ const presenters: Presenter[] = [
     tagline: "Pause. Realign. Move forward with clarity and intention.",
     accent: "gold",
     flyer: latanyaFlyer,
+    date: "July 16, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Dr. Latanya Edenburgs guides attendees through The MOVE Method™ — a framework designed to interrupt autopilot, realign intention with action, and unlock the magic that lives inside every creator and leader.",
+      "This is an interactive, reflection-driven session built for anyone ready to reset how they show up.",
+    ],
+    takeaways: [
+      "The four pillars of The MOVE Method™",
+      "Tools to interrupt patterns that block progress",
+      "Personal alignment exercises you can use immediately",
+    ],
   },
   {
     id: "eve",
@@ -67,6 +97,18 @@ const presenters: Presenter[] = [
       "Learn how casting directors evaluate self-tapes and callbacks — live critique, callback exercises, and techniques to convey confidence on camera.",
     accent: "red",
     flyer: eveFlyer,
+    date: "July 17, 2026",
+    time: "Masterclass",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Eve Pomerance pulls back the curtain on what casting directors actually look for. Through live critique and callback exercises, attendees learn how to read the room through a lens — and deliver tapes that book the work.",
+      "Bring your sides. Bring your nerves. Leave with a playbook.",
+    ],
+    takeaways: [
+      "What casting directors evaluate in the first 10 seconds",
+      "Framing, lighting, and reader choices that elevate a tape",
+      "Callback techniques to convey confidence and range",
+    ],
   },
   {
     id: "toni",
@@ -78,6 +120,18 @@ const presenters: Presenter[] = [
       "A powerful masterclass for people ready to stop overriding themselves, reconnect with what they already know, and move forward with clarity, confidence, and intention.",
     accent: "pink",
     flyer: toniFlyer,
+    date: "July 17, 2026",
+    time: "Masterclass",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Toni Tomlin leads The Intention Quotient™ Experience — a masterclass for people ready to stop overriding themselves and start trusting what they already know.",
+      "Built on 20+ years of service, leadership and healing work, this session reconnects attendees with the internal compass that has been there all along.",
+    ],
+    takeaways: [
+      "Identify where you've been overriding your own knowing",
+      "Reconnect with internal signals as a decision-making tool",
+      "Move forward with clarity, confidence, and intention",
+    ],
   },
   {
     id: "andre",
@@ -88,6 +142,18 @@ const presenters: Presenter[] = [
     tagline: "How to make lasting connections in a disconnected society.",
     accent: "houston",
     flyer: andreFlyer,
+    date: "July 17, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Coach Andre delivers a sharp, modern playbook on connection — the most undervalued currency in business, creativity and life.",
+      "Expect frameworks and live exercises designed to help attendees build relationships that compound long after the conference ends.",
+    ],
+    takeaways: [
+      "Why connection outperforms content in the attention economy",
+      "Frameworks for building lasting, high-trust relationships",
+      "Conversation tools that move strangers to allies",
+    ],
   },
   {
     id: "adroberts",
@@ -99,6 +165,18 @@ const presenters: Presenter[] = [
       "From being overlooked to being unforgettable. You don't need more luck — you need a new identity.",
     accent: "red",
     flyer: adRobertsFlyer,
+    date: "July 17, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "A.D. Roberts re-architects identity from the inside out. Blending hypnotherapy, mindset strategy and live demonstration, this session helps attendees step into the version of themselves the next chapter requires.",
+      "Walk in overlooked. Walk out unforgettable.",
+    ],
+    takeaways: [
+      "Diagnose the identity beliefs capping your growth",
+      "Install new identity patterns through guided practice",
+      "Show up with main character energy — on demand",
+    ],
   },
   {
     id: "mrcap",
@@ -110,8 +188,21 @@ const presenters: Presenter[] = [
       "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
     accent: "gold",
     flyer: mrcapFlyer,
+    date: "July 17, 2026",
+    time: "Closing Experience",
+    location: "Main Stage · Blossom Hotel Houston",
+    description: [
+      "Mr. CAP closes HUECONA 2026 with The Art of ISM Experience — a multidimensional finale fusing music, film and live performance into a single creative statement.",
+      "More than a session, this is the cultural exclamation point of the weekend.",
+    ],
+    takeaways: [
+      "Witness the ISM framework brought to life on stage",
+      "Experience cross-disciplinary creative mastery in real time",
+      "Leave with a code of thought, movement and mastery",
+    ],
   },
 ];
+
 
 const accentTokens: Record<Accent, {
   num: string; numHover: string; role: string; session: string;
