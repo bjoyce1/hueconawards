@@ -2,8 +2,15 @@ import { useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ArrowUpRight, Volume2, VolumeX, Calendar, MapPin, Clock } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
 import presentersHeroVideo from "@/assets/presenters-hero.mp4";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
@@ -13,6 +20,7 @@ import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import toniFlyer from "@/assets/presenters/toni-flyer.png";
 import eveFlyer from "@/assets/presenters/eve-flyer.png";
+
 
 type Accent = "gold" | "houston" | "red" | "pink";
 
