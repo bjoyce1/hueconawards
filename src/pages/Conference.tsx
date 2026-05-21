@@ -8,6 +8,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroConference from "@/assets/hero-conference.jpg";
+import heroVolunteer from "@/assets/hero-volunteer.jpg";
+import volunteerGraphic from "@/assets/volunteer-graphic.png";
 import hueLogo from "@/assets/hue-logo.png";
 
 const Conference = () => {
