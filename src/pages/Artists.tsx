@@ -40,8 +40,13 @@ const specialGuests = [
   { name: "Dr. Cam Hill", role: "Moderator", image: drCamHill },
   { name: "Emmai Alaquiva", role: "Producer & Director", image: emmaiAlaquiva },
   { name: "Cornelius Pratt", role: "Author, Speaker, Artist", image: corneliusPratt },
-  { name: "Spencer Proffer", role: "Music & Media Producer", image: spencerProffer },
 ];
+
+const featuredGuest = {
+  name: "Spencer Proffer",
+  role: "Music & Media Producer",
+  image: spencerProffer,
+};
 
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
