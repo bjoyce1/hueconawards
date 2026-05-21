@@ -391,14 +391,8 @@ const Presenters = () => {
       </section>
 
       <Dialog open={active !== null} onOpenChange={() => setActive(null)}>
-        <DialogContent className="max-w-4xl bg-background/95 border-gold/30 p-2 sm:p-4">
-          {active && (
-            <img
-              src={active.flyer}
-              alt={`${active.name} — ${active.session}`}
-              className="w-full h-auto rounded-lg"
-            />
-          )}
+        <DialogContent className="max-w-5xl max-h-[92vh] overflow-y-auto bg-background border-gold/30 p-0">
+          {active && <PresenterDetail presenter={active} />}
         </DialogContent>
       </Dialog>
 
