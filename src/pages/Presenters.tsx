@@ -2,8 +2,15 @@ import { useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ArrowUpRight, Volume2, VolumeX, Calendar, MapPin, Clock } from "lucide-react";
 import hueconaLogo from "@/assets/huecona-logo-flame.png";
 import presentersHeroVideo from "@/assets/presenters-hero.mp4";
 import latanyaFlyer from "@/assets/presenters/latanya-flyer.png";
@@ -13,6 +20,7 @@ import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import toniFlyer from "@/assets/presenters/toni-flyer.png";
 import eveFlyer from "@/assets/presenters/eve-flyer.png";
+
 
 type Accent = "gold" | "houston" | "red" | "pink";
 
@@ -25,6 +33,12 @@ type Presenter = {
   role: string;
   accent: Accent;
   flyer: string;
+  date?: string;
+  time?: string;
+  location?: string;
+  description?: string[];
+  takeaways?: string[];
+  gallery?: string[];
 };
 
 const presenters: Presenter[] = [
@@ -38,6 +52,18 @@ const presenters: Presenter[] = [
       "Turn iconic music, real-life stories and cultural truth into story-driven projects that travel across screens, platforms and generations.",
     accent: "houston",
     flyer: spencerFlyer,
+    date: "July 16, 2026",
+    time: "Opening Keynote",
+    location: "Main Stage · Blossom Hotel Houston",
+    description: [
+      "Spencer Proffer opens HUECONA 2026 with a master class in turning culture into cinema. Drawing from decades producing iconic music, film and television, Spencer reveals the architecture behind stories that travel — projects rooted in real lives, real music and real cultural truth.",
+      "Expect a candid, behind-the-scenes look at the creative and business decisions that move audiences and shape generations.",
+    ],
+    takeaways: [
+      "How to identify story DNA worth scaling across platforms",
+      "Building creative teams that protect the vision",
+      "Translating cultural truth into commercial momentum",
+    ],
   },
   {
     id: "latanya",
@@ -48,6 +74,18 @@ const presenters: Presenter[] = [
     tagline: "Pause. Realign. Move forward with clarity and intention.",
     accent: "gold",
     flyer: latanyaFlyer,
+    date: "July 16, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Dr. Latanya Edenburgs guides attendees through The MOVE Method™ — a framework designed to interrupt autopilot, realign intention with action, and unlock the magic that lives inside every creator and leader.",
+      "This is an interactive, reflection-driven session built for anyone ready to reset how they show up.",
+    ],
+    takeaways: [
+      "The four pillars of The MOVE Method™",
+      "Tools to interrupt patterns that block progress",
+      "Personal alignment exercises you can use immediately",
+    ],
   },
   {
     id: "eve",
@@ -59,6 +97,18 @@ const presenters: Presenter[] = [
       "Learn how casting directors evaluate self-tapes and callbacks — live critique, callback exercises, and techniques to convey confidence on camera.",
     accent: "red",
     flyer: eveFlyer,
+    date: "July 17, 2026",
+    time: "Masterclass",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Eve Pomerance pulls back the curtain on what casting directors actually look for. Through live critique and callback exercises, attendees learn how to read the room through a lens — and deliver tapes that book the work.",
+      "Bring your sides. Bring your nerves. Leave with a playbook.",
+    ],
+    takeaways: [
+      "What casting directors evaluate in the first 10 seconds",
+      "Framing, lighting, and reader choices that elevate a tape",
+      "Callback techniques to convey confidence and range",
+    ],
   },
   {
     id: "toni",
@@ -70,6 +120,18 @@ const presenters: Presenter[] = [
       "A powerful masterclass for people ready to stop overriding themselves, reconnect with what they already know, and move forward with clarity, confidence, and intention.",
     accent: "pink",
     flyer: toniFlyer,
+    date: "July 17, 2026",
+    time: "Masterclass",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Toni Tomlin leads The Intention Quotient™ Experience — a masterclass for people ready to stop overriding themselves and start trusting what they already know.",
+      "Built on 20+ years of service, leadership and healing work, this session reconnects attendees with the internal compass that has been there all along.",
+    ],
+    takeaways: [
+      "Identify where you've been overriding your own knowing",
+      "Reconnect with internal signals as a decision-making tool",
+      "Move forward with clarity, confidence, and intention",
+    ],
   },
   {
     id: "andre",
@@ -80,6 +142,18 @@ const presenters: Presenter[] = [
     tagline: "How to make lasting connections in a disconnected society.",
     accent: "houston",
     flyer: andreFlyer,
+    date: "July 17, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "Coach Andre delivers a sharp, modern playbook on connection — the most undervalued currency in business, creativity and life.",
+      "Expect frameworks and live exercises designed to help attendees build relationships that compound long after the conference ends.",
+    ],
+    takeaways: [
+      "Why connection outperforms content in the attention economy",
+      "Frameworks for building lasting, high-trust relationships",
+      "Conversation tools that move strangers to allies",
+    ],
   },
   {
     id: "adroberts",
@@ -91,6 +165,18 @@ const presenters: Presenter[] = [
       "From being overlooked to being unforgettable. You don't need more luck — you need a new identity.",
     accent: "red",
     flyer: adRobertsFlyer,
+    date: "July 17, 2026",
+    time: "Featured Session",
+    location: "Blossom Hotel Houston",
+    description: [
+      "A.D. Roberts re-architects identity from the inside out. Blending hypnotherapy, mindset strategy and live demonstration, this session helps attendees step into the version of themselves the next chapter requires.",
+      "Walk in overlooked. Walk out unforgettable.",
+    ],
+    takeaways: [
+      "Diagnose the identity beliefs capping your growth",
+      "Install new identity patterns through guided practice",
+      "Show up with main character energy — on demand",
+    ],
   },
   {
     id: "mrcap",
@@ -102,8 +188,21 @@ const presenters: Presenter[] = [
       "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe.",
     accent: "gold",
     flyer: mrcapFlyer,
+    date: "July 17, 2026",
+    time: "Closing Experience",
+    location: "Main Stage · Blossom Hotel Houston",
+    description: [
+      "Mr. CAP closes HUECONA 2026 with The Art of ISM Experience — a multidimensional finale fusing music, film and live performance into a single creative statement.",
+      "More than a session, this is the cultural exclamation point of the weekend.",
+    ],
+    takeaways: [
+      "Witness the ISM framework brought to life on stage",
+      "Experience cross-disciplinary creative mastery in real time",
+      "Leave with a code of thought, movement and mastery",
+    ],
   },
 ];
+
 
 const accentTokens: Record<Accent, {
   num: string; numHover: string; role: string; session: string;
@@ -292,14 +391,8 @@ const Presenters = () => {
       </section>
 
       <Dialog open={active !== null} onOpenChange={() => setActive(null)}>
-        <DialogContent className="max-w-4xl bg-background/95 border-gold/30 p-2 sm:p-4">
-          {active && (
-            <img
-              src={active.flyer}
-              alt={`${active.name} — ${active.session}`}
-              className="w-full h-auto rounded-lg"
-            />
-          )}
+        <DialogContent className="max-w-5xl max-h-[92vh] overflow-y-auto bg-background border-gold/30 p-0">
+          {active && <PresenterDetail presenter={active} />}
         </DialogContent>
       </Dialog>
 
@@ -437,4 +530,128 @@ const Billing = ({
   );
 };
 
+const PresenterDetail = ({ presenter: p }: { presenter: Presenter }) => {
+  const tokens = accentTokens[p.accent];
+  const gallery = p.gallery && p.gallery.length > 0 ? p.gallery : [p.flyer];
+
+  return (
+    <div className="grid md:grid-cols-2 gap-0">
+      {/* Gallery */}
+      <div className="bg-charcoal p-4 md:p-6 border-b md:border-b-0 md:border-r border-gold/20">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {gallery.map((src, i) => (
+              <CarouselItem key={i}>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-background border border-gold-antique/40">
+                  <img
+                    src={src}
+                    alt={`${p.name} — image ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {gallery.length > 1 && (
+            <>
+              <CarouselPrevious className="left-2 bg-background/80 border-gold/40 text-gold hover:bg-gold hover:text-background" />
+              <CarouselNext className="right-2 bg-background/80 border-gold/40 text-gold hover:bg-gold hover:text-background" />
+              <div className="mt-3 text-center text-[10px] tracking-[0.3em] uppercase text-gold-antique">
+                {gallery.length} images
+              </div>
+            </>
+          )}
+        </Carousel>
+      </div>
+
+      {/* Details */}
+      <div className="p-6 md:p-8 lg:p-10">
+        <div
+          className="text-[10px] font-bold tracking-[0.35em] uppercase mb-4"
+          style={{ color: tokens.role }}
+        >
+          {p.role}
+        </div>
+
+        <DialogTitle asChild>
+          <h2
+            className="font-serif font-medium leading-none tracking-[-0.02em] mb-3"
+            style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+          >
+            {p.name}
+          </h2>
+        </DialogTitle>
+
+        <p className="text-[11px] font-medium tracking-[0.12em] uppercase text-muted-foreground mb-5">
+          {p.title}
+        </p>
+
+        <p
+          className="font-serif italic leading-snug mb-6"
+          style={{ fontSize: "clamp(1.125rem, 1.4vw, 1.35rem)", color: tokens.session }}
+        >
+          <span style={{ color: tokens.num }}>"</span>
+          {p.session}
+          <span style={{ color: tokens.num }}>"</span>
+        </p>
+
+        {(p.date || p.time || p.location) && (
+          <div className="grid gap-2 mb-6 pb-6 border-b border-border">
+            {p.date && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <Calendar size={14} className="text-gold shrink-0" />
+                <span>{p.date}</span>
+              </div>
+            )}
+            {p.time && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <Clock size={14} className="text-gold shrink-0" />
+                <span>{p.time}</span>
+              </div>
+            )}
+            {p.location && (
+              <div className="flex items-center gap-3 text-sm text-foreground/80">
+                <MapPin size={14} className="text-gold shrink-0" />
+                <span>{p.location}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        <DialogDescription asChild>
+          <div className="space-y-4 mb-6">
+            {(p.description ?? [p.tagline]).map((para, i) => (
+              <p key={i} className="font-serif text-base leading-relaxed text-foreground/85">
+                {para}
+              </p>
+            ))}
+          </div>
+        </DialogDescription>
+
+        {p.takeaways && p.takeaways.length > 0 && (
+          <div>
+            <h3 className="text-[10px] font-bold tracking-[0.35em] uppercase text-gold mb-4">
+              What You'll Take Away
+            </h3>
+            <ul className="space-y-3">
+              {p.takeaways.map((t, i) => (
+                <li key={i} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+                  <span
+                    className="font-serif italic shrink-0 mt-0.5"
+                    style={{ color: tokens.role }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export default Presenters;
+
