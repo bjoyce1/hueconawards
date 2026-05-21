@@ -40,8 +40,13 @@ const specialGuests = [
   { name: "Dr. Cam Hill", role: "Moderator", image: drCamHill },
   { name: "Emmai Alaquiva", role: "Producer & Director", image: emmaiAlaquiva },
   { name: "Cornelius Pratt", role: "Author, Speaker, Artist", image: corneliusPratt },
-  { name: "Spencer Proffer", role: "Music & Media Producer", image: spencerProffer },
 ];
+
+const featuredGuest = {
+  name: "Spencer Proffer",
+  role: "Music & Media Producer",
+  image: spencerProffer,
+};
 
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
@@ -88,8 +93,54 @@ const Artists = () => {
         description="Celebrating the talent, creativity, and vision of Houston's entertainment community."
       />
 
-      {/* Special Guests */}
+      {/* Featured Guest */}
       <section className="py-14 sm:py-20 bg-charcoal">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-gold tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
+              HUECONA 2026
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
+              Featured <span className="text-gold">Guest</span>
+            </h2>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative bg-card border-2 border-gold/40 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="aspect-[4/3] md:aspect-auto overflow-hidden bg-charcoal">
+                  <img
+                    src={featuredGuest.image}
+                    alt={`${featuredGuest.name} — ${featuredGuest.role}`}
+                    className="w-full h-full object-cover object-top md:object-center"
+                    loading="eager"
+                  />
+                </div>
+                <div className="flex flex-col justify-center p-6 sm:p-10 md:p-12">
+                  <p className="text-gold tracking-[0.25em] uppercase text-xs font-bold mb-3">
+                    Spotlight
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide mb-2">
+                    {featuredGuest.name}
+                  </h3>
+                  <p className="text-gold text-lg sm:text-xl font-semibold tracking-wide mb-6">
+                    {featuredGuest.role}
+                  </p>
+                  <div className="w-16 h-0.5 bg-gold/60 mb-6" />
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-md">
+                    A celebrated music and media producer whose work has shaped
+                    the sound and stories of a generation. We are honored to have
+                    him join us at HUECONA 2026.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Special Guests */}
+      <section className="py-14 sm:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
             <p className="text-gold tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
