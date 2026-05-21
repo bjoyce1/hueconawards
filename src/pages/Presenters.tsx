@@ -12,6 +12,7 @@ import mrcapFlyer from "@/assets/presenters/mrcap-flyer.png";
 import spencerFlyer from "@/assets/presenters/spencer-flyer.png";
 import adRobertsFlyer from "@/assets/presenters/adroberts-flyer.png";
 import toniFlyer from "@/assets/presenters/toni-flyer.png";
+import eveFlyer from "@/assets/presenters/eve-flyer.png";
 
 type Accent = "gold" | "houston" | "red" | "pink";
 
@@ -47,6 +48,17 @@ const presenters: Presenter[] = [
     tagline: "Pause. Realign. Move forward with clarity and intention.",
     accent: "gold",
     flyer: latanyaFlyer,
+  },
+  {
+    id: "eve",
+    name: "Eve Pomerance",
+    role: "Self-Tapes Masterclass",
+    title: "NY-Based Casting Director & Producer · Former Assistant Talent Agent at ICM UK",
+    session: "Self-Tapes with Eve Pomerance",
+    tagline:
+      "Learn how casting directors evaluate self-tapes and callbacks — live critique, callback exercises, and techniques to convey confidence on camera.",
+    accent: "red",
+    flyer: eveFlyer,
   },
   {
     id: "toni",
@@ -234,7 +246,7 @@ const Presenters = () => {
             className="font-serif italic font-medium leading-[0.8] bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent"
             style={{ fontSize: "8rem" }}
           >
-            05
+            07
           </span>
           <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-gold">
             Featured
