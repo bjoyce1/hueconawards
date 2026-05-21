@@ -246,7 +246,7 @@ const Presenters = () => {
             className="font-serif italic font-medium leading-[0.8] bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent"
             style={{ fontSize: "8rem" }}
           >
-            05
+            07
           </span>
           <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-gold">
             Featured
