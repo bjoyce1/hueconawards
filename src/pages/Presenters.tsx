@@ -67,7 +67,7 @@ const presenters: Presenter[] = [
   },
   {
     id: "latanya",
-    name: "Dr. Latanya Edenburgs",
+    name: "Dr. LaTanya Edenburgs",
     role: "The MOVE Method™",
     title: "MA, M.Ed. · Creator of The MOVE Method™",
     session: "Unlock the Magic in You",
@@ -78,7 +78,7 @@ const presenters: Presenter[] = [
     time: "Featured Session",
     location: "Blossom Hotel Houston",
     description: [
-      "Dr. Latanya Edenburgs guides attendees through The MOVE Method™ — a framework designed to interrupt autopilot, realign intention with action, and unlock the magic that lives inside every creator and leader.",
+      "Dr. LaTanya Edenburgs guides attendees through The MOVE Method™ — a framework designed to interrupt autopilot, realign intention with action, and unlock the magic that lives inside every creator and leader.",
       "This is an interactive, reflection-driven session built for anyone ready to reset how they show up.",
     ],
     takeaways: [
