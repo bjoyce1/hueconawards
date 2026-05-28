@@ -9,6 +9,7 @@ import heroAbout from "@/assets/hero-about.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
 import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
+import murielFunches from "@/assets/guests/muriel-funches.png";
 import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
 import angelaLewis from "@/assets/guests/angela-lewis.png";
 import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
@@ -16,6 +17,7 @@ import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
   { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
+  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
   { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
   { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
   { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
@@ -135,7 +137,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-6xl mx-auto">
             {productionTeam.map((member) => (
               <div key={member.name} className="group bg-card overflow-hidden transition-colors duration-300 hover:bg-[hsl(var(--charcoal-elevated))]">
                 <div className="aspect-[4/5] overflow-hidden bg-charcoal">
