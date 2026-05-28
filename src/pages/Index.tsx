@@ -5,8 +5,6 @@ import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import SponsorWall from "@/components/SponsorWall";
-import MarblismFeature from "@/components/MarblismFeature";
-import MarblismRibbon from "@/components/MarblismRibbon";
 import EventCard from "@/components/EventCard";
 import Reveal from "@/components/Reveal";
 import { Film, Music, Palette, UtensilsCrossed, Sparkles, Users } from "lucide-react";
@@ -161,8 +159,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Marblism — Premiere Sponsor Feature */}
-      <MarblismFeature />
 
       {/* What Is HUECONA — denser BMW-grid */}
       <section className={`py-20 ${SURFACE_DARK}`}>
@@ -364,7 +360,6 @@ const Index = () => {
         </div>
       </section>
 
-      <MarblismRibbon ctaKey="home_ribbon" />
       <SponsorWall />
       </main>
 
