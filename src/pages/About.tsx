@@ -137,7 +137,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-6xl mx-auto">
             {productionTeam.map((member) => (
               <div key={member.name} className="group bg-card overflow-hidden transition-colors duration-300 hover:bg-[hsl(var(--charcoal-elevated))]">
                 <div className="aspect-[4/5] overflow-hidden bg-charcoal">
