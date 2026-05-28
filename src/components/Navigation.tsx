@@ -24,7 +24,7 @@ const Navigation = () => {
   { name: "Guests", path: "/guests" },
   { name: "Presenters", path: "/presenters" },
   { name: "Culinary & Culture", path: "/culinary" },
-  { name: "Schedule", path: "/schedule" },
+  
   { name: "Sponsors", path: "/sponsors" },
   { name: "Tickets", path: "/tickets" },
   { name: "Contact", path: "/contact" }];
