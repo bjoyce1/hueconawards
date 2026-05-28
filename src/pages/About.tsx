@@ -156,37 +156,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Map Animation Block */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              From <span className="text-gold">West Coast</span> to <span className="text-houston">South</span>
-            </h2>
-            
-            <div className="relative aspect-video bg-charcoal rounded-lg border-2 border-gold/30 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-8 mb-4">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">⭐</div>
-                      <p className="text-gold font-bold">Hollywood, CA</p>
-                    </div>
-                    <div className="text-6xl text-gold animate-pulse">→</div>
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">★</div>
-                      <p className="text-houston font-bold">Houston, TX</p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">
-                    Bringing Star Power to the Lone Star State
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <HonoreesGrid />
 
