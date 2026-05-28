@@ -43,15 +43,6 @@ const featuredGuest = {
   image: spencerProffer,
 };
 
-const productionTeam = [
-  { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
-  { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
-  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
-  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
-  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
-  { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
-];
-
 const GuestCard = ({ person }: { person: { name: string; role: string; image: string } }) => (
   <div className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow group">
     <div className="aspect-[4/3] overflow-hidden bg-charcoal">
