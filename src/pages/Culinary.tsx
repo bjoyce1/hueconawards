@@ -6,13 +6,17 @@ import { UtensilsCrossed, ChefHat, Sparkles, Wine, Coffee, IceCream } from "luci
 import heroCulinary from "@/assets/hero-culinary.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import baoOng from "@/assets/chefs/bao-ong.jpeg";
+import chef1 from "@/assets/chefs/chef-1.jpg";
+import chef2 from "@/assets/chefs/chef-2.jpg";
+import chef3 from "@/assets/chefs/chef-3.jpg";
+import chef4 from "@/assets/chefs/chef-4.jpg";
 
 const Culinary = () => {
   const chefSpotlights = [
-    { name: "Chef Name", specialty: "Modern American", restaurant: "Restaurant Name" },
-    { name: "Chef Name", specialty: "Italian Fusion", restaurant: "Restaurant Name" },
-    { name: "Chef Name", specialty: "Asian Cuisine", restaurant: "Restaurant Name" },
-    { name: "Chef Name", specialty: "Pastry & Desserts", restaurant: "Restaurant Name" },
+    { name: "Chef Name", specialty: "Modern American", restaurant: "Restaurant Name", image: chef1 },
+    { name: "Chef Name", specialty: "Italian Fusion", restaurant: "Restaurant Name", image: chef2 },
+    { name: "Chef Name", specialty: "Asian Cuisine", restaurant: "Restaurant Name", image: chef3 },
+    { name: "Chef Name", specialty: "Pastry & Desserts", restaurant: "Restaurant Name", image: chef4 },
   ];
 
   const culturalShowcases = [
@@ -136,8 +140,15 @@ const Culinary = () => {
                     Nominees Coming Soon
                   </div>
                 </div>
-                <div className="aspect-square bg-muted flex items-center justify-center">
-                  <ChefHat className="text-muted-foreground" size={64} />
+                <div className="aspect-square bg-muted overflow-hidden">
+                  <img
+                    src={chef.image}
+                    alt="Placeholder chef portrait — nominees coming soon"
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-full object-cover blur-md scale-110"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{chef.name}</h3>
