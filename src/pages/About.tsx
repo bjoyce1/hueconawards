@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import MarblismRibbon from "@/components/MarblismRibbon";
-import HonoreesGrid from "@/components/HonoreesGrid";
+
 import { Users, Target, MapPin, Award } from "lucide-react";
 import heroAbout from "@/assets/hero-about.jpg";
 import hueLogo from "@/assets/hue-logo.png";
