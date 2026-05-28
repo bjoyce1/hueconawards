@@ -157,8 +157,6 @@ const About = () => {
       </section>
 
 
-      <HonoreesGrid />
-
       <MarblismRibbon
         eyebrow="Premiere Sponsor"
         headline="HUECONA × Marblism — proudly powering Houston's creative future."
