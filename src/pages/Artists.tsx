@@ -11,20 +11,15 @@ import kentrellWright from "@/assets/guests/kentrell-wright.png";
 import krysPooleDorsey from "@/assets/guests/krys-poole-dorsey.png";
 import latanyaEdenburgs from "@/assets/guests/latanya-edenburgs.png";
 import toniTomlin from "@/assets/guests/toni-tomlin.png";
-import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
-import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
 import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
 import starlettaDupois from "@/assets/guests/starletta-dupois.png";
 import adRoberts from "@/assets/guests/ad-roberts.png";
-import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
 import andreNotice from "@/assets/guests/andre-notice.png";
-import angelaLewis from "@/assets/guests/angela-lewis.png";
 import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
 import drCamHill from "@/assets/guests/dr-cam-hill.png";
 import emmaiAlaquiva from "@/assets/guests/emmai-alaquiva.png";
 import corneliusPratt from "@/assets/guests/cornelius-pratt.png";
 import spencerProffer from "@/assets/guests/spencer-proffer.png";
-import murielFunches from "@/assets/guests/muriel-funches.png";
 
 const specialGuests = [
   { name: "Eve Pomerance", role: "Casting Director", image: evePomerance },
