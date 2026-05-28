@@ -13,8 +13,12 @@ import marblism from "@/assets/sponsors/marblism-icon.png";
 import upwardArtistry from "@/assets/sponsors/upward-artistry.png";
 import imHouston from "@/assets/sponsors/im-houston.png";
 import defiant from "@/assets/sponsors/defiant.png";
+import hbpac from "@/assets/sponsors/hbpac.png";
+import atbgo from "@/assets/sponsors/atbgo.png";
 
 export const sponsors = [
+  { name: "HeartBEAT Performing Arts Charities", logo: hbpac, invert: false },
+  { name: "And The Beat Goes On", logo: atbgo, invert: false },
   { name: "Defiant", logo: defiant, invert: false },
   { name: "I'M Houston", logo: imHouston, invert: false },
   { name: "Marblism", logo: marblism, invert: false },
