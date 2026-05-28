@@ -12,8 +12,10 @@ import popcornBar from "@/assets/sponsors/popcorn-bar.png";
 import marblism from "@/assets/sponsors/marblism-icon.png";
 import upwardArtistry from "@/assets/sponsors/upward-artistry.png";
 import imHouston from "@/assets/sponsors/im-houston.png";
+import defiant from "@/assets/sponsors/defiant.png";
 
 export const sponsors = [
+  { name: "Defiant", logo: defiant, invert: false },
   { name: "I'M Houston", logo: imHouston, invert: false },
   { name: "Marblism", logo: marblism, invert: false },
   { name: "Pandemonium Entertainment Partners", logo: pandemonium, invert: false },
