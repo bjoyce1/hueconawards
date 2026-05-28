@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -10,7 +10,7 @@ import Awards from "./pages/Awards";
 import Conference from "./pages/Conference";
 import Artists from "./pages/Artists";
 import Culinary from "./pages/Culinary";
-import Schedule from "./pages/Schedule";
+
 import Sponsors from "./pages/Sponsors";
 import Tickets from "./pages/Tickets";
 import Presenters from "./pages/Presenters";
@@ -34,7 +34,7 @@ const App = () => (
           <Route path="/conference" element={<Conference />} />
           <Route path="/guests" element={<Artists />} />
           <Route path="/culinary" element={<Culinary />} />
-          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/schedule" element={<Navigate to="/conference?tab=schedule" replace />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/presenters" element={<Presenters />} />

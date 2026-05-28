@@ -1,39 +1,36 @@
-# Hybrid Checkout — Native "Become A Vendor"
+## Goal
+Fold the Schedule page into the Conference page so visitors get conference info and the full two-day schedule in one place, without losing any content.
 
-Build a native, on-site checkout for the single "Become A Vendor" SKU using Lovable's built-in Stripe payments. Keep TicketLeap untouched for all other tickets.
+## Approach: Top-level tabs inside Conference
+Right under the Conference hero, add a two-tab switcher:
 
-## What the visitor will experience
-- Clicks "Become A Vendor" on `/sponsors` → an in-site modal opens.
-- Modal shows: booth summary, price ($350 + $8 service fee = **$358**), and a "Proceed to Checkout" button.
-- Clicking proceed redirects to a Stripe-hosted checkout (still feels seamless, no third-party branding, returns to a success page on hueconawards.com).
-- After success, they land on `/sponsors/vendor-success` with a confirmation message and an order reference.
+- **Overview** — existing Conference content (Featured Sessions, Panels grid, panel modal)
+- **Schedule** — full Day 1 / Day 2 content moved over from Schedule.tsx (with the inner Day 1/Day 2 sub-tabs preserved)
 
-## Why Stripe (not Paddle)
-Vendor booths are an in-person event service tied to a physical venue — outside Paddle's digital-products policy. Stripe handles this cleanly.
+The Volunteer section and Marblism ribbon stay at the bottom, shared across both tabs (they apply to the whole conference, not a single view).
 
-## Setup steps (in order)
-1. **Confirm prerequisites** — Project already has Lovable Cloud ✅. Payments requires a **Pro plan** — please confirm you're on Pro (or willing to upgrade) before I proceed.
-2. **Run eligibility check** (`recommend_payment_provider`) for the record.
-3. **Enable Stripe payments** (`enable_stripe_payments`) — sets up a test environment immediately so we can verify end-to-end before going live. Accepting real money later requires claiming the Stripe account (quick form, your info).
-4. **Tax handling decision** — I'll ask you to choose between:
-   - Full compliance handling (Stripe files taxes for you, +3.5% fee)
-   - Tax calculation only (+0.5%, you file)
-   - No tax automation (you handle it)
-   For a single domestic Texas vendor SKU, **"no tax automation"** is usually fine — but your call.
-5. **Create the product** in Stripe: "HUECONA 2026 Vendor Booth" — $358 one-time.
-6. **Build the checkout flow:**
-   - Edge function `create-vendor-checkout` → creates a Stripe Checkout Session.
-   - Edge function `vendor-webhook` → records successful payments in a new `vendor_orders` table (email, name, business name, amount, Stripe session id, created_at).
-   - Update `CheckoutModal` usage on `/sponsors` to show the summary card instead of an iframe, with a "Proceed to Checkout" button calling the edge function.
-   - New page `/sponsors/vendor-success` to confirm purchase.
-7. **Test in sandbox** with Stripe's test card `4242 4242 4242 4242`.
+## Changes
 
-## Out of scope
-- All other tickets stay on TicketLeap (Get Tickets button still opens TicketLeap in a new tab — we revert it from the iframe modal since that won't work either).
-- No changes to other pages, branding, or content.
+**`src/pages/Conference.tsx`**
+- Add Schedule's imports (Accordion, inner Tabs, Calendar/Clock/MapPin/Download icons, `heroSchedule` not needed since we keep Conference hero).
+- Inline the `scheduleData` object and the `DaySchedule` sub-component from Schedule.tsx.
+- Wrap the existing Featured Sessions + Panels Grid sections in a `<TabsContent value="overview">`, and put the Day 1/Day 2 inner tabs inside `<TabsContent value="schedule">`.
+- Add the "Download Event Info (PDF)" button to the Conference hero (currently only on Schedule hero) so it's not lost.
+- Merge the SEO description to mention both panels and full schedule; keep `/conference` as the path.
+- Support deep-linking from old links via `?tab=schedule` (or hash `#schedule`) — read on mount and set the active tab so `/conference?tab=schedule` lands directly on the schedule view.
 
-## What I need from you before starting
-1. Confirm you're on the **Pro plan** (required for payments).
-2. Confirm the vendor price is **$358 total** ($350 booth + $8 fee), or give me the exact amount you want to charge on-site.
-3. Tax handling choice (or "default to no automation").
-4. Should the "Get Tickets" buttons sitewide be reverted to open TicketLeap in a new tab? (Currently they don't use the broken iframe modal — only "Become A Vendor" does — but worth confirming.)
+**`src/App.tsx`**
+- Replace the `/schedule` route with a redirect: `<Route path="/schedule" element={<Navigate to="/conference?tab=schedule" replace />} />` so any existing inbound links still work.
+- Remove the `Schedule` import.
+
+**`src/components/Navigation.tsx`**
+- Remove the standalone "Schedule" nav item.
+- (Optional) keep nothing else — Conference nav item already exists.
+
+**`src/pages/Schedule.tsx`**
+- Delete the file.
+
+## Notes
+- Both pages already share `MarblismRibbon` and `Footer`; we keep one set on the merged page (using the Conference ribbon copy, since that's the parent page).
+- The two PageHeroes are similar; we keep the Conference hero (`heroConference` background, "HUECONA Conference" title) and add the Schedule's PDF download button to it.
+- Nothing in `Index.tsx` or other pages currently links to `/schedule` via hard-coded routes that need updating beyond the redirect; the redirect covers external bookmarks and search-engine results.

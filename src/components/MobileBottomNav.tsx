@@ -19,7 +19,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 
 const primaryTabs = [
   { name: "Home", path: "/", icon: Home },
-  { name: "Schedule", path: "/schedule", icon: Calendar },
+  { name: "Schedule", path: "/conference?tab=schedule", icon: Calendar },
   { name: "Tickets", path: "/tickets", icon: Ticket },
   { name: "Awards", path: "/awards", icon: Award },
 ];
