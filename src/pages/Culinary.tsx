@@ -130,7 +130,12 @@ const Culinary = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {chefSpotlights.map((chef, idx) => (
-              <div key={idx} className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow cursor-pointer">
+              <div key={idx} className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow cursor-pointer relative">
+                <div className="absolute top-3 left-0 z-10">
+                  <div className="bg-gold text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-r-md shadow-lg">
+                    Nominees Coming Soon
+                  </div>
+                </div>
                 <div className="aspect-square bg-muted flex items-center justify-center">
                   <ChefHat className="text-muted-foreground" size={64} />
                 </div>
