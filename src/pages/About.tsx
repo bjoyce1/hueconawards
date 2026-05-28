@@ -17,6 +17,7 @@ import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
 const productionTeam = [
   { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
   { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
+  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
   { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
   { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
   { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
