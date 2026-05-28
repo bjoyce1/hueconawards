@@ -9,6 +9,7 @@ import heroAbout from "@/assets/hero-about.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
 import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
+import murielFunches from "@/assets/guests/muriel-funches.png";
 import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
 import angelaLewis from "@/assets/guests/angela-lewis.png";
 import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
