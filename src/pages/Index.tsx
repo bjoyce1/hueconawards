@@ -364,6 +364,7 @@ const Index = () => {
         </div>
       </section>
 
+      <MarblismRibbon ctaKey="home_ribbon" />
       <SponsorWall />
       </main>
 
