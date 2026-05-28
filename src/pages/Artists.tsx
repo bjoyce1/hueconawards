@@ -11,20 +11,15 @@ import kentrellWright from "@/assets/guests/kentrell-wright.png";
 import krysPooleDorsey from "@/assets/guests/krys-poole-dorsey.png";
 import latanyaEdenburgs from "@/assets/guests/latanya-edenburgs.png";
 import toniTomlin from "@/assets/guests/toni-tomlin.png";
-import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
-import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
 import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
 import starlettaDupois from "@/assets/guests/starletta-dupois.png";
 import adRoberts from "@/assets/guests/ad-roberts.png";
-import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
 import andreNotice from "@/assets/guests/andre-notice.png";
-import angelaLewis from "@/assets/guests/angela-lewis.png";
 import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
 import drCamHill from "@/assets/guests/dr-cam-hill.png";
 import emmaiAlaquiva from "@/assets/guests/emmai-alaquiva.png";
 import corneliusPratt from "@/assets/guests/cornelius-pratt.png";
 import spencerProffer from "@/assets/guests/spencer-proffer.png";
-import murielFunches from "@/assets/guests/muriel-funches.png";
 
 const specialGuests = [
   { name: "Eve Pomerance", role: "Casting Director", image: evePomerance },
@@ -47,15 +42,6 @@ const featuredGuest = {
   role: "Music & Media Producer",
   image: spencerProffer,
 };
-
-const productionTeam = [
-  { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
-  { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
-  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
-  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
-  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
-  { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
-];
 
 const GuestCard = ({ person }: { person: { name: string; role: string; image: string } }) => (
   <div className="bg-card border border-border rounded-lg overflow-hidden card-hover gold-glow group">
@@ -152,25 +138,6 @@ const Artists = () => {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {specialGuests.map((p) => (
-              <GuestCard key={p.name} person={p} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Production Team */}
-      <section className="py-14 sm:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10 sm:mb-14">
-            <p className="text-houston tracking-[0.3em] uppercase text-xs md:text-sm font-semibold mb-3">
-              Behind the Scenes
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wide">
-              Production <span className="text-gold">Team</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-5xl mx-auto">
-            {productionTeam.map((p) => (
               <GuestCard key={p.name} person={p} />
             ))}
           </div>
