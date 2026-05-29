@@ -32,6 +32,14 @@ const Index = () => {
   const lastTimeRef = useRef(0);
   const mutedRef = useRef(false);
   const scrolledRef = useRef(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setHeroSlide((i) => (i + 1) % HERO_SLIDES.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
