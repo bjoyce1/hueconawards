@@ -1,332 +1,349 @@
-import PageHero from "@/components/PageHero";
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import MarblismRibbon from "@/components/MarblismRibbon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Users, MessageSquare, Film, Music, Palette, UtensilsCrossed, Calendar, Clock, MapPin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroConference from "@/assets/hero-conference.jpg";
 import heroVolunteer from "@/assets/hero-volunteer.jpg";
 import volunteerGraphic from "@/assets/volunteer-graphic.png";
 
-type ScheduleItem = {
-  time?: string;
-  title: string;
-  location?: string;
-  description?: string;
-  speakers?: string;
+const EVENT_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "HUECONA Conference & Awards 2026",
+  startDate: "2026-07-16T10:00:00-05:00",
+  endDate: "2026-07-17T22:00:00-05:00",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: "Blossom Hotel Houston",
+    address: { "@type": "PostalAddress", addressLocality: "Houston", addressRegion: "TX", addressCountry: "US" },
+  },
+  organizer: { "@type": "Organization", name: "HUECONA - Houston United in Entertainment", url: "https://hueconawards.com/" },
+  description: "Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence.",
 };
 
-type ScheduleDay = {
-  theme: string;
-  subtitle: string;
-  items: ScheduleItem[];
+type Session = {
+  id: string;
+  day: string;
+  time: string;
+  tag: string;
+  title: string;
+  speaker: string;
+  description: string;
+  details: string;
 };
+
+const sessions: Session[] = [
+  {
+    id: "spencer",
+    day: "Day 1 · Open",
+    time: "9:00 AM",
+    tag: "Opening Keynote",
+    title: "Cinematic Narratives That Move Culture",
+    speaker: "Spencer Proffer — Visionary Media Producer",
+    description:
+      "Turning iconic music, real-life stories, and cultural truth into story-driven projects that travel across screens, platforms, and generations.",
+    details:
+      "Spencer Proffer opens HUECONA with a keynote on building story-driven projects with cultural staying power — how the best music, film, and media work travels across formats and generations.",
+  },
+  {
+    id: "latanya",
+    day: "Day 1",
+    time: "11:30 AM",
+    tag: "Masterclass · Personal Growth",
+    title: "Unlock the Magic in You",
+    speaker: "Dr. Latanya Edenburgs — Creator of The MOVE Method™",
+    description:
+      "Pause. Realign. Move forward with clarity and intention. A working session on the framework behind The MOVE Method™.",
+    details:
+      "A hands-on masterclass introducing The MOVE Method™ — Dr. Edenburgs' framework for realigning and moving forward with intention. Bring a notebook.",
+  },
+  {
+    id: "andre",
+    day: "Day 1",
+    time: "2:00 PM",
+    tag: "Panel · Networking",
+    title: "Connection Is the New Currency",
+    speaker: "Coach Andre — Connection Coach",
+    description:
+      "How to make lasting connections in a disconnected society — the relationships that actually move careers forward.",
+    details:
+      "Coach Andre leads a session on building genuine professional relationships in an era of surface-level networking — and why connection is the real currency of a creative career.",
+  },
+  {
+    id: "adroberts",
+    day: "Day 2",
+    time: "10:00 AM",
+    tag: "Masterclass · Mindset",
+    title: "The Identity Factor",
+    speaker: "A.D. Roberts — Hypnotherapist & Identity Architect",
+    description:
+      "From being overlooked to being unforgettable through Main Character Energy. You don't need more luck — you need a new identity.",
+    details:
+      "A.D. Roberts unpacks the psychology of reinvention — how shifting your identity, not just your tactics, is what turns being overlooked into being unforgettable.",
+  },
+  {
+    id: "mrcap",
+    day: "Day 2 · Close",
+    time: "4:00 PM",
+    tag: "Closing Experience",
+    title: "The Art of ISM Experience",
+    speaker: "Mr. CAP — Artist, Author & Creative Visionary",
+    description:
+      "A code of thought, movement, and mastery — music, film, and the multidimensional creative universe behind The Art of ISM.",
+    details:
+      "Mr. CAP closes the conference with The Art of ISM Experience — a live exploration of the thought, movement, and mastery behind his multidimensional creative universe spanning music, film, and publishing.",
+  },
+];
+
+const upcomingTopics = [
+  "Film · Script to Screen",
+  "Music · Independence & Innovation",
+  "Visual Arts · The Digital Age",
+  "Culinary · Kitchen to Empire",
+  "Cross-Industry Collaboration",
+  "Marketing for Creatives",
+  "The Future of Entertainment",
+  "Q&A with Award Winners",
+];
+
+const gcalUrl = (s: Session) =>
+  `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+    "HUECONA: " + s.title
+  )}&dates=20260716T140000Z/20260718T040000Z&details=${encodeURIComponent(
+    s.description + " — " + s.speaker
+  )}&location=${encodeURIComponent("Blossom Hotel Houston, Houston, TX")}`;
 
 const Conference = () => {
-  const [selectedPanel, setSelectedPanel] = useState<any>(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initialTab = searchParams.get("tab") === "schedule" ? "schedule" : "overview";
-  const [activeTab, setActiveTab] = useState<string>(initialTab);
-
-  useEffect(() => {
-    const t = searchParams.get("tab");
-    if (t === "schedule" || t === "overview") setActiveTab(t);
-  }, [searchParams]);
-
-  const handleTabChange = (val: string) => {
-    setActiveTab(val);
-    const next = new URLSearchParams(searchParams);
-    if (val === "schedule") next.set("tab", "schedule");
-    else next.delete("tab");
-    setSearchParams(next, { replace: true });
-  };
-
-  const panels = [
-    {
-      id: 1,
-      category: "Film",
-      icon: <Film size={32} />,
-      title: "From Script to Screen: The Modern Filmmaker's Journey",
-      speakers: "Panel of Award-Winning Directors & Producers",
-      description: "Explore the complete filmmaking process from concept development through distribution in today's evolving landscape.",
-      details: "Join acclaimed directors and producers as they share insights on navigating the film industry, securing funding, working with talent, and getting your work seen by audiences worldwide.",
-    },
-    {
-      id: 2,
-      category: "Music",
-      icon: <Music size={32} />,
-      title: "The New Music Industry: Independence & Innovation",
-      speakers: "Chart-Topping Guest & Label Executives",
-      description: "Understanding how independent guest are reshaping the music business and finding success on their own terms.",
-      details: "Learn strategies for building a sustainable music career, leveraging streaming platforms, connecting with fans, and maintaining creative control.",
-    },
-    {
-      id: 3,
-      category: "Arts",
-      icon: <Palette size={32} />,
-      title: "Visual Storytelling: Art in the Digital Age",
-      speakers: "Gallery Curators & Contemporary Guest",
-      description: "How visual guest are adapting to digital platforms while maintaining the power of physical installations.",
-      details: "Discover how to build an art career in the 21st century, from social media presence to gallery representation and NFT opportunities.",
-    },
-    {
-      id: 4,
-      category: "Culinary",
-      icon: <UtensilsCrossed size={32} />,
-      title: "Culinary Excellence: From Kitchen to Empire",
-      speakers: "Celebrity Chefs & Restaurant Entrepreneurs",
-      description: "Building a culinary brand that extends beyond the restaurant into media, products, and cultural influence.",
-      details: "Learn from successful chefs who have built multi-faceted culinary empires while maintaining their commitment to exceptional food.",
-    },
-    {
-      id: 5,
-      category: "Cross-Industry",
-      icon: <Users size={32} />,
-      title: "Creative Collaboration Across Disciplines",
-      speakers: "Multi-Disciplinary Creative Leaders",
-      description: "How collaboration between film, music, art, and culinary creators leads to groundbreaking projects.",
-      details: "Explore successful cross-industry collaborations and learn how to forge partnerships that amplify your creative vision.",
-    },
-    {
-      id: 6,
-      category: "Business",
-      icon: <MessageSquare size={32} />,
-      title: "Building Your Brand: Marketing for Creatives",
-      speakers: "Entertainment Marketing Experts",
-      description: "Essential marketing strategies for guest, filmmakers, musicians, and culinary professionals.",
-      details: "Master social media, PR, personal branding, and audience engagement to grow your influence and opportunities.",
-    },
-  ];
-
-  const featuredPanels = [
-    {
-      title: "Keynote: Hollywood Meets Houston",
-      time: "Opening Day - 9:00 AM",
-      description: "A conversation with industry veterans on why Houston is the next major entertainment hub.",
-    },
-    {
-      title: "The Future of Entertainment",
-      time: "Day 2 - 2:00 PM",
-      description: "Technology, AI, and emerging platforms reshaping how we create and consume content.",
-    },
-    {
-      title: "Q&A with Award Winners",
-      time: "Closing Day - 4:00 PM",
-      description: "Meet and interact with this year's HUECONA Award recipients across all categories.",
-    },
-  ];
-
-  const scheduleData: Record<"day1" | "day2", ScheduleDay> = {
-    day1: {
-      theme: "OPEN SESAME!",
-      subtitle: "Day 1 — Thursday, July 16, 2026",
-      items: [
-        { title: "Pre-Event Red Carpet + Press", description: "Registration + Networking opens the day." },
-        { time: "10:00 AM", title: "Creator Showcase Opens", description: "Art, Fashion, Novelties, Literature." },
-        { time: "10:00 AM – 11:00 AM", title: "Media Interviews & The Healing Suite", description: "The Healing Suite presented by Faith2Felicity." },
-        { time: "12:00 PM", title: "Welcome", speakers: "Sheroo Mukhtiar, MSW — President/CEO, IM Houston" },
-        { time: "12:05 PM", title: "Courage to Collaborate: Inspiration From Within", speakers: "Inspirationalists: A.D. Roberts, Andre Notice, Dr. Latanya Edenburgs, Toni Tomlin" },
-        { time: "12:10 PM", title: "Breakout Sessions", description: "A: A.D. Roberts · B: Andre Notice · C: Dr. Latanya Edenburgs · D: Toni Tomlin" },
-        { time: "1:10 PM", title: "Screening — Chasing Trane Trailer (John Coltrane)" },
-        { time: "1:18 PM", title: "Introduction", speakers: "Sheroo Mukhtiar introduces Chasing Trane Producer, Spencer Proffer" },
-        { time: "1:20 PM – 1:35 PM", title: "Opening Speaker — Spencer Proffer", location: "Mainstage" },
-        { time: "1:55 PM", title: "Converging Creativity — Panel Introduction", speakers: "Moderator: Kelsey Scott · Panelists: Michael Vamosy, Spencer Proffer, Eve Pomerance", description: "Industry Panels (Film, Music, Digital Media, Sports, Fashion, Innovation, Entertainment). Purpose: to empower, educate, and connect emerging and established talent across the entertainment ecosystem." },
-        { time: "2:15 PM", title: "Breakout / Pitch Sessions", description: "A: Michael Vamosy · B: Spencer Proffer · C: Eve Pomerance" },
-        { time: "2:45 PM", title: "Film Screening — “The Ebony Canal” (Documentary Trailer)", speakers: "Award-winning writer & director Emmai Alaquiva" },
-        { time: "2:52 PM", title: "Film & Television — The Industry Meets Houston", speakers: "Moderator: Eve Pomerance · Panelists: Anita Osuigwe-Spencer, Kelsey Scott, Cristala “Krys” Poole Dorsey, Emmai Alaquiva", description: "Topics: The Things I Wasn’t Warned About · Attracting investment and distribution opportunities · Pathways for local filmmakers and actors. Featuring Hollywood producers, casting agents, and streaming platform representatives." },
-        { time: "3:05 PM", title: "Breakout Sessions", description: "A: Anita Spencer · B: Kelsey Scott · C: Cristala “Krys” Poole Dorsey · D: Emmai Alaquiva" },
-        { time: "3:35 PM", title: "Intro to “And the Beat Goes On” Trailer", speakers: "Cristala “Krys” Poole Dorsey, Creative Director" },
-        { time: "3:50 PM", title: "Recovery in Sports — “Getting Back Up”", speakers: "Ed Block CourageCast Team Roundtable — Wally Williams et al." },
-        { time: "4:30 PM", title: "Programming Concludes" },
-        { time: "6:30 PM", title: "Networking Mixer" },
-        { time: "10:00 PM", title: "Night Cap | After Dark", description: "All-Access + VIP guests only." },
-      ],
-    },
-    day2: {
-      theme: "ABRA-CA-DABRA!",
-      subtitle: "Day 2 — Friday, July 17, 2026",
-      items: [
-        { title: "Registration + Networking" },
-        { time: "10:00 AM", title: "Creator Showcase Opens", description: "Art, Fashion, Novelties, Literature." },
-        { time: "10:00 AM – 11:00 AM", title: "Media Interviews & The Healing Suite", description: "The Healing Suite presented by Faith2Felicity." },
-        { time: "12:00 PM", title: "Media Interviews Conclude" },
-        { time: "12:00 PM", title: "Closing Address — TBA", speakers: "Introduction: Michael Vamosy", description: "Q&A on Mainstage, followed by Luncheon + Networking." },
-        { title: "Music Industry — “Breaking Sound Barriers”", speakers: "Spencer Proffer, Cornelius Pratt (others TBA)", description: "Topics: Building sustainable careers as independent guest · The rise of Texas labels and music collectives · Sync licensing, publishing, and performance rights. Panelists: producers, A&R reps, performing guest, and entertainment lawyers." },
-        { title: "Culinary Arts — “The Flavor of Culture”", speakers: "Introduction: Phyllis Bailey · Bao Ong (Restaurant Critic) and others TBA", description: "Topics: Culinary storytelling and brand building · From local kitchens to national food media · Creative collaborations between chefs and guest. Panelists: celebrity chefs, food stylists, media producers, and cultural curators." },
-        { title: "Visual & Digital Arts — “Creative Futures”", speakers: "Introduction: Spencer Proffer · Panel: Asante Bradford, Cornelius Pratt, Michael Vamosy", description: "Topics: Bridging traditional and digital art markets · AI and immersive technology in creative expression · The business of art: monetization, NFTs, and gallery exposure. Panelists: visual guest, curators, digital innovators, and art investors." },
-        { time: "4:30 PM", title: "Programming and Exhibits Conclude" },
-        { time: "6:30 PM", title: "VOILA! — Red Carpet + Press + Pre-Reception" },
-        { time: "7:30 PM", title: "HUECONA Awards Show", description: "Welcome · Special Performance · Final Address / Ringing of the Bell · Presenters TBA. Awards: Film Vanguard · Music Innovator · Fashion Forward · Community Impact · Rising Star · Artistic Visionary · Culinary Creative · Lifetime Achievement (Living Legend)." },
-        { time: "8:30 PM", title: "Award Presentation" },
-        { time: "9:30 PM", title: "Celebration" },
-      ],
-    },
-  };
-
-  const DaySchedule = ({ day }: { day: ScheduleDay }) => (
-    <div>
-      <div className="text-center mb-10">
-        <p className="text-gold tracking-[0.3em] uppercase text-sm mb-2">{day.theme}</p>
-        <h3 className="text-2xl md:text-3xl font-bold">{day.subtitle}</h3>
-        <p className="text-muted-foreground text-sm mt-2">Schedule and talents subject to change.</p>
-      </div>
-      <Accordion type="single" collapsible className="space-y-4">
-        {day.items.map((event, idx) => (
-          <AccordionItem
-            key={idx}
-            value={`item-${idx}`}
-            className="bg-card border border-border rounded-lg overflow-hidden"
-          >
-            <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/50">
-              <div className="flex items-start gap-4 w-full text-left">
-                <div className="text-gold mt-1">
-                  <Calendar size={20} />
-                </div>
-                <div className="flex-1">
-                  {event.time && (
-                    <div className="flex items-center gap-2 text-gold text-sm mb-2">
-                      <Clock size={14} />
-                      <span>{event.time}</span>
-                    </div>
-                  )}
-                  <h4 className="text-lg font-bold mb-1">{event.title}</h4>
-                  {event.location && (
-                    <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                      <MapPin size={14} />
-                      <span>{event.location}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-4 pl-16">
-              {event.speakers && (
-                <p className="text-sm text-foreground/90 mb-2"><span className="text-gold font-semibold">Featuring: </span>{event.speakers}</p>
-              )}
-              {event.description && (
-                <p className="text-muted-foreground">{event.description}</p>
-              )}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
-  );
+  const [selected, setSelected] = useState<Session | null>(null);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
-      <SEO title="HUECONA Conference 2026 — Panels, Keynotes & Full Schedule" description="Two days of industry panels, keynotes, masterclasses and networking — plus the full July 16–17 event schedule at Blossom Hotel Houston." path="/conference" jsonLd={{"@context":"https://schema.org","@type":"Event","name":"HUECONA Conference & Awards 2026","startDate":"2026-07-16T10:00:00-05:00","endDate":"2026-07-17T22:00:00-05:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Blossom Hotel Houston","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"HUECONA - Houston United in Entertainment","url":"https://hueconawards.com/"},"description":"Two-day Houston United in Entertainment Conference & Awards celebrating Film, Music, Arts, Fashion, Sports & Culinary excellence."}} />
+      <SEO
+        title="HUECONA Conference 2026 — Keynotes, Masterclasses & Panels"
+        description="Two days of keynotes, masterclasses, and panels with Spencer Proffer, Dr. Latanya Edenburgs, Coach Andre, A.D. Roberts, Mr. CAP, and more at Blossom Hotel Houston."
+        path="/conference"
+        jsonLd={EVENT_JSONLD}
+      />
 
-      {/* Hero Section */}
-      <PageHero
-        backgroundImage={heroConference}
-        eyebrow="July 16–17, 2026"
-        title="HUECONA"
-        accent="Conference"
-        description="Panel discussions, Q&A sessions, and networking opportunities with industry leaders."
-      >
-        <Button variant="hero" size="lg" className="rounded-none" asChild>
-          <a href="/docs/HUECONA_Nominations_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer">
-            <Download className="mr-2" size={20} />
-            Download Event Info (PDF)
-          </a>
-        </Button>
-      </PageHero>
+      {/* ============ HERO ============ */}
+      <section className="relative min-h-screen grid grid-rows-[auto_1fr_auto] overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroConference})` }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(180deg, hsla(0 0% 2% / 0.6) 0%, transparent 25%, transparent 55%, hsla(0 0% 2% / 0.9) 100%), radial-gradient(ellipse at center, transparent 40%, hsla(0 0% 0% / 0.5) 100%)",
+          }}
+        />
 
-      {/* Top-level Tabs: Overview / Schedule */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <Tabs value={activeTab} onValueChange={handleTabChange} className="max-w-7xl mx-auto">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 bg-charcoal h-auto">
-              <TabsTrigger value="overview" className="text-sm py-2">Overview</TabsTrigger>
-              <TabsTrigger value="schedule" className="text-sm py-2">Schedule</TabsTrigger>
-            </TabsList>
+        {/* Masthead */}
+        <div className="relative z-[3] grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center gap-8 px-[max(2rem,5vw)] pt-32 md:pt-24">
+          <div className="flex items-center gap-3">
+            <span className="block h-px bg-gradient-to-r from-transparent to-gold-antique max-w-20 flex-1" />
+            <span className="font-mono text-[11px] font-medium tracking-[0.25em] uppercase text-gold whitespace-nowrap">
+              July 16–17, 2026
+            </span>
+          </div>
+          <div className="hidden md:block font-mono text-[11px] tracking-[0.4em] uppercase text-gold-antique text-center">
+            The HUECONA Conference
+          </div>
+          <div className="flex items-center gap-3 justify-end">
+            <span className="font-mono text-[11px] font-medium tracking-[0.25em] uppercase text-gold whitespace-nowrap">
+              Blossom Hotel Houston
+            </span>
+            <span className="block h-px bg-gradient-to-l from-transparent to-gold-antique max-w-20 flex-1" />
+          </div>
+        </div>
 
-            <TabsContent value="overview">
-              {/* Featured Panels - Horizontal Scroll */}
-              <div className="mb-20">
-                <h2 className="text-3xl font-bold mb-8 text-gold">Featured Sessions</h2>
-                <div className="horizontal-scroll">
-                  {featuredPanels.map((panel, idx) => (
-                    <div key={idx} className="min-w-[350px] bg-card border border-gold/30 rounded-lg p-6">
-                      <div className="text-gold font-semibold mb-2">{panel.time}</div>
-                      <h3 className="text-xl font-bold mb-3">{panel.title}</h3>
-                      <p className="text-muted-foreground">{panel.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* Body */}
+        <div className="relative z-[3] flex flex-col items-center justify-center text-center px-[max(2rem,5vw)]">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="block w-1.5 h-1.5 rounded-full bg-gold animate-[pulse-dot_2s_ease-in-out_infinite]" />
+            <span className="font-mono text-[11px] font-medium tracking-[0.3em] uppercase text-gold">
+              Two Days · One Stage
+            </span>
+          </div>
+          <h1
+            className="font-serif font-normal leading-[0.9] tracking-[-0.03em] mb-8"
+            style={{ fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
+          >
+            The{" "}
+            <span className="italic font-medium bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">
+              Conference
+            </span>
+          </h1>
+          <p
+            className="font-serif leading-relaxed text-foreground/80 max-w-xl"
+            style={{ fontSize: "clamp(1.125rem, 1.5vw, 1.5rem)" }}
+          >
+            Keynotes, masterclasses, and panels with the producers, artists, and storytellers building the future of entertainment —{" "}
+            <em className="italic text-gold-highlight">where Hollywood meets Houston.</em>
+          </p>
+        </div>
 
-              {/* All Panels Grid */}
-              <div>
-                <h2 className="text-4xl font-bold text-center mb-16">
-                  Conference <span className="text-gold">Panels</span>
-                </h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                  {panels.map((panel) => (
-                    <div
-                      key={panel.id}
-                      onClick={() => setSelectedPanel(panel)}
-                      className="bg-card border border-border rounded-lg p-6 card-hover gold-glow cursor-pointer group flex flex-col h-full"
-                    >
-                      <div className="text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
-                        {panel.icon}
-                      </div>
-                      <div className="text-houston text-sm font-semibold mb-2">{panel.category}</div>
-                      <h3 className="text-xl font-bold mb-3">{panel.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-4">{panel.speakers}</p>
-                      <p className="text-muted-foreground flex-grow">{panel.description}</p>
-                      <Button variant="outline_gold" size="sm" className="mt-4 self-start">
-                        Learn More
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="schedule">
-              <div className="max-w-5xl mx-auto">
-                <Tabs defaultValue="day1">
-                  <TabsList className="grid w-full grid-cols-2 mb-12 bg-charcoal h-auto">
-                    <TabsTrigger value="day1" className="text-xs sm:text-sm whitespace-normal py-2 leading-tight">
-                      <span className="sm:hidden">Day 1<br />Thu, Jul 16</span>
-                      <span className="hidden sm:inline">Day 1 — Thu, July 16</span>
-                    </TabsTrigger>
-                    <TabsTrigger value="day2" className="text-xs sm:text-sm whitespace-normal py-2 leading-tight">
-                      <span className="sm:hidden">Day 2<br />Fri, Jul 17</span>
-                      <span className="hidden sm:inline">Day 2 — Fri, July 17</span>
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="day1"><DaySchedule day={scheduleData.day1} /></TabsContent>
-                  <TabsContent value="day2"><DaySchedule day={scheduleData.day2} /></TabsContent>
-                </Tabs>
-
-                <p className="text-center text-muted-foreground text-sm mt-12 max-w-3xl mx-auto">
-                  <span className="text-gold font-semibold">Special Guest Perks:</span> Award Presenter · Healing Suite ·
-                  Panelist · Masterclass Instructor (optional, additional pay) · All-Access to panels and programming.
-                </p>
-              </div>
-            </TabsContent>
-          </Tabs>
+        {/* Slate */}
+        <div className="relative z-[3] grid grid-cols-2 md:grid-cols-4 border-t border-gold-antique mx-[max(2rem,5vw)] mb-8 pt-6">
+          {[
+            { label: "Format", value: "2-Day Conference", italic: "Conference" },
+            { label: "Sessions", value: "Keynotes + Panels", italic: "Keynotes + Panels" },
+            { label: "Featured Speakers", value: "05 + more", italic: "05" },
+            { label: "Venue", value: "Blossom Hotel", italic: "Hotel" },
+          ].map((item, i) => (
+            <div
+              key={item.label}
+              className={`px-6 py-2 flex flex-col gap-1.5 ${i > 0 ? "md:border-l border-border" : ""} ${
+                i % 2 === 1 ? "border-l border-border" : ""
+              }`}
+            >
+              <span className="font-mono text-[10px] font-medium tracking-[0.25em] uppercase text-gold-antique">
+                {item.label}
+              </span>
+              <span className="font-serif font-medium" style={{ fontSize: "clamp(1rem, 1.3vw, 1.25rem)" }}>
+                {item.value.split(item.italic)[0]}
+                <em className="italic text-gold-highlight">{item.italic}</em>
+                {item.value.split(item.italic)[1]}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Volunteer Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroVolunteer})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95" />
+      {/* ============ TWO TRACKS OVERVIEW ============ */}
+      <section className="py-32 bg-charcoal">
+        <div className="text-center mb-20 px-[max(2rem,5vw)]">
+          <div className="font-mono text-[11px] font-medium tracking-[0.3em] uppercase text-gold mb-6">
+            § 01 — How It Works
+          </div>
+          <h2 className="font-serif font-medium leading-none tracking-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            Two days. Two{" "}
+            <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">
+              tracks.
+            </span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto">
+          {[
+            {
+              num: "01",
+              name: "The Conference",
+              desc: "Daytime keynotes, masterclasses, and panel discussions with named industry leaders. Learn the craft and business of film, music, fashion, arts, and culinary from people doing it at the highest level.",
+            },
+            {
+              num: "02",
+              name: "The Awards",
+              desc: "The evening of July 17 closes with the inaugural HUE Awards ceremony — eight categories honoring Houston's best across every creative discipline, presented with the sculpted gold flame trophy.",
+            },
+          ].map((t) => (
+            <div key={t.num} className="bg-background p-12">
+              <div className="font-serif italic font-medium leading-none mb-4 bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent text-5xl">
+                {t.num}
+              </div>
+              <h3 className="font-serif text-3xl font-medium mb-3">{t.name}</h3>
+              <p className="font-serif text-lg leading-relaxed text-foreground/75">{t.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      {/* ============ FEATURED SESSIONS ============ */}
+      <section className="py-32 bg-background border-t border-border">
+        <div className="flex items-baseline justify-between flex-wrap gap-8 px-[max(2rem,5vw)] pb-16 border-b border-border max-w-7xl mx-auto">
+          <h2 className="font-serif font-medium leading-none tracking-tight" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            Featured{" "}
+            <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">
+              Sessions
+            </span>
+          </h2>
+          <span className="font-mono text-xs tracking-[0.25em] uppercase text-gold">
+            Confirmed Speakers · Schedule Subject to Change
+          </span>
+        </div>
+
+        <div>
+          {sessions.map((s) => (
+            <div
+              key={s.id}
+              onClick={() => setSelected(s)}
+              className="group relative grid grid-cols-1 md:grid-cols-[120px_1fr_auto] gap-4 md:gap-12 items-center px-[max(1.5rem,5vw)] py-10 border-b border-border max-w-7xl mx-auto cursor-pointer transition-colors duration-700 hover:bg-gold/[0.02]"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                style={{ background: "linear-gradient(90deg, transparent, hsla(43 74% 53% / 0.04), transparent)" }}
+              />
+              <div className="flex md:flex-col gap-2 md:gap-1 items-baseline">
+                <span className="font-mono text-[10px] font-medium tracking-[0.25em] uppercase text-gold-antique">
+                  {s.day}
+                </span>
+                <span className="font-serif italic text-2xl font-medium text-gold-highlight">{s.time}</span>
+              </div>
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-2 font-mono text-[10px] font-medium tracking-[0.3em] uppercase text-gold mb-3">
+                  <span className="w-4 h-px bg-current" />
+                  {s.tag}
+                </div>
+                <h3
+                  className="font-serif font-medium leading-tight tracking-tight mb-2"
+                  style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)" }}
+                >
+                  {s.title}
+                </h3>
+                <p className="font-serif italic text-lg text-gold-highlight mb-2">{s.speaker}</p>
+                <p className="font-serif text-base leading-relaxed text-foreground/75 max-w-2xl">{s.description}</p>
+              </div>
+              <div className="md:flex hidden flex-col items-end">
+                <a
+                  href={gcalUrl(s)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold-antique font-mono text-[10px] font-medium tracking-[0.2em] uppercase text-gold bg-transparent transition-all duration-500 group-hover:border-gold group-hover:bg-gold/5 whitespace-nowrap"
+                >
+                  + Add to Schedule
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ============ MORE TOPICS ============ */}
+      <section className="py-24 bg-background">
+        <div className="text-center mb-12 px-[max(2rem,5vw)]">
+          <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-gold mb-4">
+            § 02 — Also On the Program
+          </div>
+          <h2 className="font-serif font-medium" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+            More sessions{" "}
+            <span className="italic text-gold-highlight">being announced</span>
+          </h2>
+        </div>
+        <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto px-[max(2rem,5vw)]">
+          {upcomingTopics.map((t) => (
+            <span
+              key={t}
+              className="font-mono text-xs tracking-[0.15em] uppercase text-foreground/70 border border-border rounded-full px-5 py-2.5 transition-all duration-500 hover:border-gold-antique hover:text-gold-highlight"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* ============ VOLUNTEER ============ */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroVolunteer})` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="flex justify-center">
@@ -342,7 +359,6 @@ const Conference = () => {
                 />
               </div>
             </div>
-
             <div>
               <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-gold px-3 py-1.5 border border-white/10 bg-[#1a2129] inline-block mb-6">
                 Join The Team
@@ -358,47 +374,37 @@ const Conference = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="hero" size="xl">
-                  Volunteer
-                </Button>
+                <Button variant="hero" size="xl">Volunteer</Button>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Panel Detail Modal */}
-      <Dialog open={selectedPanel !== null} onOpenChange={() => setSelectedPanel(null)}>
-        <DialogContent className="bg-card border-gold/30 max-w-2xl">
-          <DialogHeader>
-            <div className="text-houston text-sm font-semibold mb-2">{selectedPanel?.category}</div>
-            <DialogTitle className="text-2xl font-bold text-gold">
-              {selectedPanel?.title}
-            </DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-bold mb-2">Speakers:</h4>
-              <p className="text-muted-foreground">{selectedPanel?.speakers}</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-2">Overview:</h4>
-              <p className="text-muted-foreground">{selectedPanel?.description}</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-2">What You'll Learn:</h4>
-              <p className="text-muted-foreground">{selectedPanel?.details}</p>
-            </div>
-            <Button variant="hero" className="w-full" asChild>
-              <a
-                href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("HUECONA Panel: " + (selectedPanel?.title ?? ""))}&dates=20260716T140000Z/20260718T040000Z&details=${encodeURIComponent((selectedPanel?.description ?? "") + " Speakers: " + (selectedPanel?.speakers ?? ""))}&location=${encodeURIComponent("Blossom Hotel Houston, Houston, TX")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Add to My Schedule
-              </a>
-            </Button>
-          </div>
+      {/* Session detail modal */}
+      <Dialog open={selected !== null} onOpenChange={() => setSelected(null)}>
+        <DialogContent className="bg-charcoal border-gold-antique max-w-2xl">
+          {selected && (
+            <>
+              <DialogHeader>
+                <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-gold mb-2">
+                  {selected.day} · {selected.time} — {selected.tag}
+                </div>
+                <DialogTitle className="font-serif text-3xl md:text-4xl font-medium leading-none tracking-tight">
+                  {selected.title}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4">
+                <p className="font-serif italic text-lg text-gold-highlight">{selected.speaker}</p>
+                <p className="font-serif text-base leading-relaxed text-foreground/80">{selected.details}</p>
+                <Button variant="hero" className="w-full mt-2" asChild>
+                  <a href={gcalUrl(selected)} target="_blank" rel="noopener noreferrer">
+                    Add to My Schedule
+                  </a>
+                </Button>
+              </div>
+            </>
+          )}
         </DialogContent>
       </Dialog>
 
