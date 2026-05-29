@@ -14,6 +14,9 @@ import adRoberts from "@/assets/guests/ad-roberts.png";
 import andreNotice from "@/assets/guests/andre-notice.png";
 import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
 import drCamHill from "@/assets/guests/dr-cam-hill.png";
+import emmaiAlaquiva from "@/assets/guests/emmai-alaquiva.png";
+import corneliusPratt from "@/assets/guests/cornelius-pratt.png";
+import spencerProffer from "@/assets/guests/spencer-proffer.png";
 
 type Guest = {
   name: string;
@@ -36,13 +39,22 @@ const guests: Guest[] = [
   { name: "A.D. Roberts", role: "Speaker & Coach", image: adRoberts, objectPosition: "center 22%" },
   { name: "Andre Notice", role: "Speaker & Coach", image: andreNotice, objectPosition: "center 22%" },
   { name: "Anita Osuigwe-Spencer", role: "Writer & Director", image: anitaOsuigweSpencer, objectPosition: "center 22%" },
+  { name: "Emmai Alaquiva", role: "Producer & Director", image: emmaiAlaquiva, objectPosition: "center 22%" },
+  { name: "Cornelius Pratt", role: "Author, Speaker, Artist", image: corneliusPratt, objectPosition: "center 22%" },
 ];
+
+const featuredGuest = {
+  name: "Spencer Proffer",
+  role: "Music & Media Producer",
+  image: spencerProffer,
+};
 
 const DUOTONE =
   "grayscale(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.95) contrast(1.05)";
 
 const featured = guests.filter((g) => g.featured);
 const rest = guests.filter((g) => !g.featured);
+
 
 const Artists = () => {
   return (
