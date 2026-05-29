@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
@@ -13,6 +13,12 @@ import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import DisplayHeadline from "@/components/DisplayHeadline";
 import hueconaMonogram from "@/assets/huecona-monogram.png";
+import heroSlide1 from "@/assets/hero/hero-1.jpg";
+import heroSlide2 from "@/assets/hero/hero-2.jpg";
+import heroSlide3 from "@/assets/hero/hero-3.jpg";
+import heroSlide4 from "@/assets/hero/hero-4.jpg";
+
+const HERO_SLIDES = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
 
 // BMW-inspired dark surface tokens
 const SURFACE_DARK = "bg-[#1a2129]";
@@ -26,6 +32,14 @@ const Index = () => {
   const lastTimeRef = useRef(0);
   const mutedRef = useRef(false);
   const scrolledRef = useRef(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setHeroSlide((i) => (i + 1) % HERO_SLIDES.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
@@ -109,10 +123,32 @@ const Index = () => {
 
       {/* Hero Section — flat, no glows, no blurs */}
       <section className="relative pt-28 pb-24 bg-[#0f1419] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
-          style={{ backgroundImage: `url(${heroHome})` }}
-        />
+        {/* Cinematic crossfading slideshow */}
+        <div className="absolute inset-0 z-0">
+          {HERO_SLIDES.map((src, i) => (
+            <div
+              key={src}
+              aria-hidden="true"
+              className="absolute inset-0 bg-cover bg-center transition-opacity duration-[1800ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] animate-ken-burns"
+              style={{
+                backgroundImage: `url(${src})`,
+                opacity: i === heroSlide ? 0.45 : 0,
+                transform: i === heroSlide ? "scale(1.04)" : "scale(1)",
+                transitionProperty: "opacity, transform",
+                transitionDuration: "1800ms, 4500ms",
+              }}
+            />
+          ))}
+          {/* Cinematic vignette + film grade */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.85) 100%)",
+            }}
+          />
+        </div>
 
         <div className="container mx-auto px-4 z-10 relative text-center">
           <div className="animate-fade-in max-w-4xl mx-auto">
