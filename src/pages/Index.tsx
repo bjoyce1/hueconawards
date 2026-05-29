@@ -13,6 +13,12 @@ import heroHome from "@/assets/hero-home.jpg";
 import hueLogo from "@/assets/hue-logo.png";
 import DisplayHeadline from "@/components/DisplayHeadline";
 import hueconaMonogram from "@/assets/huecona-monogram.png";
+import heroSlide1 from "@/assets/hero/hero-1.jpg";
+import heroSlide2 from "@/assets/hero/hero-2.jpg";
+import heroSlide3 from "@/assets/hero/hero-3.jpg";
+import heroSlide4 from "@/assets/hero/hero-4.jpg";
+
+const HERO_SLIDES = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
 
 // BMW-inspired dark surface tokens
 const SURFACE_DARK = "bg-[#1a2129]";
