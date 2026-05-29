@@ -3,14 +3,7 @@ import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import MarblismRibbon from "@/components/MarblismRibbon";
-import { Users } from "lucide-react";
-
-import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
-import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
-import murielFunches from "@/assets/guests/muriel-funches.png";
-import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
-import angelaLewis from "@/assets/guests/angela-lewis.png";
-import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
+import ProductionTeam from "@/components/ProductionTeam";
 
 import heroSlide1 from "@/assets/hero/hero-1.jpg";
 import heroSlide2 from "@/assets/hero/hero-2.jpg";
@@ -18,15 +11,6 @@ import heroSlide3 from "@/assets/hero/hero-3.jpg";
 import heroSlide4 from "@/assets/hero/hero-4.jpg";
 
 const HERO_SLIDES = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
-
-const productionTeam = [
-  { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
-  { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
-  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
-  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
-  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
-  { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
-];
 
 const Houston_DATA = [
   {
@@ -315,44 +299,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ============ PRODUCTION TEAM ============ */}
-      <section className="py-24 bg-charcoal">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Users className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="text-gold">Production Team</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Award-winning professionals bringing decades of Hollywood experience to Houston
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-6xl mx-auto">
-            {productionTeam.map((member) => (
-              <div
-                key={member.name}
-                className="group bg-card overflow-hidden transition-colors duration-300 hover:bg-[hsl(var(--charcoal-elevated))]"
-              >
-                <div className="aspect-[4/5] overflow-hidden bg-charcoal">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} — ${member.role}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="bmw-eyebrow text-gold mb-2">{member.role}</p>
-                  <h3 className="text-base font-bold tracking-tight text-white leading-snug">
-                    {member.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductionTeam />
 
       <MarblismRibbon
         eyebrow="Premiere Sponsor"
