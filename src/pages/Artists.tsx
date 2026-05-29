@@ -49,8 +49,6 @@ const featuredGuest = {
   image: spencerProffer,
 };
 
-const DUOTONE =
-  "grayscale(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.95) contrast(1.05)";
 
 const featured = guests.filter((g) => g.featured);
 const rest = guests.filter((g) => !g.featured);
@@ -146,8 +144,8 @@ const Artists = () => {
                 alt={`${featuredGuest.name}, ${featuredGuest.role}`}
                 loading="eager"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-                style={{ objectPosition: "center 22%", filter: DUOTONE }}
+                className="w-full h-full object-cover transition-[filter,transform] duration-1000 group-hover:scale-[1.03] [filter:grayscale(1)_sepia(1)_saturate(1.5)_hue-rotate(5deg)_brightness(0.95)_contrast(1.05)] group-hover:[filter:none]"
+                style={{ objectPosition: "center 22%" }}
               />
               <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 50%, hsla(0 0% 0% / 0.7) 100%)" }} />
               <span className="absolute top-4 left-5 z-[2] font-mono text-[10px] font-medium tracking-[0.3em] uppercase text-gold-highlight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
@@ -189,8 +187,8 @@ const Artists = () => {
                   alt={`${g.name}, ${g.role}`}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
-                  style={{ objectPosition: g.objectPosition ?? "center 22%", filter: DUOTONE }}
+                  className="w-full h-full object-cover transition-[filter,transform] duration-1000 group-hover:scale-[1.04] [filter:grayscale(1)_sepia(1)_saturate(1.5)_hue-rotate(5deg)_brightness(0.95)_contrast(1.05)] group-hover:[filter:none]"
+                  style={{ objectPosition: g.objectPosition ?? "center 22%" }}
                 />
                 <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 55%, hsla(0 0% 0% / 0.6) 100%)" }} />
                 <span className="absolute top-3 left-3.5 z-[2] font-serif italic font-medium text-2xl text-gold-highlight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
@@ -225,8 +223,8 @@ const Artists = () => {
                   alt={`${g.name}, ${g.role}`}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
-                  style={{ objectPosition: g.objectPosition ?? "center 22%", filter: DUOTONE }}
+                  className="w-full h-full object-cover transition-[filter,transform] duration-1000 group-hover:scale-[1.04] [filter:grayscale(1)_sepia(1)_saturate(1.5)_hue-rotate(5deg)_brightness(0.95)_contrast(1.05)] group-hover:[filter:none]"
+                  style={{ objectPosition: g.objectPosition ?? "center 22%" }}
                 />
                 <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at center, transparent 55%, hsla(0 0% 0% / 0.3) 100%)" }} />
               </div>
