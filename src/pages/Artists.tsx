@@ -49,8 +49,6 @@ const featuredGuest = {
   image: spencerProffer,
 };
 
-const DUOTONE =
-  "grayscale(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.95) contrast(1.05)";
 
 const featured = guests.filter((g) => g.featured);
 const rest = guests.filter((g) => !g.featured);
