@@ -5,28 +5,12 @@ import Footer from "@/components/Footer";
 import MarblismRibbon from "@/components/MarblismRibbon";
 import ProductionTeam from "@/components/ProductionTeam";
 
-import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
-import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
-import murielFunches from "@/assets/guests/muriel-funches.png";
-import akiaMcDaniel from "@/assets/guests/akia-mcdaniel.png";
-import angelaLewis from "@/assets/guests/angela-lewis.png";
-import samiyahSealy from "@/assets/guests/samiyah-sealy.png";
-
 import heroSlide1 from "@/assets/hero/hero-1.jpg";
 import heroSlide2 from "@/assets/hero/hero-2.jpg";
 import heroSlide3 from "@/assets/hero/hero-3.jpg";
 import heroSlide4 from "@/assets/hero/hero-4.jpg";
 
 const HERO_SLIDES = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
-
-const productionTeam = [
-  { name: "Nicole Merritt", role: "Executive Producer", image: nicoleMerritt },
-  { name: "Phyllis J. Bailey", role: "Chief of Publicity", image: phyllisBailey },
-  { name: "Muriel Funches", role: "Chief of Syndication", image: murielFunches },
-  { name: "Akia McDaniel", role: "Co-Producer", image: akiaMcDaniel },
-  { name: "Angela Lewis", role: "Co-Producer", image: angelaLewis },
-  { name: "Samiyah Sealy", role: "Production Assistant", image: samiyahSealy },
-];
 
 const Houston_DATA = [
   {
