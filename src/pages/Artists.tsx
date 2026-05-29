@@ -14,6 +14,9 @@ import adRoberts from "@/assets/guests/ad-roberts.png";
 import andreNotice from "@/assets/guests/andre-notice.png";
 import anitaOsuigweSpencer from "@/assets/guests/anita-osuigwe-spencer.png";
 import drCamHill from "@/assets/guests/dr-cam-hill.png";
+import emmaiAlaquiva from "@/assets/guests/emmai-alaquiva.png";
+import corneliusPratt from "@/assets/guests/cornelius-pratt.png";
+import spencerProffer from "@/assets/guests/spencer-proffer.png";
 
 type Guest = {
   name: string;
@@ -36,13 +39,22 @@ const guests: Guest[] = [
   { name: "A.D. Roberts", role: "Speaker & Coach", image: adRoberts, objectPosition: "center 22%" },
   { name: "Andre Notice", role: "Speaker & Coach", image: andreNotice, objectPosition: "center 22%" },
   { name: "Anita Osuigwe-Spencer", role: "Writer & Director", image: anitaOsuigweSpencer, objectPosition: "center 22%" },
+  { name: "Emmai Alaquiva", role: "Producer & Director", image: emmaiAlaquiva, objectPosition: "center 22%" },
+  { name: "Cornelius Pratt", role: "Author, Speaker, Artist", image: corneliusPratt, objectPosition: "center 22%" },
 ];
+
+const featuredGuest = {
+  name: "Spencer Proffer",
+  role: "Music & Media Producer",
+  image: spencerProffer,
+};
 
 const DUOTONE =
   "grayscale(1) sepia(1) saturate(1.5) hue-rotate(5deg) brightness(0.95) contrast(1.05)";
 
 const featured = guests.filter((g) => g.featured);
 const rest = guests.filter((g) => !g.featured);
+
 
 const Artists = () => {
   return (
@@ -113,6 +125,49 @@ const Artists = () => {
               </span>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ============ FEATURED GUEST SPOTLIGHT ============ */}
+      <section className="relative pt-28 pb-12 bg-charcoal">
+        <div className="text-center mb-12 px-[max(2rem,5vw)]">
+          <div className="font-mono text-[11px] font-medium tracking-[0.3em] uppercase text-gold mb-6">§ 00 — Featured Guest</div>
+          <h2 className="font-serif font-medium leading-none tracking-tight text-white" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            The{" "}
+            <span className="italic bg-[linear-gradient(135deg,hsl(var(--gold-highlight))_0%,hsl(var(--gold))_50%,hsl(var(--gold-deep))_100%)] bg-clip-text text-transparent">Spotlight</span>{" "}
+            Guest
+          </h2>
+        </div>
+        <div className="max-w-5xl mx-auto px-[max(2rem,5vw)]">
+          <article className="group grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-0 border border-gold-antique bg-[#0a0805] overflow-hidden transition-all duration-700 hover:border-gold">
+            <div className="relative aspect-[4/5] overflow-hidden bg-[#0a0805]">
+              <img
+                src={featuredGuest.image}
+                alt={`${featuredGuest.name}, ${featuredGuest.role}`}
+                loading="eager"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                style={{ objectPosition: "center 22%", filter: DUOTONE }}
+              />
+              <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 50%, hsla(0 0% 0% / 0.7) 100%)" }} />
+              <span className="absolute top-4 left-5 z-[2] font-mono text-[10px] font-medium tracking-[0.3em] uppercase text-gold-highlight" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+                Spotlight
+              </span>
+            </div>
+            <div className="flex flex-col justify-center p-8 sm:p-12 md:p-14">
+              <span className="block font-mono text-[10px] font-medium tracking-[0.3em] uppercase text-gold mb-4">Featured · HUECONA 2026</span>
+              <h3 className="font-serif font-medium leading-[0.95] tracking-tight text-white mb-3" style={{ fontSize: "clamp(2.25rem, 4vw, 3.75rem)" }}>
+                {featuredGuest.name}
+              </h3>
+              <p className="font-serif italic text-gold-highlight text-lg sm:text-xl mb-6">{featuredGuest.role}</p>
+              <span className="block w-12 h-px bg-gold mb-6" />
+              <p className="font-serif text-white/75 text-base sm:text-lg leading-relaxed max-w-lg">
+                A celebrated music and media producer whose work has shaped the sound and stories of a
+                generation. Spencer joins HUECONA as part of the creative energy connecting Hollywood
+                experience with Houston's rising entertainment platform.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
