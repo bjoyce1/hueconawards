@@ -315,44 +315,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ============ PRODUCTION TEAM ============ */}
-      <section className="py-24 bg-charcoal">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Users className="text-gold mx-auto mb-4" size={56} />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="text-gold">Production Team</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Award-winning professionals bringing decades of Hollywood experience to Houston
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 max-w-6xl mx-auto">
-            {productionTeam.map((member) => (
-              <div
-                key={member.name}
-                className="group bg-card overflow-hidden transition-colors duration-300 hover:bg-[hsl(var(--charcoal-elevated))]"
-              >
-                <div className="aspect-[4/5] overflow-hidden bg-charcoal">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} — ${member.role}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="bmw-eyebrow text-gold mb-2">{member.role}</p>
-                  <h3 className="text-base font-bold tracking-tight text-white leading-snug">
-                    {member.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductionTeam />
 
       <MarblismRibbon
         eyebrow="Premiere Sponsor"
