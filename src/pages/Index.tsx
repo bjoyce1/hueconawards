@@ -123,10 +123,32 @@ const Index = () => {
 
       {/* Hero Section — flat, no glows, no blurs */}
       <section className="relative pt-28 pb-24 bg-[#0f1419] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25 z-0 animate-ken-burns"
-          style={{ backgroundImage: `url(${heroHome})` }}
-        />
+        {/* Cinematic crossfading slideshow */}
+        <div className="absolute inset-0 z-0">
+          {HERO_SLIDES.map((src, i) => (
+            <div
+              key={src}
+              aria-hidden="true"
+              className="absolute inset-0 bg-cover bg-center transition-opacity duration-[1800ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] animate-ken-burns"
+              style={{
+                backgroundImage: `url(${src})`,
+                opacity: i === heroSlide ? 0.45 : 0,
+                transform: i === heroSlide ? "scale(1.04)" : "scale(1)",
+                transitionProperty: "opacity, transform",
+                transitionDuration: "1800ms, 4500ms",
+              }}
+            />
+          ))}
+          {/* Cinematic vignette + film grade */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.85) 100%)",
+            }}
+          />
+        </div>
 
         <div className="container mx-auto px-4 z-10 relative text-center">
           <div className="animate-fade-in max-w-4xl mx-auto">
