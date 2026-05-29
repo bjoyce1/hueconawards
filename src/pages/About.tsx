@@ -66,6 +66,19 @@ const Houston_DATA = [
 ];
 
 const About = () => {
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    const id = window.setInterval(() => {
+      setHeroSlide((i) => (i + 1) % HERO_SLIDES.length);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navigation />
@@ -77,6 +90,33 @@ const About = () => {
 
       {/* ============ EDITORIAL HERO ============ */}
       <section className="relative min-h-screen grid grid-rows-[auto_1fr_auto] pt-24 pb-12 overflow-hidden">
+        {/* Cinematic crossfading slideshow — behind everything */}
+        <div aria-hidden="true" className="absolute inset-0 z-0 bg-[#0a0a0a]">
+          {HERO_SLIDES.map((src, i) => (
+            <div
+              key={src}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${src})`,
+                opacity: i === heroSlide ? 0.22 : 0,
+                transform: i === heroSlide ? "scale(1.04)" : "scale(1)",
+                transitionProperty: "opacity, transform",
+                transitionDuration: "1800ms, 4500ms",
+                transitionTimingFunction: "cubic-bezier(0.22, 0.61, 0.36, 1)",
+              }}
+            />
+          ))}
+          {/* Bottom-vignette for legibility over busy frames */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,0.7) 100%)",
+            }}
+          />
+        </div>
+
+        {/* Atmospheric backdrop — pure CSS, sits ABOVE images to preserve gold palette */}
         {/* Atmospheric backdrop — pure CSS, no photo */}
         <div
           aria-hidden="true"
