@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import MarblismRibbon from "@/components/MarblismRibbon";
-import { Users } from "lucide-react";
+import ProductionTeam from "@/components/ProductionTeam";
 
 import nicoleMerritt from "@/assets/guests/nicole-merritt.png";
 import phyllisBailey from "@/assets/guests/phyllis-bailey.png";
