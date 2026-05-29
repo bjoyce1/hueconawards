@@ -54,10 +54,9 @@ const ProductionTeam = () => {
                 alt={`${m.name}, ${m.role}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-[1.08] group-hover:filter-none [filter:grayscale(1)_sepia(1)_saturate(1.4)_hue-rotate(5deg)_brightness(0.95)_contrast(1.05)]"
                 style={{
                   objectPosition: m.objectPosition ?? "center 30%",
-                  filter: "grayscale(1) sepia(1) saturate(1.4) hue-rotate(5deg) brightness(0.95) contrast(1.05)",
                 }}
               />
               <div
